@@ -1,99 +1,124 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's blog starter
-</h1>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8ec719ad-c2f8-4529-b97d-e7561a9eaf33/deploy-status)](https://app.netlify.com/sites/delog-w3layouts/deploys) &nbsp;<a href="https://twitter.com/intent/follow?screen_name=w3layouts">
+  <img src="https://img.shields.io/twitter/follow/w3layouts.svg?label=Follow%20@w3layouts" alt="Follow @w3layouts" />
+</a>
 
-Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+# Delog - Blog for Developer and Designer
+This simple website built with GatsbyJS and Netlify CMS. Deploys on netlify with single click. This Starter is sponsered by [W3Layouts](https://w3layouts.com).
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+[![Delog - Gatsby Starter Demo](https://w3layouts.com/wp-content/uploads/2020/03/delog.jpg)](https://delog-w3layouts.netlify.com/)
 
-## 🚀 Quick start
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/W3Layouts/gatsby-starter-delog)
 
-1.  **Create a Gatsby site.**
+Install this starter locally: (assuming you already have [NodeJS and GatsbyJS installed](https://www.gatsbyjs.org/tutorial/part-zero/))
+```bash
+gatsby new gatsby-starter-delog https://github.com/W3Layouts/gatsby-starter-delog
+```
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+Instructions also available at W3Layouts [Delog Launch Article](https://w3layouts.com/articles/delog-gatsby-starter-netlify-cms/).
 
-    ```shell
-    # create a new Gatsby site using the blog starter
-    gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
-    ```
+## Features
+- Built with GatsbyJS and Netlify CMS
+- Option to Add, Edit, Update and Delete posts via Netlify CMS
+- SEO friendly - Option to Add meta description
+- In-built contact form powered by [W3Layouts](https://w3layouts.com) 
+- Comes with dark mode
 
-1.  **Start developing.**
+---
 
-    Navigate into your new site’s directory and start it up.
+## Documentation
 
-    ```shell
-    cd my-blog-starter/
-    gatsby develop
-    ```
+* Once you hit "[Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/W3Layouts/gatsby-starter-delog)"
+* Connect Github
+* Enter Repository Name
+* And your site starts build process. After the build process your website is live
 
-1.  **Open the source code and start editing!**
+### Changing repositary URL for Netlify CMS access
+You need to change repo URL to your own `repo` at `/static/admin/config.yml`, for example `username/repo-name`
 
-    Your site is now running at `http://localhost:8000`!
+### Creating Github OAuth Client ID
+* Goto Github [Developer Settings](https://github.com/settings/developers)
+* **New OAuth** 
+* Enter Application name
+* Homepage URL as Netlify URL
+* And **Authorization callback URL** to `https://api.netlify.com/auth/done`)
+* Once Client ID and Secret token is generated configure same in [Netlify Access Control](#accessing-netlify-cms-admin) as described.
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+### Accessing Netlify CMS Admin
+* Goto your Netlify site admin
+* Goto **Access Control** > **OAuth** then **Install Provider** you need to select provider as `Github` as add `Client ID` and `Secret` 
+* Your Netlify CMS is ready. Goto you netlify site URL and append `/admin/`. for example `example.netlify.com/admin/`, You will see login with Github button.
 
-    Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+### Managing Blog Posts in Netlify CMS
+* Once logged in you will find all the blog post listed here.
+* You can create, edit, update and delete like any CMS
 
-## 🧐 What's inside?
+### Editing Meta Data
+Inside you Netlify CMS admin, `Settings > Config` or you can go to `site-meta-data.json`. Here you can edit following details
+* Title
+* Description
+* Site URL
+* Homepage Title
+* Homepage Description
+* To get the Contact form working. you need too add a form at [W3Layouts forms](https://my.w3layouts.com/Forms/). Follow the steps [How to enable W3Layouts Contact form](https://w3layouts.com/articles/introducing-contact-forms-for-static-websites/) instructions to create a form then your contact form is all set.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+### Add Google Analytics
+Change `trackingId` in `gatsby-config.js` at `gatsby-plugin-google-analytics` plugin
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+---
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+I hope you will build a great website with Delog. If you like it please spread the word, Feel free to contribute and raise a pull request :)
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+For issues,feedback on enhancement or sharing your new awesome website built with delog. [Create New Issue](https://github.com/W3Layouts/gatsby-starter-delog/issues/new) Here
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+---
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+## Roadmap
+We are maintaining future task in [Github Project](https://github.com/W3Layouts/gatsby-starter-delog/projects/1), even though most changes are instantaious. We try keep them posted here.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+---
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+## Credits
+- Awesome image used in demo is from [Unsplash](https://unsplash.com)
+- CSS and SVG Icons by [CSS.gg](https://css.gg)
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+---
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+## Changelog
+All notable changes to this project are listed here.
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+### [1.6.0] - 2020-05-03
+#### Added
+- Custom 404 page.
+- Site name will be appended in blog posts and contact page.
+- Reordering fields in Netlify CMS for better flow of post creation.
+- Validation for path in Netlify CMS
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+### [1.5.0] - 2020-05-03
+#### Added
+- Settings page in Netlify CMS to customize site meta data.
+- Site meta data is pulled from `site-meta-data.json`. maintained via Netlify CMS
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+### [1.4.0] - 2020-05-01
+#### Added
+- `gatsby-plugin-sitemap` Creates a sitemap for your Gatsby site in production.
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+#### Changed
+- Changelog improvements
+- Comments on `gatsby-config.js`
+- Comments on `static/admin/config.yml`
 
-## 🎓 Learning Gatsby
+### [1.3.0] - 2020-04-30
+#### Added
+- `gatsby-plugin-offline` drop-in support for making a GatsbyJS site work offline and more resistant to bad network connections.
+- `gatsby-plugin-manifest` configures GatsbyJS to create a manifest.webmanifest file on every site build
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+### [1.2.0] - 2020-04-28
+#### Added 
+- GatsbyJS Increment builds with Netlify deployment
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+### [1.1.0] - 2020-04-21
+#### Added 
+- Dark mode compatibitly and toggle for user preference
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-blog)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+### [1.0.0] - 2020-03-14
+- Launch of GatsbyJS and Netlify CMS based starter `gatsby-starter-delog`
