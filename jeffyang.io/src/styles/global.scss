@@ -9,15 +9,15 @@ body {
   margin-top: 0
 }
 body.light {
-  --primary-color: #381696;
+  --primary-color: #1f364c;
   --primary-text-color: #fff;
   --featured-bg: #493b8a;
   --featured-text: #fff;
   --secondary-color: #10072b;
-  --background: #fff;
+  --background: #fdfcfa;
   --site-header: var(--background);
   --card-bg: #fff;
-  --card-bdr: #eee;
+  --card-bdr: #fff;
   --card-shadow: #d5d5d5;
   --btn-bg: var(--background);
   --btn-bdr: #d3d6e7;
@@ -53,7 +53,7 @@ body.dark {
 /* System Fonts as used by Medium and WordPress */
 body {
   font-family: $font-family;
-  border-top: 10px solid var(--primary-color);
+  border-top: 7px solid var(--primary-color);
   background-color: var(--background);
   color: var(--text-color);
 }
@@ -65,7 +65,7 @@ a {
   }
 }
 .site-wrapper {
-  padding: 32px;
+  padding: 10px 32px 32px 32px;
   max-width: 1140px;
   margin: 0 auto;
   img {
@@ -219,7 +219,7 @@ a {
   background-color: var(--card-bg);
   border-radius: 9px;
   border: 1px solid var(--card-bdr);
-  box-shadow: 0 0 30px var(--card-shadow);
+  box-shadow: 0 0 10px var(--card-shadow);
   overflow: hidden;
   line-height: 1.5;
   &:hover .post-link {
@@ -404,4 +404,15 @@ body.light {
     box-shadow: 0 0 0 2px;
     top: 8px;
     left: 2px
+}
+img[src*="#fluid"] {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  border-radius: 0.5rem;
+}
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
