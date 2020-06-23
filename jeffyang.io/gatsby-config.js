@@ -31,6 +31,9 @@ module.exports = {
         },
         {
           resolve: 'gatsby-remark-emojis',
+        },
+        {
+          resolve: 'gatsby-remark-reading-time'
         }],
       },
     },
@@ -59,7 +62,7 @@ module.exports = {
       options: {
         fonts: [
           `limelight`,
-          `merriweather\:300,400,600,700`
+          `merriweather\:300,400,600,700`,
           `montserrat\:300,400,400i,700` // you can also specify font weights and styles
         ],
         display: 'swap'

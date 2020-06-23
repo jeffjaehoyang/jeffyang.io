@@ -17,6 +17,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               path
             }
+            fields {
+              readingTime {
+                text
+              }
+            }
           }
         }
       }

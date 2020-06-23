@@ -51,6 +51,11 @@ export const pageQuery = graphql`
             title
             thumbnail
           }
+          fields {
+            readingTime {
+              text
+            }
+          }
         }
       }
     }

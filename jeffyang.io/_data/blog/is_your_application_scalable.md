@@ -3,7 +3,7 @@ template: BlogPost
 path: /shipping-code-for-a-business
 date: 2019-09-09T12:12:25.364Z
 title: 'Shipping Code for a Business – Is Your Application Scalable?'
-thumbnail: /assets/aws_lambda_s3.png
+thumbnail: /assets/scalable_cover.png
 ---
 
 ### Reflecting on 2019 Summer Internship @Knowru 

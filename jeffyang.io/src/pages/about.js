@@ -18,13 +18,14 @@ const AboutPage = ({
         <div className="about-picture" style={{ backgroundImage: `url('/assets/about-me.jpeg')`, filter: 'brightness(0.7)', marginBottom: 0}}>
       </div>
       <div>
-        <p style={{ fontSize: '2.5em', fontWeight: 600, color: '#1f364c'}}>Hi there, I'm Jeff!</p>
-        <p>Welcome to my blog! I created this blog for myself to freely share ideas and document my progress as a software engineer. 
-          I have benefited from numerous other writers out there who aren't shy to share their success and failure as programmers. I hope 
-          to replicate that learning experience for others through sharing knowledge on this blog 🧑‍💻</p>
+        <p style={{ fontSize: '2.5em', fontWeight: 600, color: '#1f364c', marginTop: '0.5em' }}>Hi there, I'm Jeff!</p>
+        <p className="welcome-to-my-blog">Welcome to my blog! I created this blog for myself to <b>freely share ideas and document my progress as a software engineer.</b> I have benefited 
+        from the community of programmer-bloggers out there who aren't shy to share their success and failure as programmers. I hope 
+        to replicate that learning experience for others through sharing knowledge on this blog!</p>
         <hr></hr>
-        <p style={{ fontSize: '1.5em', fontWeight: 600 }}>A little bit about myself</p>
+        <p style={{ fontSize: '1.5em', fontWeight: 600 }}>A little bit about myself 🧑‍💻</p>
         <div className="a-little-bit-about-myself">
+          <div>I'm a <b>web enthusiast</b>, with a special interest in scalable software architecture</div>
           <div><b>Northwestern University</b> CS '21</div>
           <div>Software Engineering Intern <b>@Esri</b>, previously <b>@Knowru</b></div>
           <div>Born and Raised in <b>Seoul, South Korea</b></div>

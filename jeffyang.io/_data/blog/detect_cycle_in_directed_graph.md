@@ -3,7 +3,7 @@ template: BlogPost
 path: /detect-a-cycle-in-a-directed-graph
 date: 2019-11-29T12:12:25.364Z
 title: 'Detect a Cycle in a Directed Graph'
-thumbnail: /assets/acyclic_graph.png
+thumbnail: /assets/course_schedule_cover.png
 ---
 
 This is the third post of the algorithms series, and this time I would like to share a classic algorithms problem related to graphs. In this post, we are going to examine how to detect a cycle in a directed graph.  

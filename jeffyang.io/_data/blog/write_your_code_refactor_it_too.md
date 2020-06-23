@@ -3,7 +3,7 @@ template: BlogPost
 path: /write-your-code-and-refactor-it-too
 date: 2019-04-28T12:12:25.364Z
 title: 'Write Your Code, and Refactor it Too!'
-thumbnail: /assets/sssp.png
+thumbnail: /assets/refactor_code.png
 ---
 
 ### Reflecting on 2017 Summer Internship @Knowru 
