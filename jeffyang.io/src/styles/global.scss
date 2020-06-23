@@ -1,4 +1,4 @@
-$font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+$font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 
 html,
 body {
@@ -65,7 +65,7 @@ a {
   }
 }
 .site-wrapper {
-  padding: 10px 32px 32px 32px;
+  padding: 10px 32px;
   max-width: 1140px;
   margin: 0 auto;
   img {
@@ -152,10 +152,13 @@ a {
   padding: 0;
   background:var(--background);
   color: var(--text-color);
-  line-height: 1.5;
+  line-height: 1.9;
   > .blog-post-content {
     max-width: 768px;
     margin: 0 auto;
+    h2 {
+      margin-top: 2.5em;
+    }
   }
   > .blog-post-content *:last-child,
   > *:last-child {
@@ -176,8 +179,9 @@ a {
 .post-thumbnail {
   text-align: center;
   min-height: 380px;
-  //background-image: url('/assets/circles-light.png');
-  background-color: var(--featured-bg);
+  max-width: 735px;
+  margin: auto;
+  // background-color: var(--featured-bg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -191,7 +195,7 @@ a {
   overflow: hidden;
   &:before {
     content: "";
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.8);
     position: absolute;
     top: 0;
     left: 0;
@@ -219,7 +223,7 @@ a {
   background-color: var(--card-bg);
   border-radius: 9px;
   border: 1px solid var(--card-bdr);
-  box-shadow: 0 0 10px var(--card-shadow);
+  box-shadow: 0 0 20px var(--card-shadow);
   overflow: hidden;
   line-height: 1.5;
   &:hover .post-link {
@@ -415,4 +419,60 @@ img[src*="#fluid"] {
 p {
   margin-top: 1em;
   margin-bottom: 1em;
+}
+.about-picture {
+  text-align: center;
+  min-height: 65vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  margin-bottom: 36px;
+  color: var(--featured-text);
+  display: grid;
+  align-content: center;
+  position: relative;
+  padding: 18px;
+  overflow: hidden;
+}
+.a-little-bit-about-myself {
+  display: flex;
+  flex-direction: column;
+  line-height: 3em;
+}
+.projects-wrapper {
+  max-width: 768px;
+  margin: 0 auto;
+}
+.projects-item {
+
+}
+.projects-detail {
+  max-width: 30%;
+  display: inline-block;
+  padding: 10px;
+  span {
+    font-size: 22px;
+    font-weight: 600;
+    background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #ffe1dd 50%);
+  }
+  div {
+    text-align: center;
+    margin-top: 1em;
+    line-height: 2em;
+    font-size: 12px;
+    background-color: #d8efee;
+    border: transparent;
+    max-width: 100px;
+    margin-bottom: 1em;
+  }
+}
+.projects-description {
+  max-width: 70%;
+  display: inline-block;
+  padding: 10px;
+  line-height: 1.9;
+}
+.projects-links {
+
 }

@@ -12,17 +12,17 @@ This is going to be the first of the algorithms series, where I will be writing 
 
 The problem statement itself may not paint a clear picture of what we are dealing with, so let us take a look at an example `spiralMatrix(4)`:  
 
-![A diagram that shows how to traverse a matrix in a spiral manner.](../../static/upload/spiral_matrix_1.jpg#fluid)
+![A diagram that shows how to traverse a matrix in a spiral manner.](/assets/spiral_matrix_1.jpg#fluid)
 
 Hopefully, the picture above was clear enough to give you a good idea of what our function is supposed to do. Essentially, the function `spiralMatrix(n)` needs to produce a n\*n matrix that spirals inwards. The question may seem a bit daunting at first, but we’ll go through it step by step.  
 
-###### 1. Notice that we are dealing with a 2D Array
+## 1. Notice that we are dealing with a 2D Array
 This problem can be challenging to even start because it does not directly say what type of data structure we are dealing with. To begin discussing the solution to this problem, we need to be very clear on the fact that the matrix shown above is essentially a 2D array, where there are multiple arrays within an array.  
 
-###### 2. How will we populate the 2D array, spiraling inwards?
+## 2. How will we populate the 2D array, spiraling inwards?
 Take a look at the following diagram:
 
-![A diagram that shows how to approach the problem.](../../static/upload/spiral_matrix_2.jpg#fluid)
+![A diagram that shows how to approach the problem.](/assets/spiral_matrix_2.jpg#fluid)
 
 The general idea is to populate the 2D array by iterating through each row and column, and incrementing the respective variables as we continue with the iteration. The pseudo code would be as follows:
 

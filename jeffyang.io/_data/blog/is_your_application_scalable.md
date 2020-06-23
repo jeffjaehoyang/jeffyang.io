@@ -6,7 +6,7 @@ title: 'Shipping Code for a Business – Is Your Application Scalable?'
 thumbnail: /assets/aws_lambda_s3.png
 ---
 
-###### Reflecting on 2019 Summer Internship @Knowru 
+### Reflecting on 2019 Summer Internship @Knowru 
 
 This summer, I had the privilege of returning to and working at Knowru, a startup that primarily focuses on helping loan processing companies through a suite of innovative software. I had worked at Knowru in the summer of 2017 before enlisting in the Korean Army, and over the next 2 years of my military service, the company saw remarkable growth (most notably, the backing of a multimillion-dollar investment from Hong Kong). Back at Knowru as a software engineering intern, I had to navigate through problems that came from the company’s rapidly growing customer-base: writing code with scalability in mind.
 

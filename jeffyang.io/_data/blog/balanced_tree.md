@@ -14,19 +14,19 @@ This is the second post of the algorithms series, and this time I would like to 
 
 The problem statement itself may not paint a clear picture of what we are dealing with, so let us take a look at the following picture of a balanced binary tree. Notice that the depth of all leaf nodes differ by at most 1. 
 
-![A diagram that represents a binary tree with a root node at the top.](../../static/upload/root.png#fluid)
+![A diagram that represents a binary tree with a root node at the top.](/assets/root.png#fluid)
 
 Hopefully, the picture above was enough to give you a clear idea of what a balanced binary tree looks like. Now, let's dive into solving the problem! We’ll go through it step by step.  
 
-##### 1. We are interested in the *depth* of leaf nodes - nodes that don't have any child node
+## 1. We are interested in the *depth* of leaf nodes - nodes that don't have any child node
 
 At the end, we need to somehow keep track of the depth of the leaf nodes to determine if the tree is balanced. There can be different ways to approaching this problem at hand. I'm going to be implementing an iterative depth-first traversal of the tree to check the depth of leaf nodes.  
 
 To visualize depth-first traversal, take a look at the following diagram:
 
-![A diagram that illustrates a depth-first traversal of a binary tree.](../../static/upload/root2.png#fluid)
+![A diagram that illustrates a depth-first traversal of a binary tree.](/assets/root2.png#fluid)
 
-##### 2. Do we necessarily have to traverse the *entire* tree, and check *all* the leaf nodes to definitively determine if a tree is balanced?  
+## 2. Do we necessarily have to traverse the *entire* tree, and check *all* the leaf nodes to definitively determine if a tree is balanced?  
 
 Well, it *depends*. If a tree is in fact balanced, we will end up traversing the entire tree in *all* cases. There's no escaping that. However, if a tree is not balanced, we can optimize our code so that we can just return `False` as soon as we figure out that there exists a leaf node that is more than a level deeper in depth than another leaf node.  
 
@@ -84,6 +84,6 @@ def check_balanced(root):
 
 This diagram of a skewed tree will help your understanding:  
 
-![A diagram that represents a skewed tree.](../../static/upload/root3.png#fluid)
+![A diagram that represents a skewed tree.](/assets/root3.png#fluid)
 
 And with that, we are done! Hopefully this post gave you a clear idea of how to determine if a binary tree is balanced, and how efficient our algorithm is in terms of time and memory. 

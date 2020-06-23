@@ -18,7 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [{
+        plugins: [
+          {
           resolve: `gatsby-remark-prismjs`,
           options: {
             classPrefix: "language-",
@@ -52,6 +53,17 @@ module.exports = {
         display: `standalone`,
         icon: "src/images/icon.png",
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `limelight`,
+          `merriweather\:300,400,600,700`
+          `montserrat\:300,400,400i,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
     },
     `gatsby-plugin-sass`, 
     `gatsby-plugin-react-helmet`,

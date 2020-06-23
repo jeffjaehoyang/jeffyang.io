@@ -8,7 +8,7 @@ thumbnail: /assets/tweetbot.png
 
 According to recent research conducted by USC and Indiana University affiliates, the *conservative* estimate for the number of Twitter bots is somewhere around 15% of all active accounts, suggesting that automated account activity is in fact prominent across the Twitter ecosystem. In fact, your daily interactions on Twitter may very well include interactions with bots! Despite the negative connotations surrounding the term *Twitter Bots*, the qualitative judgement shouldn't be so simplistic. The usage of Twitter bots can vary from being as helpful as disseminating information on natural disasters, to being as harmful as cultivating terrorist recruitment propaganda. Leaving that value judgment up to you, in this blog post, I'll be writing about how to make a fully functional Twitter bot that Tweets simple sentences composed of three words - hence the "Three Word Philosopher." Hop on!  
 
-##### 1. Getting Ready - The Basics  
+## 1. Getting Ready - The Basics  
 As I always emphasize, when starting Python projects, it's a good idea to default to creating a Python virtual environment for the specific project that you are working on. So let's do just that:  
 
 ```console
@@ -35,7 +35,7 @@ We now have all the must-haves ready. Let's move on to the next step. Again, rec
 
 Note that in the snippet above, I've installed all major dependencies at once. However, in real life, this is unlikely to happen because you will never know which dependencies you are going to end up with at the end of the day. So in real life, it is more likely that you would update your requirements.txt file as you make progress with your project.  
 
-##### 2. Feeding Your Bot - A Wealthful and Clean Text Corpus
+## 2. Feeding Your Bot - A Wealthful and Clean Text Corpus
 To build a bot that doesn't dully Tweet out same sets of hard-coded sentences over and over again, we need to first feed our bot with words so that it can dynamically generate sentences. With a bit of machine learning knowledge (such as the [Markov Chain](https://medium.com/@__amol__/markov-chains-with-python-1109663f3678)), it's possible to generate a grammatically sound sentence given that the bot is fed with a wealthful repository of words. However, for this bot, I did not use any machine learning concepts and instead opted to try and mimic a short, "philosophical" sentence by performing a simple categorization of words. To achieve any of this, we are first going to need a source for our texts. Because I wanted a long text with "philosophical" words, I scraped an e-book of John Stuart Mill's *Utilitarianism* from [Project Gutenberg](https://www.gutenberg.org/). You are more than welcome to choose any other source, but it's going to be better if the text is decently long, to prevent repetitive sentences.  
 
 For the purposes of scraping an e-book (or any other source as long as it's online), we are going to use BeautifulSoup, Python's famous parsing library. [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is a fantastic package for parsing HTML and XML documents. We are not looking to do anyting complex here, so the code is fairly simple. Make a python file (I named mine `scrape_words.py`), and do:  
@@ -77,7 +77,7 @@ output_file_write.close()
 
 Essentially the function `text_cleanup` takes a string as input, gets rid of all the unwanted punctuations, and returns the cleaned up string. Then, we write that cleaned text into an output file, so our bot can later access it.  
 
-##### 3. A Simple Categorization of the Corpus
+## 3. A Simple Categorization of the Corpus
 Now that we have a clean text corpus ready for use, let's write some code to help our bot generate sentences. Create a new file called `sentence.py` in your project directory, and do:  
 
 ```python
@@ -108,7 +108,7 @@ The `categorize()` function reads the long text from the cleaned up `gutenberg.t
 
 Although not necessarily the most sophisticated way of categorization, it will suffice for the purpose of feeding our bot with words to generate a sentence comprised of three parts - *start, body, end*.  
 
-##### 4. Make That Bot Speak!
+## 4. Make That Bot Speak!
 We've finished categorizing our words, so now we need to generate a sentence for the bot to Tweet out. We are going to accomplish that by using Python's random module.  
 
 ```python
@@ -125,9 +125,9 @@ def run():
 
 That's it! Now by calling the function `run()`, we can generate three-word sentences. Granted, because I didn't use a more sophisticated algorithm (perhaps a machine learning algorithm) to try and emulate a more human-like sentence, the sentences generated will not always make perfect sense. However, for the purposes of this project, it does the minimum job of sounding like a "Three Word Philosopher." Here is a sample of three-word sentences that our bot is capable of producing:  
 
-![A screenshot of the terminal showing the kinds of sentences our bot is capable of producing.](../../static/upload/sentence_sample.png#fluid)
+![A screenshot of the terminal showing the kinds of sentences our bot is capable of producing.](/assets/sentence_sample.png#fluid)
 
-##### 5. Connecting our Bot to Twitter 
+## 5. Connecting our Bot to Twitter 
 We now have a bot that can generate three-word sentences (well, something close it) by selecting words from the three categorized lists we built. To build a bot that *Tweets*, we now need to plug our bot that resides in our local machine to the outer world - Twitter.  
 
 To connect our bot to Twitter, we first need to somehow programmatically access Twitter, right? That's where Twitter's API comes into play. API stands for *Application Programming Interface* (check this [article](https://medium.com/@perrysetgo/what-exactly-is-an-api-69f36968a41f) out), and more specifically, Twitter's API is a predefined set of Twitter-developed protocols that programmers can use to interact with Twitter at a programmatic level, without any user interface. Although Twitter's API can be used by anyone who needs it, you do need to [apply online](https://developer.twitter.com/en/apply-for-access.html) to get access to your Twitter API keys (Twitter is very sensitive to malicious usage of their API). You will need to answer some questions to confirm with Twitter that you have legitimate reasons for requesting to use their API. Once Twitter approves, you will have access to your own API keys that you will need to connect your bot to Twitter.  
@@ -177,7 +177,7 @@ def tweet(status):
 
 The code above accomplishes the simple job of connecting our bot to Twitter through our authenticated API keys, and updating the status with a custom input - which we call *Tweeting*.  
 
-##### 6. Taking it a Bit Further - Flask and Heroku 
+## 6. Taking it a Bit Further - Flask and Heroku 
 This is an optional part of the project that is not an integral part of the Twitter bot itself. However, I thought that it would be nice to have a user friendly interface for the "Three Word Philsopher" that I built so that people can easily use the bot that I built. I am not going to go into the details of Flask here, but as an introduction , Flask is a great Python microframework for building web applications. If you are interested, I have a more detailed post on Flask [here](https://www.jeffyangme.com/post/build_a_flask_website). Create a Python file with a name of your choice, and do the following:  
 
 ```python
@@ -256,7 +256,7 @@ The HTML code above is not going to generate a decent looking interface. However
 
 Now that we have a Flask web application, I wanted to deploy it on Heroku so that I could reveal my bot to the world. Deploying a Flask Application on Heroku is not too difficult to do, and I have that covered in detail [here](http://localhost:5000/post/deploy_flask_app_on_heroku), if you are interested.  
 
-##### 7. What I learned
+## 7. What I learned
 The Twitter bot project turned out to be an enjoyable learning experience. Here are some areas that I thought this project helped me hone my skills in: 
 
 * Basic **web scraping** with Python 
@@ -274,7 +274,7 @@ That's all! [This](https://threewordthinker-api-heroku.herokuapp.com/) is the li
 
 *By the way*, I wasn't kidding when I said there are bots lurking around in Twitter...  
 
-![A real screenshot of another tweet bot retweeting a tweet that our bot just tweeted.](../../static/upload/jesus_retweet.png#fluid)
+![A real screenshot of another tweet bot retweeting a tweet that our bot just tweeted.](/assets/jesus_retweet.png#fluid)
 
 Github repository [link](https://github.com/jeffjaehoyang/twitter_bot).
 
