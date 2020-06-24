@@ -333,6 +333,16 @@ a {
   font-size: 0.8rem;
   color: var(--text-secondary-color);
 }
+.back-to-blog {
+  margin-top: 5em;
+  padding: 5px;
+  width: 100px;
+  line-height: 2em;
+  color: var(--text-color);
+  border: 1px solid grey;
+  text-align: center;
+  border-radius: 0.5rem;
+}
 .site-footer {
   text-align: center;
   margin: 90px 0 16px;

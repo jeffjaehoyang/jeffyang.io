@@ -4,11 +4,11 @@
     "name": "Jeff Yang",
     "summary": "I blog about web development, ideas, and my daily journey as an aspiring software engineer."
   },
-  "siteUrl": "https://delog-w3layouts.netlify.com/",
+  "siteUrl": "https://www.jeffyang.io",
   "description": "A personal blog by Jeff Yang.",
   "home": {
     "title": "Hi! I'm Jeff 👋",
-    "description": "Hi, I am Jeff, a college student always looking for ways to learn, and make a positive impact on this world. My hope is that this space helps achieve even a fraction of that goal, and open up opportunities to learn from the world. Thanks for stopping by, and hopefully, enjoy!"
+    "description": "I’m a Northwestern senior looking to make positive impact on the world through code. This space looks to achieve even a fraction of that goal and learn from others in turn. Thank you for stopping by, and enjoy!"
   },
   "social": {
     "twitter": "jjeffyang"

@@ -1,8 +1,9 @@
 import React from "react"
 import Helmet from 'react-helmet';
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Bio from "../components/bio"
+import Commento from "../components/commento"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -35,7 +36,11 @@ export default function Template({
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>
+        <Link to="/blog" className="back-to-blog">
+          See all posts
+        </Link>
         <Bio />
+        <Commento id={frontmatter.title} />
       </div>
     </Layout>
   )

@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
-import { FaGithubAlt, FaCode, FaLink } from "react-icons/fa";
+import { FaGithubAlt, FaLink } from "react-icons/fa";
 
 const ProjectsPage = ({
   data: {
@@ -12,7 +12,7 @@ const ProjectsPage = ({
   return (
     <Layout>
       <Helmet>
-        <title>Projects — {site.siteMetadata.title}</title>
+        <title>Projects | {site.siteMetadata.title}</title>
         <meta name="description" content={"Projects page of " + site.siteMetadata.description} />
       </Helmet>
       <h2>Software Projects &darr;</h2>
@@ -61,7 +61,7 @@ const ProjectsPage = ({
           </div>
           <div className="projects-links">
             <span className="project-links-item">
-              <a href="https://www.sublets.nu">
+              <a href="https://sorting-algos.netlify.app/">
                 <FaLink /> Link
               </a>
             </span>

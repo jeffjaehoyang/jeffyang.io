@@ -11,7 +11,7 @@ const AboutPage = ({
   return (
     <Layout>
       <Helmet>
-        <title>About Me— {site.siteMetadata.title}</title>
+        <title>About Me | {site.siteMetadata.title}</title>
         <meta name="description" content={"About page of " + site.siteMetadata.description} />
       </Helmet>
       <div className="two-grids -contact">
@@ -23,7 +23,7 @@ const AboutPage = ({
         benefited immensely from the generous and welcoming programming community who share their knowledge with others. I hope 
         to replicate that learning experience for others through this blog!</p>
         <hr></hr>
-        <p style={{ fontSize: '1.5em', fontWeight: 600, marginBottom: 0 }}>A little bit about myself 🧑‍💻</p>
+        <p style={{ fontSize: '1.5em', fontWeight: 600, marginBottom: 0 }}>A little bit about myself <span role="img" aria-label="computer boy emoji">🧑‍💻</span></p>
         <div className="a-little-bit-about-myself">
           <div>I'm a <b>web enthusiast</b>, with a special interest in <b>scalable software architecture</b></div>
           <div><b>Northwestern University</b> CS '21</div>

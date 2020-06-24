@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import BlogPostItem from "../components/blogPostItem"
-import HeroHeader from "../components/heroHeader"
 
 const BlogPage = ({
   data: {
@@ -19,7 +18,7 @@ const BlogPage = ({
   return (
     <Layout>
       <Helmet>
-        <title>{site.siteMetadata.title}</title>
+        <title>Blog | {site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <h2>Blog Posts &darr;</h2>

@@ -19,7 +19,7 @@ const IndexPage = ({
   return (
     <Layout>
       <Helmet>
-        <title>{site.siteMetadata.title}</title>
+        <title>jeffyang.io | A personal blog by Jeff Yang</title>
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <HeroHeader/>
@@ -36,7 +36,7 @@ const IndexPage = ({
           </div>
           <div className="news-post">
             <div className="news-date">Apr 2020</div>-
-            <span className="news-content">Deploying <a href="https://www.sublets.nu"><b>sublets.nu</b></a> into production! 🎉</span>
+            <span className="news-content">Starting alpha testing for <a href="https://www.sublets.nu"><b>sublets.nu</b></a> 🎉</span>
           </div>
           <div className="news-post">
             <div className="news-date">Feb 2020</div>-
