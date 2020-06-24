@@ -196,6 +196,8 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 635px;
+  margin: auto;
 }
 .post-category {
   font-size: 1em;
@@ -230,7 +232,7 @@ a {
   line-height: 1.9;
   > .blog-post-content {
     font-family: 'Merriweather';
-    max-width: 635px;
+    // max-width: 635px;
     margin: 0 auto;
     h2 {
       margin-top: 2.5em;
@@ -257,7 +259,6 @@ a {
 .post-thumbnail {
   text-align: center;
   min-height: 380px;
-  max-width: 600px;
   margin: auto;
   // background-color: var(--featured-bg);
   background-repeat: no-repeat;
