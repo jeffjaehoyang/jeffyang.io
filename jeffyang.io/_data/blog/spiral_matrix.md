@@ -4,6 +4,8 @@ path: /spiral-matrix
 date: 2019-09-21T12:12:25.364Z
 title: 'Spiral Matrix'
 thumbnail: /assets/spiral_matrix_cover.png
+metaDescription: A blog post on how to solve the spiral-matrix problem on LeetCode
+category: Coding Challenge
 ---
 
 This is going to be the first of the algorithms series, where I will be writing posts on the so-called “whiteboard interview questions” that I thought were interesting. I'm giving this series a try because not only do I value sharing knowledge, but this is also a great way for me to learn and brush up my algorithms skills! So for this first post of the series, we are going to take a look at the “Spiral Matrix” problem, where you need to write a function that accepts an integer N and returns a N\*N spiral matrix.  

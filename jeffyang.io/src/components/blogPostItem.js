@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const PostLink = ({ post }) => (
-  <article className="card">
+const BlogPostItem = ({ post }) => (
+  <article className="blog-post-item">
     <Link to={post.frontmatter.path}>
       {!!post.frontmatter.thumbnail && (
         <img src={post.frontmatter.thumbnail} alt={post.frontmatter.title + "- Featured Shot"} />
@@ -14,8 +14,9 @@ const PostLink = ({ post }) => (
           {post.frontmatter.title}
         </Link>
       </h2>
+      <div className={`post-category ${post.frontmatter.category.split(' ').join('').toLowerCase()}`}>{post.frontmatter.category}</div>
       <div className="post-meta">{post.frontmatter.date} • {post.fields.readingTime.text}</div>
     </header>
   </article>
 )
-export default PostLink
+export default BlogPostItem

@@ -4,6 +4,8 @@ path: /tweet-bot-with-tweepy-and-flask
 date: 2019-11-14T12:12:25.364Z
 title: 'Tweet Bot with Tweepy & Flask'
 thumbnail: /assets/tweetbot.png
+metaDescription: A blog post on how to build a Twitter bot with Python
+category: Web Development
 ---
 
 According to recent research conducted by USC and Indiana University affiliates, the *conservative* estimate for the number of Twitter bots is somewhere around 15% of all active accounts, suggesting that automated account activity is in fact prominent across the Twitter ecosystem. In fact, your daily interactions on Twitter may very well include interactions with bots! Despite the negative connotations surrounding the term *Twitter Bots*, the qualitative judgement shouldn't be so simplistic. The usage of Twitter bots can vary from being as helpful as disseminating information on natural disasters, to being as harmful as cultivating terrorist recruitment propaganda. Leaving that value judgment up to you, in this blog post, I'll be writing about how to make a fully functional Twitter bot that Tweets simple sentences composed of three words - hence the "Three Word Philosopher." Hop on!  

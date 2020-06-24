@@ -4,7 +4,8 @@ path: /min-number-of-coins-for-change
 date: 2020-06-13T12:12:25.364Z
 title: 'Minimum Number of Coins for Change'
 thumbnail: /assets/min_num_coins_for_exchange_cover.png
-metaDescription: Meta description for Min Number of Coins for Change
+metaDescription: A blog post on how to solve the coin exchange problem
+category: Coding Challenge
 ---
 
 In this post, I am going to attempt to dissect the popular *coin exchange* problem that can be found on many technical interview preparation resources (e.g. LeetCode).  

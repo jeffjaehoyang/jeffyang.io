@@ -4,6 +4,8 @@ path: /resize-images-stored-in-aws-s3-with-aws-lambda
 date: 2020-04-27T12:12:25.364Z
 title: 'Resize Images Stored in AWS S3 with AWS Lambda (feat. Docker)'
 thumbnail: /assets/aws_lambda_s3.png
+metaDescription: A blog post on how to resize images stored in AWS S3 with AWS Lambda
+category: Web Development
 ---
 
 **Note: An AWS Account and a basic knowledge of their services are assumed throughout this blog post**  

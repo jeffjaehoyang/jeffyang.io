@@ -16,6 +16,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -62,12 +69,17 @@ module.exports = {
       options: {
         fonts: [
           `limelight`,
+          `questrial`,
+          `fira sans`,
+          `inconsolata`,
           `merriweather\:300,400,600,700`,
           `montserrat\:300,400,400i,700` // you can also specify font weights and styles
         ],
         display: 'swap'
       }
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`, 
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,

@@ -2,6 +2,7 @@ import React from "react"
 import Helmet from 'react-helmet';
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import Bio from "../components/bio"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -17,7 +18,6 @@ export default function Template({
       </Helmet>
       <div className="blog-post-container">
         <article className="post">
-          
           {!frontmatter.thumbnail && (
             <div className="post-thumbnail">
               <h1 className="post-title">{frontmatter.title}</h1>
@@ -35,6 +35,7 @@ export default function Template({
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>
+        <Bio />
       </div>
     </Layout>
   )
@@ -55,6 +56,7 @@ export const pageQuery = graphql`
         title
         thumbnail
         metaDescription
+        category
       }
       fields {
         readingTime {

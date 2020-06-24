@@ -4,6 +4,8 @@ path: /what-is-a-graph
 date: 2019-12-28T12:12:25.364Z
 title: 'What is a Graph?'
 thumbnail: /assets/sample_graph.png
+metaDescription: A blog post on the graph data structure in computer science
+category: Computer Science
 ---
 
 In this blog post, I will be going over the basics of the graph data structure, including its representation, implementation, and basic graph traversal algorithms. Graph is an important data structure, especially because of its practical applications that can range from representing friendships to maps of locational intelligence, computer networks and much more. Does that sound interesting? Let's dive into learning the basics of graphs.  

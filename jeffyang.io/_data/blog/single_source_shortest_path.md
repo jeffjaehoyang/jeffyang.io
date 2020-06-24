@@ -4,6 +4,8 @@ path: /single-source-shortest-path
 date: 2019-12-15T12:12:25.364Z
 title: 'Finding the Shortest Path From A to Anywhere'
 thumbnail: /assets/dijkstra_cover.png
+metaDescription: A blog post on the Dijkstra's Algorithm
+category: Coding Challenge
 ---
 
 In this post, I would like to take a slightly different approach and write about an algorithm that I learned about in a classroom setting. While taking a computer science course in data structures and algorithms this quarter, I found the graph data structure and related algorithms to be particularly fascinating, as graphs can be applied in real-life to represent virtually anything from friendships to geographic maps. Although far from being an expert on this topic, I am going to make an attempt to dissect perhaps the most famous graph algorithm and its practical application. Take a bow, introducing Dijkstra's algorithm and the single source shortest path problem.  

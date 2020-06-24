@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
-import PostLink from "../components/post-link"
+import BlogPostItem from "../components/blogPostItem"
 import HeroHeader from "../components/heroHeader"
 
 const BlogPage = ({
@@ -14,7 +14,7 @@ const BlogPage = ({
 
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+    .map(edge => <BlogPostItem key={edge.node.id} post={edge.node} />)
 
   return (
     <Layout>
@@ -23,7 +23,8 @@ const BlogPage = ({
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <h2>Blog Posts &darr;</h2>
-      <div className="grids">
+      <h4>Coding is great, but sometimes, writing about code can be even better.</h4>
+      <div className="blog-wrapper">
         {Posts}
       </div>
     </Layout>
@@ -49,6 +50,7 @@ export const pageQuery = graphql`
             path
             title
             thumbnail
+            category
           }
           fields {
             readingTime {

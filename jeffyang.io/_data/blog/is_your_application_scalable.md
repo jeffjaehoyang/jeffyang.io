@@ -4,6 +4,8 @@ path: /shipping-code-for-a-business
 date: 2019-09-09T12:12:25.364Z
 title: 'Shipping Code for a Business – Is Your Application Scalable?'
 thumbnail: /assets/scalable_cover.png
+metaDescription: A blog post reflecting on the 2019 summer internship at Knowru
+category: Personal Reflection
 ---
 
 ### Reflecting on 2019 Summer Internship @Knowru 

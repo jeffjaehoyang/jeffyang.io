@@ -4,6 +4,8 @@ path: /balanced-binary-tree
 date: 2019-11-09T12:12:25.364Z
 title: 'Balanced Binary Tree'
 thumbnail: /assets/balanced_binary_tree_cover.png
+metaDescription: A blog post on how to solve the balanced-binary-tree problem on LeetCode 
+category: Coding Challenge
 ---
 
 This is the second post of the algorithms series, and this time I would like to share a classic algorithms problem related to binary trees. In this post, we are going to examine how to check if a binary tree is balanced.  

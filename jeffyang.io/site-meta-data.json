@@ -1,10 +1,16 @@
 {
   "title": "Jeff Yang",
-  "author": "Jeff Yang",
+  "author": {
+    "name": "Jeff Yang",
+    "summary": "I blog about web development, ideas, and my daily journey as an aspiring software engineer."
+  },
   "siteUrl": "https://delog-w3layouts.netlify.com/",
   "description": "A personal blog by Jeff Yang.",
   "home": {
     "title": "Hi! I'm Jeff 👋",
     "description": "Hi, I am Jeff, a college student always looking for ways to learn, and make a positive impact on this world. My hope is that this space helps achieve even a fraction of that goal, and open up opportunities to learn from the world. Thanks for stopping by, and hopefully, enjoy!"
+  },
+  "social": {
+    "twitter": "jjeffyang"
   }
 }

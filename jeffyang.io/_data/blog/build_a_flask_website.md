@@ -4,6 +4,8 @@ path: /build-your-own-website-with-flask
 date: 2019-10-26T12:12:25.364Z
 title: 'Build Your Own Website with Flask'
 thumbnail: /assets/flask_md.png
+metaDescription: A blog post on how to build your own website with Flask
+category: Web Development
 ---
 
 Hello World! This is a post that was on my mind for a while now, and I'm so glad to finally write this post on this personal portfolio site I created! I previously had a Wordpress site that got me a good-looking fancy website up and running in no time. With all the beautiful Wordpress blog templates out there for a bargain, a sleek looking website was just a few clicks away. Nevertheless, something kept telling me to build a website myself - let me tell you why. Most importantly, the Wordpress site was beautiful on the outside, but rather bulky inside. I wanted to build a faster and a more light-weight website. Wordpress offered thousands of useful plugins (which is great), but having to update them constantly (for security purposes) was another downside of owning a Wordpress site. Last but certainly not the least, I thought "why not take this chance to brush up my web development skills?" This portfolio site is by no means greatly complex, but it still has all the basic structures of a full-fledged web application. So this simple site came to be, and for its creation, I mainly utilized Python's microframework, Flask (and some BootStrap4 to make things look decent effortlessly).  
