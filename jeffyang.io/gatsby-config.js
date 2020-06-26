@@ -22,6 +22,8 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -39,11 +41,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: '100%',
-              height: 'auto',
-              display: 'block',
-              margin: 'auto',
-              borderRadius: '0.5rem'
+              maxWidth: '920'
             },
           },
           {
@@ -88,8 +86,6 @@ module.exports = {
         display: 'swap'
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`, 
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
