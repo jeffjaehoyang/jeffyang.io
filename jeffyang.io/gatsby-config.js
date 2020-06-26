@@ -27,21 +27,31 @@ module.exports = {
       options: {
         plugins: [
           {
-          resolve: `gatsby-remark-prismjs`,
-          options: {
-            classPrefix: "language-",
-            inlineCodeMarker: null,
-            aliases: {},
-            showLineNumbers: false,
-            noInlineHighlight: false,
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
           },
-        },
-        {
-          resolve: 'gatsby-remark-emojis',
-        },
-        {
-          resolve: 'gatsby-remark-reading-time'
-        }],
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: '100%',
+              height: 'auto',
+              display: 'block',
+              margin: 'auto',
+              borderRadius: '0.5rem'
+            },
+          },
+          {
+            resolve: 'gatsby-remark-emojis',
+          },
+          {
+            resolve: 'gatsby-remark-reading-time'
+          }],
       },
     },
     {
