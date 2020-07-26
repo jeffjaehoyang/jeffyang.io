@@ -57,9 +57,14 @@ body {
   background-color: var(--background);
   color: var(--text-color);
 }
+.a-little-bit-about-myself {
+  a {
+    color: black;
+  }
+}
 a {
   color: var(--primary-color);
-  text-decoration: none;
+  text-decoration: underline;
   &:hover {
     text-decoration: underline;
   }
@@ -189,6 +194,9 @@ a {
   display: flex;
 }
 .blog-wrapper {
+  a {
+    text-decoration: none;
+  }
   margin-top: 4em;
 }
 .blog-post-container {
@@ -230,6 +238,7 @@ a {
   background:var(--background);
   color: var(--text-color);
   line-height: 1.9;
+  margin-bottom: 5em;
   > .blog-post-content {
     font-family: 'Merriweather';
     // max-width: 635px;
@@ -258,9 +267,8 @@ a {
 }
 .post-thumbnail {
   text-align: center;
-  min-height: 380px;
+  min-height: 200px;
   margin: auto;
-  // background-color: var(--featured-bg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -333,16 +341,6 @@ a {
 .post-meta {
   font-size: 0.8rem;
   color: var(--text-secondary-color);
-}
-.back-to-blog {
-  margin-top: 5em;
-  padding: 5px;
-  width: 100px;
-  line-height: 2em;
-  color: var(--text-color);
-  border: 1px solid grey;
-  text-align: center;
-  border-radius: 0.5rem;
 }
 .site-footer {
   text-align: center;
@@ -570,6 +568,9 @@ p {
   line-height: 1.5;
 }
 .projects-links {
+  a {
+    text-decoration: none;
+  }
   display: flex;
   margin-top: 1em;
   span {  
@@ -581,7 +582,7 @@ p {
   margin-top: 64px;
 }
 .news span a {
-  color: #3D3D3D;
+  color: black;
   background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #f6c0a3 50%);
 }
 .news-date {

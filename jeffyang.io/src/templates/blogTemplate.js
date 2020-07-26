@@ -1,21 +1,26 @@
-import React from "react"
+import React from 'react';
 import Helmet from 'react-helmet';
-import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import Bio from "../components/bio"
-import Commento from "../components/commento"
+import { graphql, Link } from 'gatsby';
+import Layout from '../components/layout';
+import Bio from '../components/bio';
+import Commento from '../components/commento';
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { site, markdownRemark } = data // data.markdownRemark holds your post data
-  const { siteMetadata } = site
-  const { frontmatter, html, fields } = markdownRemark
+  const { site, markdownRemark } = data; // data.markdownRemark holds your post data
+  const { siteMetadata } = site;
+  const { frontmatter, html, fields } = markdownRemark;
   return (
     <Layout>
       <Helmet>
-        <title>{frontmatter.title} | {siteMetadata.title}</title>
-        <meta name="description" content={frontmatter.metaDescription} />
+        <title>
+          {frontmatter.title} | {siteMetadata.title}
+        </title>
+        <meta
+          name="description"
+          content={frontmatter.metaDescription}
+        />
       </Helmet>
       <div className="blog-post-container">
         <article className="post">
@@ -26,9 +31,16 @@ export default function Template({
             </div>
           )}
           {!!frontmatter.thumbnail && (
-            <div className="post-thumbnail" style={{backgroundImage: `url(${frontmatter.thumbnail})`}}>
+            <div
+              className="post-thumbnail"
+              style={{
+                backgroundColor: '#001b32',
+              }}
+            >
               <h1 className="post-title">{frontmatter.title}</h1>
-              <div className="post-meta">{frontmatter.date} • {fields.readingTime.text}</div>
+              <div className="post-meta">
+                {frontmatter.date} • {fields.readingTime.text}
+              </div>
             </div>
           )}
           <div
@@ -36,14 +48,14 @@ export default function Template({
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>
-        <Link to="/blog" className="back-to-blog">
+        <Link to="/blog" className="button -primary">
           See all posts
         </Link>
         <Bio />
         <Commento id={frontmatter.title} />
       </div>
     </Layout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -70,4 +82,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
