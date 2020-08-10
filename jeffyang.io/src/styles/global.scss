@@ -163,7 +163,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-radius: 18px;
+    border-radius: 10px;
     margin-bottom: 36px;
     margin-right: 3em;
     color: var(--featured-text);
@@ -231,6 +231,10 @@ a {
     color: #402099;
     background-color: rgba(64, 32, 153, 0.1);
   }
+  &.developertools {
+    color: rgba(0, 150, 136, 1);
+    background-color: rgba(0, 150, 136, 0.1);
+  }
 }
 .post {
   max-width: 100%;
@@ -256,7 +260,7 @@ a {
     text-align: center;
     margin: 0 0 0.5rem;
     line-height: 1.3;
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   .post-meta {
     font-size: 1rem;
@@ -510,7 +514,7 @@ p {
   margin-bottom: 1em;
 }
 .about-picture {
-  transform: rotate(358deg);
+  transform: rotate(355deg);
   text-align: center;
   height: 45vh;
   background-repeat: no-repeat;
@@ -583,7 +587,7 @@ p {
 }
 .news span a {
   color: black;
-  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #f6c0a3 50%);
+  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #b1bfde 50%);
 }
 .news-date {
   font-family: "Inconsolata";
@@ -601,6 +605,24 @@ p {
   margin-top: 20px;
 }
 .highlighted-text {
-  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #f6c0a3 50%);
+  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #b1bfde 50%);
   display: inline-block;
+}
+
+blockquote{
+  font-size: 0.9em;
+  margin: auto;
+  margin-bottom: 20px;
+  font-style:italic;
+  color: #555555;
+  padding: 20px; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  border-left:8px solid #b1bfde;
+  background:#EDEDED;
+
+  p {
+    margin-top: 0
+  }
 }

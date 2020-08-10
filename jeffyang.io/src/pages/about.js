@@ -1,9 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout';
+import Image from 'gatsby-image';
 
-const AboutPage = ({ data: { site } }) => {
+const AboutPage = ({ data: { site, file } }) => {
   return (
     <Layout>
       <Helmet>
@@ -14,13 +15,25 @@ const AboutPage = ({ data: { site } }) => {
         />
       </Helmet>
       <div className="two-grids -contact">
-        <div
+        {/* <div
           className="about-picture"
           style={{
             backgroundImage: `url('/assets/about-me.jpeg')`,
             marginBottom: 0,
           }}
-        ></div>
+        ></div> */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Image
+            className="about-picture"
+            fixed={file.childImageSharp.fixed}
+          />
+        </div>
         <div>
           <p
             style={{
@@ -96,6 +109,16 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+      }
+    }
+    file(relativePath: { eq: "about-me.jpeg" }) {
+      childImageSharp {
+        fixed(width: 250, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+        fluid(maxWidth: 300, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

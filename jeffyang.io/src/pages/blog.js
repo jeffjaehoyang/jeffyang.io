@@ -13,7 +13,11 @@ const BlogPage = ({
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => (
-      <BlogPostItem key={edge.node.id} post={edge.node} />
+      <BlogPostItem
+        key={edge.node.id}
+        post={edge.node}
+        thumbnailUri={edge.node.frontmatter.thumbnail}
+      />
     ));
 
   return (
