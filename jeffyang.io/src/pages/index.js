@@ -31,7 +31,7 @@ const IndexPage = ({
         <h2 className="highlighted-text">News &darr;</h2>
         <div className="news-content-wrapper">
           <div className="news-post">
-            <div className="news-date">Jun 2020</div>-
+            <div className="news-date">Sep 2020</div>-
             <span className="news-content">
               Wrapped up software engineering internship @
               <a href="https://www.esri.com/en-us/home">
