@@ -52,6 +52,7 @@ module.exports = {
                       fields { slug }
                       frontmatter {
                         title
+                        metaDescription
                         date
                       }
                     }
