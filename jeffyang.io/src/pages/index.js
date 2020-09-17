@@ -33,6 +33,16 @@ const IndexPage = ({
           <div className="news-post">
             <div className="news-date">Jun 2020</div>-
             <span className="news-content">
+              Wrapped up software engineering internship @
+              <a href="https://www.esri.com/en-us/home">
+                <b>Esri</b>
+              </a>
+              ! 👋
+            </span>
+          </div>
+          <div className="news-post">
+            <div className="news-date">Jun 2020</div>-
+            <span className="news-content">
               Starting software engineering internship @
               <a href="https://www.esri.com/en-us/home">
                 <b>Esri</b>
