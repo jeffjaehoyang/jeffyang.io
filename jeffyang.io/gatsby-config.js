@@ -7,8 +7,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: require('./site-meta-data.json'),
-  plugins: [
-    {
+  plugins: [{
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -23,24 +22,26 @@ module.exports = {
             }
           }
         `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url:
-                    site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid:
-                    site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [
-                    { 'content:encoded': edge.node.html },
-                  ],
-                });
+        feeds: [{
+          serialize: ({
+            query: {
+              site,
+              allMarkdownRemark
+            }
+          }) => {
+            return allMarkdownRemark.edges.map(edge => {
+              return Object.assign({}, edge.node.frontmatter, {
+                description: edge.node.excerpt,
+                date: edge.node.frontmatter.date,
+                url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                // custom_elements: [{
+                //   'content:encoded': edge.node.html
+                // }, ],
               });
-            },
-            query: `
+            });
+          },
+          query: `
               {
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
@@ -54,21 +55,21 @@ module.exports = {
                         title
                         metaDescription
                         date
+                        path
                       }
                     }
                   }
                 }
               }
             `,
-            output: '/rss.xml',
-            title: 'jeffyang.io - RSS Feed',
-            // optional configuration to insert feed reference in pages:
-            // if `string` is used, it will be used to create RegExp and then test if pathname of
-            // current page satisfied this regular expression;
-            // if not provided or `undefined`, all pages will have feed reference inserted
-            match: '^/blog/',
-          },
-        ],
+          output: '/rss.xml',
+          title: 'jeffyang.io - RSS Feed',
+          // optional configuration to insert feed reference in pages:
+          // if `string` is used, it will be used to create RegExp and then test if pathname of
+          // current page satisfied this regular expression;
+          // if not provided or `undefined`, all pages will have feed reference inserted
+          match: '^/blog/',
+        }, ],
       },
     },
     {
@@ -90,8 +91,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          {
+        plugins: [{
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',
