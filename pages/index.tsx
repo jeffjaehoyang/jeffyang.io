@@ -6,7 +6,7 @@ import { InferGetStaticPropsType } from 'next'
 import { allBlogs } from 'contentlayer/generated'
 import newsData from '@/data/newsData'
 import NewsCard from '@/components/NewsCard'
-import BlogPostCard from '@/components/FeaturedPostCard'
+import FeaturedPostCard from '@/components/FeaturedPostCard'
 
 const gradients = {
   '0': 'from-[#D8B4FE] to-[#818CF8]',
@@ -51,7 +51,12 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
             {featuredPosts.map((frontMatter, index) => {
               const { slug, title } = frontMatter
               return (
-                <BlogPostCard key={index} title={title} slug={slug} gradient={gradients[index]} />
+                <FeaturedPostCard
+                  key={index}
+                  title={title}
+                  slug={slug}
+                  gradient={gradients[index]}
+                />
               )
             })}
           </div>

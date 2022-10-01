@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function BlogPostCard({ title, slug, gradient }) {
+export default function FeaturedPostCard({ title, slug, gradient }) {
   // const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher)
   // const views = data?.total
 
