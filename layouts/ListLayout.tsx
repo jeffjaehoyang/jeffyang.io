@@ -2,14 +2,10 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import { ComponentProps, useState } from 'react'
 import Pagination from '@/components/Pagination'
+import BlogPostCard from '@/components/BlogPostCard'
 import formatDate from '@/lib/utils/formatDate'
 import { CoreContent } from '@/lib/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
-
-import useSWR from 'swr'
-import fetcher from 'lib/fetcher'
-import { Views } from '@/lib/types'
-import BlogPostCard from '@/components/BlogPostCard'
 
 interface Props {
   posts: CoreContent<Blog>[]
@@ -76,32 +72,6 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                 summary={summary}
                 tags={tags}
               />
-              // <li key={slug} className="pb-10">
-              //   <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-              //     <div className="xl:col-span-3">
-              //       <div>
-              //         <h3 className="text-xl font-bold tracking-tight">
-              //           <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-200">
-              //             {title}
-              //           </Link>
-              //         </h3>
-              //         <div className="flex flex-row items-center">
-              //           <span className="mr-3 text-sm text-gray-500 dark:text-gray-400">
-              //             <time dateTime={date}>{formatDate(date)}</time>
-              //           </span>
-              //           <div className="flex flex-wrap">
-              //             {tags.map((tag) => (
-              //               <Tag key={tag} text={tag} />
-              //             ))}
-              //           </div>
-              //         </div>
-              //       </div>
-              //       <div className="prose max-w-none text-sm text-gray-500 dark:text-gray-400">
-              //         {summary}
-              //       </div>
-              //     </div>
-              //   </article>
-              // </li>
             )
           })}
         </ul>
