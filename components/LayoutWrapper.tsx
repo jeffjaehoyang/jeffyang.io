@@ -7,6 +7,7 @@ import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import { ReactNode } from 'react'
+import NavLink from './NavLink'
 
 interface Props {
   children: ReactNode
@@ -36,13 +37,9 @@ const LayoutWrapper = ({ children }: Props) => {
           <div className="flex items-center text-sm leading-5">
             <div className="hidden sm:block">
               {headerNavLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  href={link.href}
-                  className="p-1 text-gray-900 dark:text-gray-200 sm:px-3"
-                >
+                <NavLink key={link.title} href={link.href}>
                   {link.title}
-                </Link>
+                </NavLink>
               ))}
             </div>
             <ThemeSwitch />

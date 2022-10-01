@@ -6,7 +6,8 @@ const newsData = [
   {
     category: 'news',
     content: 'Started full-time @Meta 🥽',
-    explanation: 'Opening a new chapter of my life as a professional :)',
+    explanation:
+      'Opening a new chapter of my life as a professional! Building the backend & infrastructure for checkout experiences across Facebook & Instagram.',
     newsDate: 'Jun 2022',
     year: '2022',
     published: true,

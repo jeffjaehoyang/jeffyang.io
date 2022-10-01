@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'Personal Blog by Jeff Yang',
   author: 'Jeff Yang',
-  headerTitle: 'jeffyang.io',
+  headerTitle: '',
   description: 'Recording life, code, and passion.',
   language: 'en-us',
   theme: 'system', // system, dark or light

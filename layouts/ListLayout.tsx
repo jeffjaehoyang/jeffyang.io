@@ -28,13 +28,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     <>
       <div>
         <div className="mb-8">
-          <div className="text-md font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
+          <div className="text-lg font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
             {title}
           </div>
           <div className="text-2xl font-extrabold text-primary-400">
             It's not an idea until you write it down.
           </div>
-          <div className="relative mt-3 max-w-lg">
+          <div className="relative mt-3">
             <input
               aria-label="Search articles"
               type="text"

@@ -33,8 +33,8 @@ export default function Home({
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
-        <div className="mb-8">
-          <div className="text-md font-bold tracking-tight text-gray-900 dark:text-gray-200">
+        <div className="mb-16">
+          <div className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-200">
             Software Engineer & Neovim Enthusiast
           </div>
           <div className="mt-2 mb-8 text-3xl font-bold tracking-tight text-primary-400">
@@ -47,37 +47,41 @@ export default function Home({
           </div>
         </div>
 
-        <div className="mb-8 pt-8 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
-          Featured Posts
-        </div>
+        <div className="mb-16">
+          <div className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
+            Featured Posts
+          </div>
 
-        <div className="flex flex-col gap-6 md:flex-row">
-          {featuredPosts.map((frontMatter, index) => {
-            const { slug, date, title, summary, tags } = frontMatter
-            return <BlogPostCard title={title} slug={slug} gradient={gradients[index]} />
-          })}
-        </div>
-
-        <div className="mb-8 pt-8 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
-          News Room
-        </div>
-        <div>
-          {newsData
-            .sort((a, b) => Date.parse(b.newsDate) - Date.parse(a.newsDate))
-            .map((d) => {
-              if (d.isSeparator) {
-                return <div className="mb-2 text-xl font-bold">{d.year}</div>
-              }
-              return (
-                <NewsCard
-                  content={d.content}
-                  explanation={d.explanation}
-                  newsDate={d.newsDate}
-                  year={d.year}
-                  published={d.published}
-                />
-              )
+          <div className="flex flex-col gap-6 md:flex-row">
+            {featuredPosts.map((frontMatter, index) => {
+              const { slug, date, title, summary, tags } = frontMatter
+              return <BlogPostCard title={title} slug={slug} gradient={gradients[index]} />
             })}
+          </div>
+        </div>
+
+        <div className="mb-16">
+          <div className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
+            News Room
+          </div>
+          <div>
+            {newsData
+              .sort((a, b) => Date.parse(b.newsDate) - Date.parse(a.newsDate))
+              .map((d) => {
+                if (d.isSeparator) {
+                  return <div className="mb-2 text-xl font-bold">{d.year}</div>
+                }
+                return (
+                  <NewsCard
+                    content={d.content}
+                    explanation={d.explanation}
+                    newsDate={d.newsDate}
+                    year={d.year}
+                    published={d.published}
+                  />
+                )
+              })}
+          </div>
         </div>
       </div>
     </>
