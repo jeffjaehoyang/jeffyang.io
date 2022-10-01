@@ -8,8 +8,6 @@ import newsData from '@/data/newsData'
 import NewsCard from '@/components/NewsCard'
 import BlogPostCard from '@/components/FeaturedPostCard'
 
-const MAX_DISPLAY = 3
-
 const gradients = {
   '0': 'from-[#D8B4FE] to-[#818CF8]',
   '1': 'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]',
@@ -25,10 +23,7 @@ export const getStaticProps = async () => {
   return { props: { posts, featuredPosts } }
 }
 
-export default function Home({
-  posts,
-  featuredPosts,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -54,8 +49,10 @@ export default function Home({
 
           <div className="flex flex-col gap-6 md:flex-row">
             {featuredPosts.map((frontMatter, index) => {
-              const { slug, date, title, summary, tags } = frontMatter
-              return <BlogPostCard title={title} slug={slug} gradient={gradients[index]} />
+              const { slug, title } = frontMatter
+              return (
+                <BlogPostCard key={index} title={title} slug={slug} gradient={gradients[index]} />
+              )
             })}
           </div>
         </div>
@@ -69,7 +66,11 @@ export default function Home({
               .sort((a, b) => Date.parse(b.newsDate) - Date.parse(a.newsDate))
               .map((d) => {
                 if (d.isSeparator) {
-                  return <div className="mb-2 text-xl font-bold">{d.year}</div>
+                  return (
+                    <div key={d.year} className="mb-2 text-xl font-bold">
+                      {d.year}
+                    </div>
+                  )
                 }
                 return (
                   <NewsCard
@@ -78,6 +79,7 @@ export default function Home({
                     newsDate={d.newsDate}
                     year={d.year}
                     published={d.published}
+                    key={d.content}
                   />
                 )
               })}
