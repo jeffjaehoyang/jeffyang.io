@@ -5,7 +5,7 @@ const siteMetadata = {
   description: 'Recording life, code, and passion.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://www.jeffyang.io',
+  siteUrl: 'https://jeffyang-io.vercel.app',
   siteRepo: 'https://github.com/jeffjaehoyang/jeffyang.io',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
