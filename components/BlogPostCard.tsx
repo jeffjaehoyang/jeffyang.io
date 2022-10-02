@@ -34,17 +34,19 @@ export default function BlogPostCard({
               {`${views ? new Number(views).toLocaleString() : '–––'} views`}
             </div>
           </div>
-          <div className="flex flex-row items-center">
+          <div className="flex flex-col md:flex-row md:items-center">
             <div className="flex flex-wrap">
               {tags.map((tag) => (
                 <Tag key={tag} text={tag} />
               ))}
             </div>
-            <span className="mr-2 text-sm text-gray-500 dark:text-gray-400">
-              <time dateTime={date}>{formatDate(date)}</time>
+            <span className="mr-2 flex flex-row items-center text-sm text-gray-500 dark:text-gray-400">
+              <time className="mr-2" dateTime={date}>
+                {formatDate(date)}
+              </time>
+              <div className="mr-2 text-sm text-gray-500 dark:text-gray-400">{` • `}</div>
+              <span className="mr-2 text-sm text-gray-500 dark:text-gray-400">{readingTime}</span>
             </span>
-            <div className="mr-2 text-sm text-gray-500 dark:text-gray-400">{` • `}</div>
-            <span className="mr-2 text-sm text-gray-500 dark:text-gray-400">{readingTime}</span>
           </div>
           <div className="prose max-w-none text-sm text-gray-500 dark:text-gray-400">{summary}</div>
         </div>
