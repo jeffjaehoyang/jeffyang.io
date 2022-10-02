@@ -26,12 +26,6 @@
   display: inline-block;
 }
 
-.commento-root {
-  overflow-x: inherit !important;
-  margin-top: 3em !important;
-  margin-bottom: 3em !important;
-}
-
 /* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {

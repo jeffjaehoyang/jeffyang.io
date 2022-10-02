@@ -143,17 +143,17 @@
   display: inline;
 }
 
-@media (max-width: 672px) {
-  pre {
-    margin-bottom: 1.75rem;
-    margin-left: -1.8725rem;
-    margin-right: -1.8725rem;
-    border-radius: 0 !important;
-  }
+/* @media (max-width: 672px) { */
+/*   pre { */
+/*     margin-bottom: 1.75rem; */
+/*     margin-left: -1.8725rem; */
+/*     margin-right: -1.8725rem; */
+/*     border-radius: 0 !important; */
+/*   } */
 
-  .remark-code-title {
-    margin-left: -1.8725rem;
-    margin-right: -1.8725rem;
-    border-radius: 0;
-  }
-}
+/*   .remark-code-title { */
+/*     margin-left: -1.8725rem; */
+/*     margin-right: -1.8725rem; */
+/*     border-radius: 0; */
+/*   } */
+/* } */
