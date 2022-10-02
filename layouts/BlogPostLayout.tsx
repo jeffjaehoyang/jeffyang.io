@@ -8,6 +8,7 @@ import { CoreContent } from '@/lib/utils/contentlayer'
 import { ReactNode } from 'react'
 import type { Blog } from 'contentlayer/generated'
 import Commento from '@/components/Commento'
+import Giscus from '@/components/comments/Giscus'
 
 interface Props {
   content: CoreContent<Blog>
@@ -50,7 +51,8 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
             <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
-            <Commento id={slug} />
+            <Giscus />
+            {/* <Commento id={slug} /> */}
             <div className="flex w-full flex-row items-center justify-between pt-12 text-sm text-base font-medium">
               {prev && (
                 <div className="pt-4 xl:pt-8">

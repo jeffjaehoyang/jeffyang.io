@@ -25,32 +25,32 @@ export default function AuthorLayout({ children, content }: Props) {
             {siteMetadata.description}
           </div>
         </div>
-        <div className="mb-2">Hey, I'm Jeff 👋</div>
+        <div className="mb-2 font-bold">Hey, I'm Jeff 👋</div>
         <div className="mb-8">
           Welcome to my personal corner of the internet! I created this blog for myself to freely
           share thoughts and document my progress as a software engineer. I have benefited immensely
           from the generous and welcoming programming community who share their knowledge with
           others. I hope to replicate that learning experience for others through this blog!
         </div>
-        <div className="mb-3 font-bold text-emerald-500">Where am I from?</div>
+        <div className="mb-3 font-bold text-primary-400">Where am I from?</div>
         <div className="mb-8">
           I was born and raised in Seoul / I went to college in Evanston / I live in New York City
         </div>
-        <div className="mb-3 font-bold text-emerald-500">What's my job?</div>
+        <div className="mb-3 font-bold text-primary-400">What's my job?</div>
         <div className="mb-8">
           I'm a software engineer at Meta. Specifically, I'm builiding the backend & infrastructure
           of checkout experiences across Meta's Family of Apps (including Facebook & Instagram).
         </div>
-        <div className="mb-3 font-bold text-emerald-500">When did I start programming?</div>
+        <div className="mb-3 font-bold text-primary-400">When did I start programming?</div>
         <div className="mb-8">
           My first ever programming experience was in freshman year of college.
         </div>
-        <div className="mb-3 font-bold text-emerald-500">Why do I like to code?</div>
+        <div className="mb-3 font-bold text-primary-400">Why do I like to code?</div>
         <div className="mb-8">
           I love to build and create software & products that impact the world in a positive way.
           It's a great feeling to be able to help others through technology!
         </div>
-        <div className="mb-3 font-bold text-emerald-500">What technologies interest me?</div>
+        <div className="mb-3 font-bold text-primary-400">What technologies interest me?</div>
         <div className="mb-8">
           I am still in the process of exploring many different areas of software engineering. So
           far, I've found passion in delivering high quality end-products to users and in the art of

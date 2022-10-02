@@ -30,7 +30,7 @@ export default function BlogPostCard({
         <div className="mb-12 w-full">
           <div className="flex flex-col justify-between md:flex-row">
             <h3 className="text-xl font-bold tracking-tight">{title}</h3>
-            <div className="mb-4 w-32 text-left text-gray-500 md:mb-0 md:text-right">
+            <div className="w-32 text-left text-sm text-gray-500 md:mb-0 md:text-right">
               {`${views ? new Number(views).toLocaleString() : '–––'} views`}
             </div>
           </div>

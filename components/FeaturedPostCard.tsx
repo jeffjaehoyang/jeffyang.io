@@ -1,5 +1,6 @@
 import fetcher from '@/lib/fetcher'
 import { Views } from '@/lib/types'
+import cn from 'classnames'
 import Link from 'next/link'
 import useSWR from 'swr'
 
@@ -10,11 +11,11 @@ export default function FeaturedPostCard({ title, slug, gradient }) {
   return (
     <Link href={`/blog/${slug}`}>
       <a
-        className={
-          'transform transition-all hover:scale-[1.01] ' +
-          'w-full rounded-lg bg-gradient-to-r p-0.5 md:w-1/3 ' +
+        className={cn(
+          'transform transition-all hover:scale-[1.01]',
+          'w-full rounded-xl bg-gradient-to-r p-1 md:w-1/3',
           gradient
-        }
+        )}
       >
         <div className="flex h-full flex-col justify-between rounded-lg bg-white p-4 dark:bg-gray-900">
           <div className="flex flex-col justify-between md:flex-row">
