@@ -42,38 +42,33 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
               </div>
             </div>
           </header>
-          <div
-            className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0 "
-            style={{ gridTemplateRows: 'auto 1fr' }}
-          >
-            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div className="pb-8" style={{ gridTemplateRows: 'auto 1fr' }}>
+            <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
             <Commento id={slug} />
-            <footer>
-              <div className="flex flex-row items-center justify-between text-sm text-base font-medium">
-                {prev && (
-                  <div className="pt-4 xl:pt-8">
-                    <Link
-                      href={`/blog/${prev.slug}`}
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                    >
-                      &larr; prev
-                    </Link>
-                  </div>
-                )}
-                {next && (
-                  <div className="pt-4 xl:pt-8">
-                    <Link
-                      href={`/blog/${next.slug}`}
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                    >
-                      next &rarr;
-                    </Link>
-                  </div>
-                )}
-              </div>
-            </footer>
+            <div className="flex flex-row items-center justify-between pt-12 text-sm text-base font-medium">
+              {prev && (
+                <div className="pt-4 xl:pt-8">
+                  <Link
+                    href={`/blog/${prev.slug}`}
+                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    &larr; prev
+                  </Link>
+                </div>
+              )}
+              {next && (
+                <div className="pt-4 xl:pt-8">
+                  <Link
+                    href={`/blog/${next.slug}`}
+                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    next &rarr;
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </article>
