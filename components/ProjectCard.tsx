@@ -8,7 +8,7 @@ const ProjectCard = ({ title, description, href, repo }) => (
       <div className="mb-2 text-sm">{description}</div>
       <div className="float-right mt-2 flex flex-row items-center">
         <a
-          className="mr-3 flex max-w-fit flex-row items-center rounded-md bg-emerald-200 px-3 py-2 dark:bg-emerald-600"
+          className="mr-3 flex max-w-fit flex-row items-center rounded-md bg-gray-200 px-3 py-2 dark:bg-gray-800"
           href={href}
         >
           <span className="mr-3 text-sm font-semibold">Link</span>
@@ -25,7 +25,7 @@ const ProjectCard = ({ title, description, href, repo }) => (
             />
           </svg>
         </a>
-        <div className="flex max-w-fit flex-row items-center rounded-md bg-primary-200 px-3 py-2 dark:bg-primary-600">
+        <div className="flex max-w-fit flex-row items-center rounded-md bg-gray-200 px-3 py-2 dark:bg-gray-800">
           <span className="mr-3 text-sm font-semibold">Repo</span>
           <SocialIcon kind="github" href={repo} size={5} />
         </div>
