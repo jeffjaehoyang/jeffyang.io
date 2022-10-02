@@ -49,13 +49,14 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
 
           <div className="flex flex-col gap-6 md:flex-row">
             {featuredPosts.map((frontMatter, index) => {
-              const { slug, title } = frontMatter
+              const { slug, title, readingTime } = frontMatter
               return (
                 <FeaturedPostCard
                   key={index}
                   title={title}
                   slug={slug}
                   gradient={gradients[index]}
+                  readingTime={readingTime.text}
                 />
               )
             })}
