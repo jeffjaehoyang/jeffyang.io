@@ -13,6 +13,7 @@ import type { Blog, Authors } from 'contentlayer/generated'
 interface MDXLayout {
   layout: string
   content: Blog | Authors
+  viewCount: string
   [key: string]: unknown
 }
 

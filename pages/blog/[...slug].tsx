@@ -4,7 +4,9 @@ import { sortedBlogPost, coreContent } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
 import { allBlogs, allAuthors } from 'contentlayer/generated'
 
-const DEFAULT_LAYOUT = 'PostLayout'
+import useViewCounter from '@/lib/hooks/useViewCounter'
+
+const DEFAULT_LAYOUT = 'BlogPostLayout'
 
 export async function getStaticPaths() {
   return {
@@ -45,16 +47,18 @@ export default function Blog({
   prev,
   next,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const viewCount = useViewCounter(post.slug)
   return (
     <>
       {'draft' in post && post.draft !== true ? (
         <MDXLayoutRenderer
-          layout={post.layout || DEFAULT_LAYOUT}
+          layout={DEFAULT_LAYOUT}
           toc={post.toc}
           content={post}
           authorDetails={authorDetails}
           prev={prev}
           next={next}
+          viewCount={viewCount}
         />
       ) : (
         <div className="mt-24 text-center">
