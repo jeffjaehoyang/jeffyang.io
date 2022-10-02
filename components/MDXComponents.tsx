@@ -13,7 +13,7 @@ import type { Blog, Authors } from 'contentlayer/generated'
 interface MDXLayout {
   layout: string
   content: Blog | Authors
-  viewCount: string
+  viewCount?: string
   [key: string]: unknown
 }
 
@@ -22,9 +22,9 @@ interface Wrapper {
   [key: string]: unknown
 }
 
-const Wrapper = ({ layout, content, ...rest }: MDXLayout) => {
+const Wrapper = ({ layout, content, viewCount, ...rest }: MDXLayout) => {
   const Layout = require(`../layouts/${layout}`).default
-  return <Layout content={content} {...rest} />
+  return <Layout content={content} viewCount={viewCount} {...rest} />
 }
 
 export const MDXComponents: ComponentMap = {
@@ -36,9 +36,17 @@ export const MDXComponents: ComponentMap = {
   BlogNewsletterForm,
 }
 
-export const MDXLayoutRenderer = ({ layout, content, ...rest }: MDXLayout) => {
+export const MDXLayoutRenderer = ({ layout, content, viewCount, ...rest }: MDXLayout) => {
   const MDXLayout = useMDXComponent(content.body.code)
   const mainContent = coreContent(content)
 
-  return <MDXLayout layout={layout} content={mainContent} components={MDXComponents} {...rest} />
+  return (
+    <MDXLayout
+      layout={layout}
+      content={mainContent}
+      viewCount={viewCount}
+      components={MDXComponents}
+      {...rest}
+    />
+  )
 }
