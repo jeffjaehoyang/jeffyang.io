@@ -30,16 +30,10 @@ export const getStaticProps = async (context) => {
     POSTS_PER_PAGE * (pageNumber - 1),
     POSTS_PER_PAGE * pageNumber
   )
-  const pagination = {
-    currentPage: pageNumber,
-    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
-  }
-
   return {
     props: {
       initialDisplayPosts: allCoreContent(initialDisplayPosts),
       posts: allCoreContent(posts),
-      pagination,
     },
   }
 }
@@ -47,17 +41,11 @@ export const getStaticProps = async (context) => {
 export default function PostPage({
   posts,
   initialDisplayPosts,
-  pagination,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <ListLayout
-        posts={posts}
-        initialDisplayPosts={initialDisplayPosts}
-        pagination={pagination}
-        title="All Posts"
-      />
+      <ListLayout posts={posts} initialDisplayPosts={initialDisplayPosts} title="All Posts" />
     </>
   )
 }
