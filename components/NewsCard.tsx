@@ -1,6 +1,3 @@
-import Image from './Image'
-import Link from './Link'
-
 const NewsCard = ({ content, explanation, newsDate, year, published }) => {
   return (
     published && (
@@ -8,16 +5,22 @@ const NewsCard = ({ content, explanation, newsDate, year, published }) => {
         <div className="flex flex-row items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            fill="#709d3b"
             viewBox="0 0 24 24"
-            fill="#FCD148"
-            className="mr-2"
-            style={{ width: 15, height: 15 }}
+            className="mr-3"
+            style={{ minWidth: 18, minHeight: 18, maxWidth: 18, maxHeight: 18 }}
           >
-            <path d="M16.881 4.346A23.112 23.112 0 018.25 6H7.5a5.25 5.25 0 00-.88 10.427 21.593 21.593 0 001.378 3.94c.464 1.004 1.674 1.32 2.582.796l.657-.379c.88-.508 1.165-1.592.772-2.468a17.116 17.116 0 01-.628-1.607c1.918.258 3.76.75 5.5 1.446A21.727 21.727 0 0018 11.25c0-2.413-.393-4.735-1.119-6.904zM18.26 3.74a23.22 23.22 0 011.24 7.51 23.22 23.22 0 01-1.24 7.51c-.055.161-.111.322-.17.482a.75.75 0 101.409.516 24.555 24.555 0 001.415-6.43 2.992 2.992 0 00.836-2.078c0-.806-.319-1.54-.836-2.078a24.65 24.65 0 00-1.415-6.43.75.75 0 10-1.409.516c.059.16.116.321.17.483z" />
+            <path
+              fillRule="evenodd"
+              d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+              clipRule="evenodd"
+            />
           </svg>
-          <div className="text-md font-bold">{content}</div>
+          <div className="flex flex-col">
+            <div className="text-md font-bold">{content}</div>
+            <div className="text-md">{explanation}</div>
+          </div>
         </div>
-        <div className="text-md">{explanation}</div>
       </div>
     )
   )
