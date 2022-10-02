@@ -12,12 +12,14 @@ export default function BlogPostCard({
   summary,
   date,
   tags,
+  readingTime,
 }: {
   slug: string
   title: string
   summary: string
   date: string
   tags: Array<string>
+  readingTime: string
 }) {
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher)
   const views = data?.total
@@ -33,14 +35,16 @@ export default function BlogPostCard({
             </div>
           </div>
           <div className="flex flex-row items-center">
-            <span className="mr-3 text-sm text-gray-500 dark:text-gray-400">
-              <time dateTime={date}>{formatDate(date)}</time>
-            </span>
             <div className="flex flex-wrap">
               {tags.map((tag) => (
                 <Tag key={tag} text={tag} />
               ))}
             </div>
+            <span className="mr-2 text-sm text-gray-500 dark:text-gray-400">
+              <time dateTime={date}>{formatDate(date)}</time>
+            </span>
+            <div className="mr-2 text-sm text-gray-500 dark:text-gray-400">{` • `}</div>
+            <span className="mr-2 text-sm text-gray-500 dark:text-gray-400">{readingTime}</span>
           </div>
           <div className="prose max-w-none text-sm text-gray-500 dark:text-gray-400">{summary}</div>
         </div>

@@ -18,7 +18,7 @@ interface Props {
 }
 
 export default function BlogPostLayout({ content, viewCount, next, prev, children }: Props) {
-  const { slug, date, title } = content
+  const { slug, date, title, readingTime } = content
 
   return (
     <>
@@ -33,12 +33,16 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                     <time dateTime={date}>{formatDate(date)}</time>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">{viewCount}</div>
                   </dd>
                 </div>
               </dl>
               <div>
                 <PageTitle>{title}</PageTitle>
+              </div>
+              <div className="flex flex-row justify-center">
+                <div className="mr-2 text-sm text-gray-500 dark:text-gray-400">{viewCount}</div>
+                <div className="mr-2 text-sm text-gray-500 dark:text-gray-400">{` • `}</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">{readingTime.text}</div>
               </div>
             </div>
           </header>
@@ -47,7 +51,7 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
             <Commento id={slug} />
-            <div className="flex flex-row items-center justify-between pt-12 text-sm text-base font-medium">
+            <div className="flex w-full flex-row items-center justify-between pt-12 text-sm text-base font-medium">
               {prev && (
                 <div className="pt-4 xl:pt-8">
                   <Link

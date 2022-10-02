@@ -60,7 +60,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [] }: P
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((post, index) => {
-            const { slug, date, title, summary, tags } = post
+            const { slug, date, title, summary, tags, readingTime } = post
             return (
               <BlogPostCard
                 key={index}
@@ -69,6 +69,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [] }: P
                 title={title}
                 summary={summary}
                 tags={tags}
+                readingTime={readingTime.text}
               />
             )
           })}
