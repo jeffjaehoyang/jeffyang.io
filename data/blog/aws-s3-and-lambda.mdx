@@ -33,8 +33,7 @@ Creating a lambda function is relatively straightforward. All we need to do is t
 
 Once the function is created, you will be able to see the control panel for the lambda function that you have just created. Your lambda function doesn't do anything yet, because we didn't write any code. There's an option to write code directly in the inline editor that AWS provides for us, but that's only possible if your lambda function does not have any external dependencies. Unfortunately, for image resizing, an external library must be installed for pretty much any language you might be working in (in Python, our code needs `Pillow` to work properly). This is where it gets tricky. The lambda function executes in an amazonlinux environment, which most likely is not identical to your local environment. AWS provides a [detailed guideline](https://docs.aws.amazon.com/lambda/latest/dg/python-package.html) on how to solve this problem - you have to upload your function as a deployment package. In other words, you need to package your function as a module (with all dependencies included) and ship it onto AWS Lambda so that it knows exactly what it's working with. The following is the lambda function that grabs an image from the source bucket, resizes it, then puts the resized image in the destination bucket.    
 
-#### lambda_function.py
-```python
+```python:lambda_function.py
 # lambda_function.py
 import boto3
 from io import BytesIO
