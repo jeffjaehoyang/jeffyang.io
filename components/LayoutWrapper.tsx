@@ -19,7 +19,11 @@ const LayoutWrapper = ({ children }: Props) => {
       <div className="flex h-screen flex-col justify-between">
         <header className="flex items-center justify-between pt-5 pb-10">
           <div>
-            <Link href="/" aria-label={siteMetadata.headerTitle}>
+            <Link
+              href="/"
+              aria-label={siteMetadata.headerTitle}
+              style={{ WebkitTapHighlightColor: 'transparent' }}
+            >
               <div className="flex items-center justify-between">
                 <div className="mr-3">
                   <Logo />

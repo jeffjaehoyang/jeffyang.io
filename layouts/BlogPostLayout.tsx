@@ -1,6 +1,5 @@
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/SectionContainer'
 import { BlogSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
@@ -22,7 +21,7 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
   const { slug, date, title } = content
 
   return (
-    <SectionContainer>
+    <>
       <BlogSEO url={`${siteMetadata.siteUrl}/blog/${slug}`} {...content} />
       <ScrollTopAndComment />
       <article>
@@ -52,14 +51,14 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
             </div>
             <Commento id={slug} />
             <footer>
-              <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
+              <div className="flex flex-row items-center justify-between text-sm text-base font-medium">
                 {prev && (
                   <div className="pt-4 xl:pt-8">
                     <Link
                       href={`/blog/${prev.slug}`}
                       className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                     >
-                      &larr; {prev.title}
+                      &larr; prev
                     </Link>
                   </div>
                 )}
@@ -69,7 +68,7 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
                       href={`/blog/${next.slug}`}
                       className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                     >
-                      {next.title} &rarr;
+                      next &rarr;
                     </Link>
                   </div>
                 )}
@@ -78,6 +77,6 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
           </div>
         </div>
       </article>
-    </SectionContainer>
+    </>
   )
 }

@@ -24,7 +24,7 @@ export default function BlogPostCard({
 
   return (
     <Link href={`/blog/${slug}`}>
-      <a className="w-full">
+      <a className="w-full" style={{ WebkitTapHighlightColor: 'transparent' }}>
         <div className="mb-12 w-full">
           <div className="flex flex-col justify-between md:flex-row">
             <h3 className="text-xl font-bold tracking-tight">{title}</h3>

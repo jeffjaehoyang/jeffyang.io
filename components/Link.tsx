@@ -12,7 +12,7 @@ const CustomLink = ({
   if (isInternalLink) {
     return (
       <Link href={href}>
-        <a {...rest} />
+        <a className="select:transparent" {...rest} />
       </Link>
     )
   }
