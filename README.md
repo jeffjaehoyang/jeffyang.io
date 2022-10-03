@@ -8,4 +8,5 @@ Tailwind Next.js Starter Blog Template ([repo link] (https://github.com/timlrx/t
 Inspired by: 
 Lee Rob's Personal Blog ([repo link](https://github.com/leerob/leerob.io))
 
-Personal Blog
+Technologies used:
+Next.js, Tailwindcss, Contentlayer, PlanetScale, Prisma, Giscus
