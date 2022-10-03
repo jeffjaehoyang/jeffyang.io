@@ -1,4 +1,3 @@
-import Link from './Link'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
 
@@ -12,7 +11,6 @@ export default function Footer() {
         </div>
         <div className="mb-8 flex space-x-2 text-sm text-gray-900 dark:text-gray-200">
           <div>{siteMetadata.title}</div>
-          <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
         </div>
       </div>

@@ -1,8 +1,5 @@
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
-import { ComponentProps, useState } from 'react'
+import { useState } from 'react'
 import BlogPostCard from '@/components/BlogPostCard'
-import formatDate from '@/lib/utils/formatDate'
 import { CoreContent } from '@/lib/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
 

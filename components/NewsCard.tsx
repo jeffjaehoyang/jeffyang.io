@@ -1,4 +1,4 @@
-const NewsCard = ({ content, explanation, newsDate, year, published }) => {
+const NewsCard = ({ content, explanation, published }) => {
   return (
     published && (
       <div className="mb-8">

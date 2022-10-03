@@ -1,4 +1,3 @@
-import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { sortedBlogPost, allCoreContent, featuredBlogPost } from '@/lib/utils/contentlayer'
@@ -70,7 +69,7 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
           <div>
             {newsData
               .sort((a, b) => Date.parse(b.newsDate) - Date.parse(a.newsDate))
-              .map((d) => {
+              .map((d, index) => {
                 if (d.isSeparator) {
                   return (
                     <div key={d.year} className="mb-2 text-xl font-bold">
@@ -82,10 +81,8 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
                   <NewsCard
                     content={d.content}
                     explanation={d.explanation}
-                    newsDate={d.newsDate}
-                    year={d.year}
                     published={d.published}
-                    key={d.content}
+                    key={index}
                   />
                 )
               })}
