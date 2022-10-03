@@ -15,7 +15,7 @@ export function featuredBlogPost(allBlogs: Blog[]) {
   const featuredPostsTitle = [
     'My Facebook Internship',
     'Resize Images Stored in AWS S3 with AWS Lambda (feat. Docker)',
-    'Setting up ESLint and Prettier with VS Code',
+    'Navigating a Computer Science Degree',
   ]
   return allBlogs.filter((blog) => featuredPostsTitle.includes(blog.title))
 }
