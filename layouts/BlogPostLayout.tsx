@@ -8,6 +8,7 @@ import { CoreContent } from '@/lib/utils/contentlayer'
 import { ReactNode } from 'react'
 import type { BlogPost } from 'contentlayer/generated'
 import Giscus from '@/components/comments/Giscus'
+import Bio from '@/components/Bio'
 
 interface Props {
   content: CoreContent<BlogPost>
@@ -50,6 +51,7 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
             <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
+            <Bio />
             <Giscus />
             <div className="flex w-full flex-row items-center justify-between pt-12 text-sm text-base font-medium">
               {prev && (
