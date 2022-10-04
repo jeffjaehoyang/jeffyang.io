@@ -2,11 +2,11 @@ import { writeFileSync } from 'fs'
 import globby from 'globby'
 import prettier from 'prettier'
 import siteMetadata from '../data/siteMetadata.js'
-import { allBlogs } from '../.contentlayer/generated/index.mjs'
+import { allBlogPosts } from '../.contentlayer/generated/index.mjs'
 
 async function generate() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
-  const contentPages = allBlogs
+  const contentPages = allBlogPosts
     .map((x) => `/${x._raw.flattenedPath}`)
     .filter((x) => !x.draft && !x.canonicalUrl)
   const pages = await globby([
@@ -21,23 +21,23 @@ async function generate() {
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
-              .concat(contentPages)
-              .map((page) => {
-                const path = page
-                  .replace('pages/', '/')
-                  .replace('public/', '/')
-                  .replace('.js', '')
-                  .replace('.mdx', '')
-                  .replace('.md', '')
-                  .replace('/feed.xml', '')
-                const route = path === '/index' ? '' : path
-                return `
+      .concat(contentPages)
+      .map((page) => {
+        const path = page
+          .replace('pages/', '/')
+          .replace('public/', '/')
+          .replace('.js', '')
+          .replace('.mdx', '')
+          .replace('.md', '')
+          .replace('/feed.xml', '')
+        const route = path === '/index' ? '' : path
+        return `
                         <url>
                             <loc>${siteMetadata.siteUrl}${route}</loc>
                         </url>
                     `
-              })
-              .join('')}
+      })
+      .join('')}
         </urlset>
     `
 

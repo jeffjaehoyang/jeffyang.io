@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import BlogPostCard from '@/components/BlogPostCard'
 import { CoreContent } from '@/lib/utils/contentlayer'
-import type { Blog } from 'contentlayer/generated'
+import type { BlogPost } from 'contentlayer/generated'
 
 interface Props {
-  posts: CoreContent<Blog>[]
+  posts: CoreContent<BlogPost>[]
   title: string
-  initialDisplayPosts?: CoreContent<Blog>[]
+  initialDisplayPosts?: CoreContent<BlogPost>[]
 }
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [] }: Props) {

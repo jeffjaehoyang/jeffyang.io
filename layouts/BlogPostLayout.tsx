@@ -6,11 +6,11 @@ import formatDate from '@/lib/utils/formatDate'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { CoreContent } from '@/lib/utils/contentlayer'
 import { ReactNode } from 'react'
-import type { Blog } from 'contentlayer/generated'
+import type { BlogPost } from 'contentlayer/generated'
 import Giscus from '@/components/comments/Giscus'
 
 interface Props {
-  content: CoreContent<Blog>
+  content: CoreContent<BlogPost>
   children: ReactNode
   viewCount: string
   next?: { slug: string; title: string }

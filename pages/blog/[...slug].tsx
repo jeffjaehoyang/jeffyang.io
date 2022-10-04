@@ -2,7 +2,7 @@ import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { sortedBlogPost, coreContent } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
-import { allBlogs, allAuthors } from 'contentlayer/generated'
+import { allBlogPosts, allAuthors } from 'contentlayer/generated'
 
 import useViewCounter from '@/lib/hooks/useViewCounter'
 
@@ -10,14 +10,14 @@ const DEFAULT_LAYOUT = 'BlogPostLayout'
 
 export async function getStaticPaths() {
   return {
-    paths: allBlogs.map((p) => ({ params: { slug: p.slug.split('/') } })),
+    paths: allBlogPosts.map((p) => ({ params: { slug: p.slug.split('/') } })),
     fallback: false,
   }
 }
 
 export const getStaticProps = async ({ params }) => {
   const slug = (params.slug as string[]).join('/')
-  const sortedPosts = sortedBlogPost(allBlogs)
+  const sortedPosts = sortedBlogPost(allBlogPosts)
   const postIndex = sortedPosts.findIndex((p) => p.slug === slug)
   // TODO: Refactor this extraction of coreContent
   const prevContent = sortedPosts[postIndex + 1] || null
@@ -27,7 +27,7 @@ export const getStaticProps = async ({ params }) => {
   const post = sortedPosts.find((p) => p.slug === slug)
   const authorList = post.authors || ['default']
   const authorDetails = authorList.map((author) => {
-    const authorResults = allAuthors.find((p) => p.slug === author)
+    const authorResults = allAuthors.find((p) => p.name === author)
     return coreContent(authorResults)
   })
 
@@ -41,12 +41,12 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
-export default function Blog({
+const Blog = ({
   post,
   authorDetails,
   prev,
   next,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const viewCount = useViewCounter(post.slug)
   return (
     <>
@@ -73,3 +73,5 @@ export default function Blog({
     </>
   )
 }
+
+export default Blog

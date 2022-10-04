@@ -4,10 +4,10 @@ import ListLayout from '@/layouts/ListLayout'
 import kebabCase from '@/lib/utils/kebabCase'
 import { getAllTags, allCoreContent } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
-import { allBlogs } from 'contentlayer/generated'
+import { allBlogPosts } from 'contentlayer/generated'
 
 export async function getStaticPaths() {
-  const tags = await getAllTags(allBlogs)
+  const tags = await getAllTags(allBlogPosts)
 
   return {
     paths: Object.keys(tags).map((tag) => ({
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 export const getStaticProps = async (context) => {
   const tag = context.params.tag as string
   const filteredPosts = allCoreContent(
-    allBlogs.filter(
+    allBlogPosts.filter(
       (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(tag)
     )
   )

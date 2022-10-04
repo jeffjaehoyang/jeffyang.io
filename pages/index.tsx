@@ -2,10 +2,11 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { sortedBlogPost, allCoreContent, featuredBlogPost } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
-import { allBlogs } from 'contentlayer/generated'
+import { allBlogPosts } from 'contentlayer/generated'
 import newsData from '@/data/newsData'
 import NewsCard from '@/components/NewsCard'
 import FeaturedPostCard from '@/components/FeaturedPostCard'
+import Link from 'next/link'
 
 const gradients = {
   '0': 'from-[#D8B4FE] to-[#818CF8]',
@@ -15,8 +16,8 @@ const gradients = {
 
 export const getStaticProps = async () => {
   // TODO: move computation to get only the essential frontmatter to contentlayer.config
-  const sortedPosts = sortedBlogPost(allBlogs)
-  const featuredPosts = featuredBlogPost(allBlogs)
+  const sortedPosts = sortedBlogPost(allBlogPosts)
+  const featuredPosts = featuredBlogPost(allBlogPosts)
   const posts = allCoreContent(sortedPosts)
 
   return { props: { posts, featuredPosts } }
@@ -60,6 +61,25 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
               )
             })}
           </div>
+          <Link href="/blog">
+            <a className="mt-6 flex h-6 items-center rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+              Read all posts
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="ml-1 h-6 w-6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
+                />
+              </svg>
+            </a>
+          </Link>
         </div>
 
         <div className="mb-16">

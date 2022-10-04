@@ -2,17 +2,17 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 import { CoreContent } from '@/lib/utils/contentlayer'
-import type { Blog, Authors } from 'contentlayer/generated'
+import type { BlogPost, Authors } from 'contentlayer/generated'
 interface CommonSEOProps {
   title: string
   description: string
   ogType: string
   ogImage:
-    | string
-    | {
-        '@type': string
-        url: string
-      }[]
+  | string
+  | {
+    '@type': string
+    url: string
+  }[]
   twImage: string
   canonicalUrl?: string
 }
@@ -98,7 +98,7 @@ export const TagSEO = ({ title, description }: PageSEOProps) => {
   )
 }
 
-interface BlogSeoProps extends CoreContent<Blog> {
+interface BlogSeoProps extends CoreContent<BlogPost> {
   authorDetails?: CoreContent<Authors>[]
   url: string
 }
@@ -119,8 +119,8 @@ export const BlogSEO = ({
     images.length === 0
       ? [siteMetadata.socialBanner]
       : typeof images === 'string'
-      ? [images]
-      : images
+        ? [images]
+        : images
 
   const featuredImages = imagesArr.map((img) => {
     return {

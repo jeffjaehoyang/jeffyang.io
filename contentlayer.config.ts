@@ -28,8 +28,8 @@ const computedFields: ComputedFields = {
   toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
 }
 
-export const Blog = defineDocumentType(() => ({
-  name: 'Blog',
+export const BlogPost = defineDocumentType(() => ({
+  name: 'BlogPost',
   filePathPattern: 'blog/**/*.mdx',
   contentType: 'mdx',
   fields: {
@@ -42,7 +42,6 @@ export const Blog = defineDocumentType(() => ({
     images: { type: 'list', of: { type: 'string' } },
     authors: { type: 'list', of: { type: 'string' } },
     layout: { type: 'string' },
-    bibliography: { type: 'string' },
     canonicalUrl: { type: 'string' },
   },
   computedFields,
@@ -57,18 +56,14 @@ export const Authors = defineDocumentType(() => ({
     avatar: { type: 'string' },
     occupation: { type: 'string' },
     company: { type: 'string' },
-    email: { type: 'string' },
-    twitter: { type: 'string' },
     linkedin: { type: 'string' },
     github: { type: 'string' },
-    layout: { type: 'string' },
   },
-  computedFields,
 }))
 
 export default makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog, Authors],
+  documentTypes: [BlogPost, Authors],
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [
