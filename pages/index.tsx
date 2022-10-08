@@ -1,12 +1,13 @@
-import { PageSEO } from '@/components/SEO'
-import siteMetadata from '@/data/siteMetadata'
-import { sortedBlogPost, allCoreContent, featuredBlogPost } from '@/lib/utils/contentlayer'
-import { InferGetStaticPropsType } from 'next'
-import { allBlogPosts } from 'contentlayer/generated'
-import newsData from '@/data/newsData'
-import NewsCard from '@/components/NewsCard'
-import FeaturedPostCard from '@/components/FeaturedPostCard'
-import Link from 'next/link'
+import { allBlogPosts } from 'contentlayer/generated';
+import { InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
+
+import FeaturedPostCard from '@/components/FeaturedPostCard';
+import NewsCard from '@/components/NewsCard';
+import { PageSEO } from '@/components/SEO';
+import newsData from '@/data/newsData';
+import siteMetadata from '@/data/siteMetadata';
+import { allCoreContent, featuredBlogPost, sortedBlogPost } from '@/lib/utils/contentlayer';
 
 const gradients = {
   '0': 'from-[#D8B4FE] to-[#818CF8]',
@@ -29,10 +30,10 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
         <div className="mb-16">
-          <div className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-200">
+          <div className="font-bold tracking-tight text-gray-900 text-md dark:text-gray-200">
             Software Engineer & Neovim Enthusiast
           </div>
-          <div className="mt-2 mb-8 text-3xl font-bold tracking-tight text-primary-400">
+          <div className="mt-2 mb-8 text-3xl font-bold tracking-tight">
             Hello, I'm Jeff <span className="waving-hand"> 👋</span>
           </div>
           <div>
@@ -62,13 +63,13 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
             })}
           </div>
           <Link href="/blog">
-            <a className="mt-6 flex h-6 items-center rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
-              Read all posts
+            <a className="flex items-center float-right mt-6 text-gray-600 transition-all rounded-lg hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+              See More
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="ml-1 h-6 w-6"
+                className="w-6 h-6 ml-1"
               >
                 <path
                   stroke="currentColor"

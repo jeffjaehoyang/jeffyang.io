@@ -1,7 +1,7 @@
-import siteMetadata from '@/data/siteMetadata'
-import projectsData from '@/data/projectsData'
-import ProjectCard from '@/components/ProjectCard'
-import { PageSEO } from '@/components/SEO'
+import ProjectCard from '@/components/ProjectCard';
+import { PageSEO } from '@/components/SEO';
+import projectsData from '@/data/projectsData';
+import siteMetadata from '@/data/siteMetadata';
 
 export default function Projects() {
   return (
@@ -12,7 +12,7 @@ export default function Projects() {
           <div className="text-lg font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
             Projects
           </div>
-          <div className="text-2xl font-extrabold text-primary-400">
+          <div className="text-2xl font-extrabold">
             First do it, then do it right, then do it better.
           </div>
         </div>
