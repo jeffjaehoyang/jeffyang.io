@@ -24,7 +24,12 @@ const ExperienceCard = ({ company, position, startDate, endDate }: Props) => {
   console.log(CompanyLogo, company)
   return (
     <div className="mt-5 flex items-center gap-4">
-      <CompanyLogo style={{ height: 'auto', width: 60 }} />
+      <div
+        className="flex items-center justify-center rounded-lg bg-gray-100 p-1 dark:bg-gray-200"
+        style={{ height: 68 }}
+      >
+        <CompanyLogo style={{ height: 'auto', width: 60 }} />
+      </div>
       <div className="flex min-w-0 flex-col justify-center">
         <p className="mb-1 flex items-center">
           <span className="font-semibold">{company}</span>

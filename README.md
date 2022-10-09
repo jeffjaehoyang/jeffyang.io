@@ -1,17 +1,33 @@
-## jeffyang.io
+# jeffyang.io
 
-**My personal home on the web.**
+**Welcome to my personal home on the web.**
 
-Forked from: 
+## Forked from
 Tailwind Next.js Starter Blog Template ([repo link](https://github.com/timlrx/tailwind-nextjs-starter-blog))
 
-Inspired by: 
+## Inspired by
 Lee Rob's Personal Blog ([repo link](https://github.com/leerob/leerob.io))
 
-Technologies used:
-Next.js, Tailwindcss, Contentlayer, PlanetScale, Prisma, Giscus
+## Technologies used
+* Framework: Next.js
+* Styling: Tailwind CSS
+* Database: PlanetScale
+* ORM: Prisma
+* Content SDK: Contentlayer
+* Blog Post Comments: Giscus
 
-How to add a new blog post:
+## Running Locally
+
+This application requires Node.js v16.13+.
+
+```bash
+git clone git@github.com:jeffjaehoyang/jeffyang.io.git
+cd jeffyang.io
+npm install
+npm run dev
+```
+
+## How to add a new blog post
 Add a new new-blog-post.mdx file under `/data/blog`. 'new-blog-post' will be the new slug. The document types are defined as follows via [contentlayer](https://www.contentlayer.dev/):
 ```typescript:contentlayer.config.ts
 export const BlogPost = defineDocumentType(() => ({
@@ -48,8 +64,8 @@ export const Authors = defineDocumentType(() => ({
 }))
 ```
 
-How to add more to News Room:
+## How to add more to News Room
 Add more to `/data/newsData.ts`.
 
-How to add more to Projects:
+## How to add more to Projects
 Add more to `/data/projectsData.ts`
