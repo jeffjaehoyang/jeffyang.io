@@ -30,10 +30,8 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
         <div className="mb-16">
-          <div className="font-bold tracking-tight text-gray-900 text-md dark:text-gray-200">
-            Software Engineer & Neovim Enthusiast
-          </div>
-          <div className="mt-2 mb-8 text-3xl font-bold tracking-tight">
+          <div className="font-bold tracking-tight">Software Engineer & Neovim Enthusiast</div>
+          <div className="mb-8 text-3xl font-bold tracking-tight">
             Hello, I'm Jeff <span className="waving-hand"> 👋</span>
           </div>
           <div>
@@ -63,13 +61,13 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
             })}
           </div>
           <Link href="/blog">
-            <a className="flex items-center float-right mt-6 text-gray-600 transition-all rounded-lg hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+            <a className="float-right mt-6 flex items-center rounded-lg text-gray-600 transition-all hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
               See More
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="w-6 h-6 ml-1"
+                className="ml-1 h-6 w-6"
               >
                 <path
                   stroke="currentColor"

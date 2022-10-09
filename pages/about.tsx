@@ -15,47 +15,48 @@ const About = ({ author }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
-      <div className="">
+      <div>
         <div className="mb-8">
-          <div className="text-lg font-extrabold leading-6 tracking-tight text-gray-900 dark:text-gray-200">
-            A Little About Myself
-          </div>
-          <div className="mt-2 text-2xl font-extrabold leading-6">{siteMetadata.description}</div>
+          <div className="text-lg font-extrabold tracking-tight">A Little About Myself</div>
+          <div className="text-2xl font-extrabold">{siteMetadata.description}</div>
         </div>
-        <div className="mb-2 font-bold">Hey, I'm Jeff 👋</div>
+        <div className="mb-2 text-lg font-bold">Hey, I'm Jeff ✌️</div>
         <div className="mb-8">
           Welcome to my personal corner of the internet! I created this blog for myself to freely
           share thoughts and document my progress as a software engineer. I have benefited immensely
           from the generous and welcoming programming community who share their knowledge with
           others. I hope to replicate that learning experience for others through this blog!
         </div>
-        <div className="mb-3 font-bold">Where am I from?</div>
+        <div className="mb-3 text-lg font-bold">Where am I from?</div>
         <div className="mb-8">
-          I was born and raised in Seoul / I went to college in Evanston / I live in New York City
+          Born and raised in Seoul 🇰🇷<br></br>Went to college Evanston 🎒<br></br>Currently in New
+          York City 🗽
         </div>
-        <div className="mb-3 font-bold">What's my job?</div>
+        <div className="mb-3 text-lg font-bold">What's my job?</div>
         <div className="mb-8">
-          I'm a software engineer at Meta. Specifically, I'm builiding the backend & infrastructure
-          of checkout experiences across Meta's Family of Apps (including Facebook & Instagram).
+          I'm a software engineer at Meta - builiding the backend & infrastructure of checkout
+          experiences across Meta's Family of Apps (including Facebook & Instagram).
         </div>
-        <div className="mb-3 font-bold">When did I start programming?</div>
+        <div className="mb-3 text-lg font-bold">When did I start programming?</div>
         <div className="mb-8">
           My first ever programming experience was in freshman year of college.
         </div>
-        <div className="mb-3 font-bold">Why do I like to code?</div>
+        <div className="mb-3 text-lg font-bold">Why do I like to code?</div>
         <div className="mb-8">
           I love to build and create software & products that impact the world in a positive way.
           It's a great feeling to be able to help others through technology!
         </div>
-        <div className="mb-3 font-bold">What technologies interest me?</div>
+        <div className="mb-3 text-lg font-bold">
+          What areas of software development interest me?
+        </div>
         <div className="mb-8">
-          I am still in the process of exploring many different areas of software engineering. So
-          far, I've found passion in delivering high quality end-products to users and in the art of
-          finding the right balance between business and engineering - although ultimately, I
-          believe that software engineers also exist to add value to businesses. I especially enjoy
-          exploring web technologies. I love how the technologies related to the web are rapidly
-          developing and constantly changing for the better. Bottom-line: still have lots to learn
-          😉
+          I am still in the process of exploring different areas of software engineering - I've only
+          just started my life as a software engineer. So far, I've found passion in delivering high
+          quality end-products to users. Ultimately, I believe that software engineers also exist to
+          add value to businesses. I enjoy the process of thinking of ways to write cleaner code
+          that makes other engineers reading my code less-grumpy. I find great joy and motivation in
+          solving challenging technical problems and in the process of architecting large systems -
+          it's a special feeling. Bottom-line: still have lots to learn 😉
         </div>
       </div>
     </>

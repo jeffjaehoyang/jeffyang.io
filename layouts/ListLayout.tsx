@@ -26,9 +26,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [] }: P
     <>
       <div>
         <div className="mb-8">
-          <div className="text-lg font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
-            {title}
-          </div>
+          <div className="text-lg font-extrabold tracking-tight">{title}</div>
           <div className="text-2xl font-extrabold">It's not an idea until you write it down.</div>
           <div className="relative mt-3">
             <input
@@ -36,10 +34,10 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [] }: P
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search articles"
-              className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md focus:border-primary-500 focus:ring-primary-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+              className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
             />
             <svg
-              className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"
+              className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"

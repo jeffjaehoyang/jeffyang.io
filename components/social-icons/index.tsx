@@ -5,8 +5,10 @@ import Mail from './mail.svg'
 import Meta from './meta.svg'
 import Twitter from './twitter.svg'
 import Youtube from './youtube.svg'
-
-// Icons taken from: https://simpleicons.org/
+import Esri from './esri.svg'
+import Knowru from './knowru.svg'
+import Fumi from './fumi.svg'
+import FacebookLetter from './facebook-letter.svg'
 
 const components = {
   mail: Mail,
@@ -16,6 +18,10 @@ const components = {
   linkedin: Linkedin,
   twitter: Twitter,
   meta: Meta,
+  esri: Esri,
+  knowru: Knowru,
+  fumi: Fumi,
+  facebookLetter: FacebookLetter,
 }
 
 const SocialIcon = ({ kind, href, size = 8 }) => {
