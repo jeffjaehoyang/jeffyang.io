@@ -6,7 +6,6 @@ import {
   DollarSVG,
   DotfilesSVG,
   HomeSVG,
-  LinkSVG,
   MusicSVG,
   TotalVisitsSVG,
 } from '@/components/icons'
