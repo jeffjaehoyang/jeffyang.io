@@ -8,11 +8,11 @@ interface CommonSEOProps {
   description: string
   ogType: string
   ogImage:
-  | string
-  | {
-    '@type': string
-    url: string
-  }[]
+    | string
+    | {
+        '@type': string
+        url: string
+      }[]
   twImage: string
   canonicalUrl?: string
 }
@@ -119,8 +119,8 @@ export const BlogSEO = ({
     images.length === 0
       ? [siteMetadata.socialBanner]
       : typeof images === 'string'
-        ? [images]
-        : images
+      ? [images]
+      : images
 
   const featuredImages = imagesArr.map((img) => {
     return {

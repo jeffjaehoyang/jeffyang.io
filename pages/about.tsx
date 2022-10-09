@@ -1,8 +1,8 @@
-import { allAuthors } from 'contentlayer/generated';
-import { InferGetStaticPropsType } from 'next';
+import { allAuthors } from 'contentlayer/generated'
+import { InferGetStaticPropsType } from 'next'
 
-import { PageSEO } from '@/components/SEO';
-import siteMetadata from '@/data/siteMetadata';
+import { PageSEO } from '@/components/SEO'
+import siteMetadata from '@/data/siteMetadata'
 
 export const getStaticProps = async () => {
   const author = allAuthors.find((p) => p.name === 'Jeff Yang')

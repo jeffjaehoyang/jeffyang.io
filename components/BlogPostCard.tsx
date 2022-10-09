@@ -1,11 +1,11 @@
-import fetcher from 'lib/fetcher';
-import { Views } from 'lib/types';
-import Link from 'next/link';
-import useSWR from 'swr';
+import fetcher from 'lib/fetcher'
+import { Views } from 'lib/types'
+import Link from 'next/link'
+import useSWR from 'swr'
 
-import formatDate from '@/lib/utils/formatDate';
+import formatDate from '@/lib/utils/formatDate'
 
-import Tag from './Tag';
+import Tag from './Tag'
 
 export default function BlogPostCard({
   slug,

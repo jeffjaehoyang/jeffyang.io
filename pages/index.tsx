@@ -1,13 +1,13 @@
-import { allBlogPosts } from 'contentlayer/generated';
-import { InferGetStaticPropsType } from 'next';
-import Link from 'next/link';
+import { allBlogPosts } from 'contentlayer/generated'
+import { InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
 
-import FeaturedPostCard from '@/components/FeaturedPostCard';
-import NewsCard from '@/components/NewsCard';
-import { PageSEO } from '@/components/SEO';
-import newsData from '@/data/newsData';
-import siteMetadata from '@/data/siteMetadata';
-import { allCoreContent, featuredBlogPost, sortedBlogPost } from '@/lib/utils/contentlayer';
+import FeaturedPostCard from '@/components/FeaturedPostCard'
+import NewsCard from '@/components/NewsCard'
+import { PageSEO } from '@/components/SEO'
+import newsData from '@/data/newsData'
+import siteMetadata from '@/data/siteMetadata'
+import { allCoreContent, featuredBlogPost, sortedBlogPost } from '@/lib/utils/contentlayer'
 
 const gradients = {
   '0': 'from-[#D8B4FE] to-[#818CF8]',

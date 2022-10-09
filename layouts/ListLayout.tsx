@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import BlogPostCard from '@/components/BlogPostCard';
-import { CoreContent } from '@/lib/utils/contentlayer';
+import BlogPostCard from '@/components/BlogPostCard'
+import { CoreContent } from '@/lib/utils/contentlayer'
 
 import type { BlogPost } from 'contentlayer/generated'
 

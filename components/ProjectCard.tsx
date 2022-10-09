@@ -1,16 +1,14 @@
-import Link from './Link';
-import SocialIcon from './social-icons';
+import Link from './Link'
+import SocialIcon from './social-icons'
 
 const ProjectCard = ({ title, description, href, repo }) => (
   <Link href={href} aria-label={`Link to ${title}`}>
-    <div
-      className="p-4 mb-4 overflow-hidden border-2 border-gray-200 rounded-md border-opacity-60 dark:border-gray-700"
-    >
-      <div className="mb-2 font-bold text-md">{title}</div>
+    <div className="mb-4 overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 p-4 dark:border-gray-700">
+      <div className="text-md mb-2 font-bold">{title}</div>
       <div className="mb-2 text-sm">{description}</div>
-      <div className="flex flex-row items-center float-right mt-2">
+      <div className="float-right mt-2 flex flex-row items-center">
         <a
-          className="flex flex-row items-center px-3 py-2 mr-3 bg-gray-200 rounded-md max-w-fit dark:bg-gray-800"
+          className="mr-3 flex max-w-fit flex-row items-center rounded-md bg-gray-200 px-3 py-2 dark:bg-gray-800"
           href={href}
         >
           <span className="mr-2 text-sm font-semibold">Link</span>
@@ -18,7 +16,7 @@ const ProjectCard = ({ title, description, href, repo }) => (
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-5 h-5"
+            className="h-5 w-5"
           >
             <path
               fillRule="evenodd"
@@ -27,7 +25,7 @@ const ProjectCard = ({ title, description, href, repo }) => (
             />
           </svg>
         </a>
-        <div className="flex flex-row items-center px-3 py-2 bg-gray-200 rounded-md max-w-fit dark:bg-gray-800">
+        <div className="flex max-w-fit flex-row items-center rounded-md bg-gray-200 px-3 py-2 dark:bg-gray-800">
           <span className="mr-2 text-sm font-semibold">Repo</span>
           <SocialIcon kind="github" href={repo} size={5} />
         </div>
