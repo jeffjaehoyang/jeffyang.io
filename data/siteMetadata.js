@@ -18,7 +18,7 @@ const siteMetadata = {
   linkedin: 'https://www.linkedin.com/in/jaeho-yang/',
   locale: 'en-US',
   analytics: {
-    googleAnalyticsId: 'UA-170622682-1',
+    googleAnalyticsId: 'G-R7SJ84DNYT',
   },
   comment: {
     // If you want to use an analytics provider you have to add it to the
