@@ -21,7 +21,7 @@ const LogoMapping = {
 
 const ExperienceCard = ({ company, position, startDate, endDate }: Props) => {
   const CompanyLogo = LogoMapping[company]
-  console.log(CompanyLogo, company)
+
   return (
     <div className="mt-5 flex items-center gap-4">
       <div
