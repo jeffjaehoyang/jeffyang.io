@@ -2,29 +2,21 @@ import { PageSEO } from '@/components/SEO'
 import BoardCard from '@/components/BoardCard'
 import ExperienceCard from '@/components/ExperienceCard'
 import {
-  DateSVG,
-  DollarSVG,
+  BarChartSquareSVG,
   DotfilesSVG,
   HomeSVG,
   MusicSVG,
   TotalVisitsSVG,
+  TrophySVG,
 } from '@/components/icons'
 import useSWR from 'swr'
 import { Stock, TopTracks, Views } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
-
-const getDaysSince = (start: Date): string => {
-  const today = new Date()
-  // To calculate the time difference of two dates
-  const difference = today.getTime() - start.getTime()
-  // To calculate the no. of days between two dates
-  const numDays = difference / (1000 * 3600 * 24)
-  return Math.floor(numDays).toLocaleString()
-}
+import { getDaysSince, lastDayInKorea, prevUncountedViews } from '@/lib/boardDataUtils'
 
 const TotalBlogViewsBoardCard = () => {
   const { data } = useSWR<Views>('/api/views', fetcher)
-  const pageViews = data?.total ? parseInt(data?.total?.toString()) + 8698 : '--'
+  const pageViews = data?.total ? parseInt(data?.total?.toString()) + prevUncountedViews : '--'
   return (
     <BoardCard
       title="Total Blog Visits"
@@ -45,7 +37,7 @@ const NasdaqBoardCard = () => {
       content={
         "As a personal finance junkie, I closely follow the stock market. I'm a big believer of time in the market - not timing the market."
       }
-      icon={DollarSVG}
+      icon={BarChartSquareSVG}
       stockData={[data?.ytd, data?.five, data?.ten, data?.twenty]}
     />
   )
@@ -66,7 +58,7 @@ const SpotifyBoardCard = () => {
 }
 
 const Board = () => {
-  const daysSinceHome = getDaysSince(new Date('6/20/2022')) // last day I was in Korea
+  const daysSinceHome = getDaysSince(lastDayInKorea) // last day I was in Korea
 
   return (
     <>
@@ -119,14 +111,14 @@ const Board = () => {
           metric={`${daysSinceHome} days`}
         />
         <SpotifyBoardCard />
+        <NasdaqBoardCard />
         <BoardCard
           title="Next Liverpool Game"
           content={
             "I've been a Liverpool fan since 2007. I watch every single Liverpool game, so you know what I'll be doing on this date."
           }
-          icon={DateSVG}
+          icon={TrophySVG}
         />
-        <NasdaqBoardCard />
         <BoardCard
           title="Dotfiles"
           content={

@@ -32,12 +32,7 @@ const BoardCard = ({ title, content, icon, metric, stockData, spotifyData }: Pro
         )}
         {metric && <div className="ml-auto mt-2 max-w-fit text-xl font-bold">{metric}</div>}
         {spotifyData && (
-          <a
-            href={spotifyData?.tracks[0].songUrl}
-            className="mt-2 flex flex-col text-lg font-bold"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <div className="mt-2 flex flex-col text-lg font-bold">
             {spotifyData?.tracks && (
               <>
                 <div className="nasdaq-ytd truncate">{spotifyData.tracks[0].title}</div>
@@ -47,7 +42,7 @@ const BoardCard = ({ title, content, icon, metric, stockData, spotifyData }: Pro
                 </div>
               </>
             )}
-          </a>
+          </div>
         )}
         {stockData && (
           <div className="text-md float-right mt-3 flex flex-row items-center font-bold">
@@ -56,15 +51,15 @@ const BoardCard = ({ title, content, icon, metric, stockData, spotifyData }: Pro
               <span>{stockData && stockData[0]}%</span>
             </div>
             <div className="nasdaq-five mr-2 flex h-14 w-14 flex-col items-center justify-center rounded-full bg-gray-100 p-1 text-sm dark:bg-gray-700">
-              <span className="text-xs font-normal">(5)</span>
+              <span className="text-xs font-normal">(5y)</span>
               <span>{stockData && stockData[1]}%</span>
             </div>
             <div className="nasdaq-ten mr-2 flex h-14 w-14 flex-col items-center justify-center rounded-full bg-gray-100 p-1 text-sm dark:bg-gray-700">
-              <span className="text-xs font-normal">(10)</span>
+              <span className="text-xs font-normal">(10y)</span>
               <span>{stockData && stockData[2]}%</span>
             </div>
             <div className="nasdaq-twenty mr-2 flex h-14 w-14 flex-col items-center justify-center rounded-full bg-gray-100 p-1 text-sm dark:bg-gray-700">
-              <span className="text-xs font-normal">(20)</span>
+              <span className="text-xs font-normal">(20y)</span>
               <span>{stockData && stockData[3]}%</span>
             </div>
           </div>

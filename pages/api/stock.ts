@@ -1,22 +1,17 @@
+import {
+  calcPriceChange,
+  priceFiveYearsAgo,
+  priceOneYearAgo,
+  priceTenYearsAgo,
+  priceTwentyYearsAgo,
+} from '@/lib/boardDataUtils'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 export const config = {
   runtime: 'experimental-edge',
 }
 
-const calcPriceChange = (latestPrice, comparePrice) => {
-  latestPrice = parseFloat(latestPrice)
-  comparePrice = parseFloat(comparePrice)
-  const result = ((latestPrice - comparePrice) / comparePrice) * 100.0
-  return Math.ceil(result)
-}
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const priceOneYearAgo = '401.68'
-  const priceFiveYearsAgo = '119.54'
-  const priceTenYearsAgo = '56.9'
-  const priceTwentyYearsAgo = '40.11'
-
   const apiKey = process.env.ALPHAVANTAGE_API_KEY
   const globalQuote = await fetch(
     `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=QQQ&apikey=${apiKey}`,
