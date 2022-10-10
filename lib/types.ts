@@ -3,6 +3,7 @@ export type Views = {
 }
 
 export type Stock = {
+  latestPrice: string
   ytd: string
   five: string
   ten: string

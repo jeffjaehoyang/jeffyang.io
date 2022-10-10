@@ -12,42 +12,20 @@ const calcPriceChange = (latestPrice, comparePrice) => {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const priceOneYearAgo = '401.68'
+  const priceFiveYearsAgo = '119.54'
+  const priceTenYearsAgo = '56.9'
+  const priceTwentyYearsAgo = '40.11'
+
   const apiKey = process.env.ALPHAVANTAGE_API_KEY
-  const timeSeriesDaily = await fetch(
-    `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&outputsize=full&symbol=QQQ&apikey=${apiKey}`,
-    {
-      method: 'GET',
-    }
-  )
   const globalQuote = await fetch(
     `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=QQQ&apikey=${apiKey}`,
     { method: 'GET' }
   )
-  const stockData = await timeSeriesDaily.json()
   const latestPriceData = await globalQuote.json()
 
   const latestPrice = latestPriceData['Global Quote']
     ? latestPriceData['Global Quote']['05. price']
-    : null
-
-  const oneYearAgo = '2022-01-03'
-  const fiveYearsAgo = '2017-01-03'
-  const tenYearsAgo = '2012-01-03'
-  const twentyYearsAgo = '2002-01-02'
-
-  console.log('stock data: ', stockData['Time Series (Daily)'])
-
-  const priceOneYearAgo = stockData['Time Series (Daily)']
-    ? stockData['Time Series (Daily)'][oneYearAgo]['4. close']
-    : null
-  const priceFiveYearsAgo = stockData['Time Series (Daily)']
-    ? stockData['Time Series (Daily)'][fiveYearsAgo]['4. close']
-    : null
-  const priceTenYearsAgo = stockData['Time Series (Daily)']
-    ? stockData['Time Series (Daily)'][tenYearsAgo]['4. close']
-    : null
-  const priceTwentyYearsAgo = stockData['Time Series (Daily)']
-    ? stockData['Time Series (Daily)'][twentyYearsAgo]['4. close']
     : null
 
   const priceChangeYtd = calcPriceChange(latestPrice, priceOneYearAgo)
@@ -56,6 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const priceChangeTwentyYears = calcPriceChange(latestPrice, priceTwentyYearsAgo)
 
   return res.status(200).json({
+    latestPrice: latestPrice,
     ytd: priceChangeYtd,
     five: priceChangeFiveYears,
     ten: priceChangeTenYears,

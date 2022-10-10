@@ -9,6 +9,7 @@ import Esri from './esri.svg'
 import Knowru from './knowru.svg'
 import Fumi from './fumi.svg'
 import FacebookLetter from './facebook-letter.svg'
+import Spotify from './spotify.svg'
 
 const components = {
   mail: Mail,
@@ -22,6 +23,7 @@ const components = {
   knowru: Knowru,
   fumi: Fumi,
   facebookLetter: FacebookLetter,
+  spotify: Spotify,
 }
 
 const SocialIcon = ({ kind, href, size = 8 }) => {

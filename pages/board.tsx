@@ -10,8 +10,9 @@ import {
   TotalVisitsSVG,
 } from '@/components/icons'
 import useSWR from 'swr'
-import { TopTracks, Views } from '@/lib/types'
+import { Stock, TopTracks, Views } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
+import { useEffect, useState } from 'react'
 
 const getDaysSince = (start: Date): string => {
   const today = new Date()
@@ -38,15 +39,15 @@ const TotalBlogViewsBoardCard = () => {
 }
 
 const NasdaqBoardCard = () => {
-  // const { data } = useSWR<Stock>('/api/stock', fetcher)
+  const { data } = useSWR<Stock>('/api/stock', fetcher)
   return (
     <BoardCard
-      title="NASDAQ Index"
+      title="NASDAQ Index Returns"
       content={
         "As a personal finance junkie, I closely follow the stock market. I'm a big believer of time in the market - not timing the market."
       }
       icon={DollarSVG}
-    // stockData={[data?.ytd, data?.five, data?.ten, data?.twenty]}
+      stockData={[data?.ytd, data?.five, data?.ten, data?.twenty]}
     />
   )
 }
@@ -60,7 +61,7 @@ const SpotifyBoardCard = () => {
         'I usually listen to the same songs over and over again. Hopefully this will serve as a reminder to explore some new music.'
       }
       icon={MusicSVG}
-      metric={data?.tracks[0]?.title}
+      spotifyData={data}
     />
   )
 }
