@@ -1,4 +1,4 @@
-import { Song, TopTracks } from '@/lib/types'
+import { TopTracks } from '@/lib/types'
 import { ReactNode } from 'react'
 import SocialIcon from './social-icons'
 
@@ -36,6 +36,7 @@ const BoardCard = ({ title, content, icon, metric, stockData, spotifyData }: Pro
             href={spotifyData?.tracks[0].songUrl}
             className="mt-2 flex flex-col text-lg font-bold"
             target="_blank"
+            rel="noopener noreferrer"
           >
             {spotifyData?.tracks && (
               <>

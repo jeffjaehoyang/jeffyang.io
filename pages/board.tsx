@@ -12,7 +12,6 @@ import {
 import useSWR from 'swr'
 import { Stock, TopTracks, Views } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
-import { useEffect, useState } from 'react'
 
 const getDaysSince = (start: Date): string => {
   const today = new Date()
