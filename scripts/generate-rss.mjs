@@ -59,21 +59,6 @@ async function generate() {
     const rss = generateRss(allBlogPosts)
     writeFileSync('./public/feed.xml', rss)
   }
-
-  // RSS for tags
-  // TODO: use AllTags from contentlayer when computed docs is ready
-  if (allBlogPosts.length > 0) {
-    const tags = await getAllTags()
-    for (const tag of Object.keys(tags)) {
-      const filteredPosts = allBlogPosts.filter(
-        (post) => post.draft !== true && post.tags.map((t) => GithubSlugger.slug(t)).includes(tag)
-      )
-      const rss = generateRss(filteredPosts, `tags/${tag}/feed.xml`)
-      const rssPath = path.join('public', 'tags', tag)
-      mkdirSync(rssPath, { recursive: true })
-      writeFileSync(path.join(rssPath, 'feed.xml'), rss)
-    }
-  }
 }
 
 generate()
