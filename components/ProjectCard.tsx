@@ -9,6 +9,8 @@ const ProjectCard = ({ title, description, href, repo }) => (
       <div className="float-right mt-2 flex flex-row items-center">
         <a
           className="mr-3 flex max-w-fit flex-row items-center rounded-md bg-gray-200 px-3 py-2 dark:bg-gray-800"
+          rel="noopener noreferrer"
+          target="_blank"
           href={href}
         >
           <span className="mr-2 text-sm font-semibold">Link</span>

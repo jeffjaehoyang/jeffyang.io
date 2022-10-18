@@ -29,13 +29,15 @@ const About = ({ author }: InferGetStaticPropsType<typeof getStaticProps>) => {
         </div>
         <div className="mb-3 text-lg font-bold">Where am I from?</div>
         <div className="mb-8">
-          Born and raised in Seoul 🇰🇷<br></br>Went to college Evanston 🎒<br></br>Currently in New
-          York City 🗽
+          Born and raised in Seoul, South Korea. <br></br>
+          Went to college in Evanston, IL. <br></br>
+          Currently in New York City. <br></br>
         </div>
         <div className="mb-3 text-lg font-bold">What's my job?</div>
         <div className="mb-8">
-          I'm a software engineer at Meta - builiding the backend & infrastructure of checkout
-          experiences across Meta's Family of Apps (including Facebook & Instagram).
+          I'm a software engineer at Meta. I am part of a team that builds the backend &
+          infrastructure of checkout experiences across Meta's Family of Apps (including Facebook &
+          Instagram).
         </div>
         <div className="mb-3 text-lg font-bold">When did I start programming?</div>
         <div className="mb-8">
@@ -43,20 +45,23 @@ const About = ({ author }: InferGetStaticPropsType<typeof getStaticProps>) => {
         </div>
         <div className="mb-3 text-lg font-bold">Why do I like to code?</div>
         <div className="mb-8">
-          I love to build and create software & products that impact the world in a positive way.
-          It's a great feeling to be able to help others through technology!
+          I enjoy many different aspects of software enginnering. Nothing beats the feeling of
+          building and shipping products that deliver great value to users. In order to build great
+          products, of course, there are the technical aspects such as architecture design & API
+          design - I greatly enjoy them as well.
         </div>
         <div className="mb-3 text-lg font-bold">
-          What areas of software development interest me?
+          Do I have any specific technical areas of interest?
         </div>
         <div className="mb-8">
           I am still in the process of exploring different areas of software engineering - I've only
           just started my life as a software engineer. So far, I've found passion in delivering high
           quality end-products to users. Ultimately, I believe that software engineers also exist to
-          add value to businesses. I enjoy the process of thinking of ways to write cleaner code
-          that makes other engineers reading my code less-grumpy. I find great joy and motivation in
-          solving challenging technical problems and in the process of architecting large systems -
-          it's a special feeling. Bottom-line: still have lots to learn 😉
+          add value to businesses. While I firmly believe that software engineers should never be
+          too isolated from the business needs, I enjoy the unique challenges that software
+          engineers face on a daily basis. I find great joy and motivation in solving challenging
+          technical problems and in the process of architecting software systems. Bottom-line: still
+          have lots to learn 😉
         </div>
       </div>
     </>

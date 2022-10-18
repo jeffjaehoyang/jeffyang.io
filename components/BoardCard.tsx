@@ -1,4 +1,5 @@
-import { TopTracks } from '@/lib/types'
+import { LiverpoolFixture, TopTracks } from '@/lib/types'
+import Image from 'next/image'
 import { ReactNode } from 'react'
 import SocialIcon from './social-icons'
 
@@ -9,9 +10,18 @@ interface Props {
   metric?: string | number
   stockData?: string[]
   spotifyData?: TopTracks
+  liverpoolData?: LiverpoolFixture
 }
 
-const BoardCard = ({ title, content, icon, metric, stockData, spotifyData }: Props) => {
+const BoardCard = ({
+  title,
+  content,
+  icon,
+  metric,
+  stockData,
+  spotifyData,
+  liverpoolData,
+}: Props) => {
   return (
     <div
       title={title}
@@ -25,12 +35,12 @@ const BoardCard = ({ title, content, icon, metric, stockData, spotifyData }: Pro
         <div className="text-sm">{content}</div>
       </div>
       <div>
-        {!metric && !stockData && !spotifyData && (
+        {!metric && !stockData && !spotifyData && !liverpoolData && (
           <div className="ml-auto mt-4 max-w-fit rounded-md bg-sky-100 px-1.5 py-1 text-xs text-sky-700 opacity-60">
             coming soon
           </div>
         )}
-        {metric && <div className="ml-auto mt-2 max-w-fit text-xl font-bold">{metric}</div>}
+        {metric && <div className="ml-auto mt-2 max-w-fit text-lg font-bold">{metric}</div>}
         {spotifyData && (
           <div className="mt-2 flex flex-col text-lg font-bold">
             {spotifyData?.tracks && (
@@ -62,6 +72,16 @@ const BoardCard = ({ title, content, icon, metric, stockData, spotifyData }: Pro
               <span className="text-xs font-normal">(20y)</span>
               <span>{stockData && stockData[3]}%</span>
             </div>
+          </div>
+        )}
+        {liverpoolData && (
+          <div className="ml-auto mt-2 flex max-w-fit flex-col text-lg font-bold">
+            <div className="ml-auto">
+              {liverpoolData.homeTeam.name} (H) <span className="text-xs font-normal">vs.</span>
+            </div>
+            <div> {liverpoolData.awayTeam.name} (A)</div>
+            <div className="ml-auto text-sm font-normal"> {liverpoolData.date}</div>
+            <div className="ml-auto text-sm font-normal">{liverpoolData.competition.name}</div>
           </div>
         )}
       </div>

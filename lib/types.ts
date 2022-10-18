@@ -19,3 +19,22 @@ export type Song = {
 export type TopTracks = {
   tracks: Song[]
 }
+
+export type Team = {
+  name: string
+  shortName: string
+  crest: string
+}
+
+export type FootballCompetition = {
+  name: string
+  code: string
+  emblem: string
+}
+
+export type LiverpoolFixture = {
+  homeTeam: Team
+  awayTeam: Team
+  competition: FootballCompetition
+  date: string
+}

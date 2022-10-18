@@ -10,7 +10,7 @@ import {
   TrophySVG,
 } from '@/components/icons'
 import useSWR from 'swr'
-import { Stock, TopTracks, Views } from '@/lib/types'
+import { LiverpoolFixture, Stock, TopTracks, Views } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
 import { getDaysSince, lastDayInKorea, prevUncountedViews } from '@/lib/boardDataUtils'
 
@@ -53,6 +53,20 @@ const SpotifyBoardCard = () => {
       }
       icon={MusicSVG}
       spotifyData={data}
+    />
+  )
+}
+
+const LiverpoolBoardCard = () => {
+  const { data } = useSWR<LiverpoolFixture>('/api/liverpool', fetcher)
+  return (
+    <BoardCard
+      title="Next Liverpool Game"
+      content={
+        "I've been a Liverpool fan since 2007. I watch every single Liverpool game, so you know what I'll be doing on this date."
+      }
+      icon={TrophySVG}
+      liverpoolData={data}
     />
   )
 }
@@ -112,13 +126,7 @@ const Board = () => {
         />
         <SpotifyBoardCard />
         <NasdaqBoardCard />
-        <BoardCard
-          title="Next Liverpool Game"
-          content={
-            "I've been a Liverpool fan since 2007. I watch every single Liverpool game, so you know what I'll be doing on this date."
-          }
-          icon={TrophySVG}
-        />
+        <LiverpoolBoardCard />
         <BoardCard
           title="Dotfiles"
           content={
