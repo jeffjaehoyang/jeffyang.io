@@ -14,8 +14,9 @@ const newsData = [
   },
   {
     category: 'news',
-    content: 'Graduated from Northwestern University (B.A. Computer Science) 🎓',
-    explanation: "It's been a ride! Thank you Northwestern.",
+    content: 'Graduated from Northwestern University 🎓',
+    explanation:
+      "After 7 years, I graduated with a degree in computer science. It's been a ride! Thank you Northwestern.",
     newsDate: 'Mar 2022',
     year: '2022',
     published: true,

@@ -62,9 +62,7 @@ const LiverpoolBoardCard = () => {
   return (
     <BoardCard
       title="Next Liverpool Game"
-      content={
-        "I've been a Liverpool fan since 2007. I watch every single Liverpool game, so you know what I'll be doing on this date."
-      }
+      content={"I've been a Liverpool fan since 2007 - I try to watch every single Liverpool game."}
       icon={TrophySVG}
       liverpoolData={data}
     />

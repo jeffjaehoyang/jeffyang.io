@@ -72,6 +72,30 @@ module.exports = withContentlayer(
         },
       ]
     },
+    async redirects() {
+      return [
+        {
+          source: '/blog/my_facebook_internship',
+          destination: '/blog/my-facebook-internship',
+          permanent: true,
+        },
+        {
+          source: '/blog/aws_s3_and_lambda',
+          destination: '/blog/aws-s3-and-lambda',
+          permanent: true,
+        },
+        {
+          source: '/blog/deploy_django_app_on_heroku',
+          destination: '/blog/deploy-django-on-heroku',
+          permanent: true,
+        },
+        {
+          source: '/blog/eslint_prettier_vscode',
+          destination: '/blog/eslint-prettier-vscode',
+          permanent: true,
+        },
+      ]
+    },
     webpack: (config, { dev, isServer }) => {
       config.module.rules.push({
         test: /\.svg$/,

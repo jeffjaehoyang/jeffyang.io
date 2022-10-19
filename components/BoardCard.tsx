@@ -1,5 +1,4 @@
 import { LiverpoolFixture, TopTracks } from '@/lib/types'
-import Image from 'next/image'
 import { ReactNode } from 'react'
 import SocialIcon from './social-icons'
 
@@ -79,9 +78,12 @@ const BoardCard = ({
             <div className="ml-auto">
               {liverpoolData.homeTeam.name} (H) <span className="text-xs font-normal">vs.</span>
             </div>
-            <div> {liverpoolData.awayTeam.name} (A)</div>
-            <div className="ml-auto text-sm font-normal"> {liverpoolData.date}</div>
-            <div className="ml-auto text-sm font-normal">{liverpoolData.competition.name}</div>
+            <div className="ml-auto">{liverpoolData.awayTeam.name} (A)</div>
+            <div className="ml-auto flex flex-row items-center text-xs font-normal">
+              <span>{liverpoolData.date}</span>
+              <span className="mr-1 ml-1 text-lg font-bold">·</span>
+              <span>{liverpoolData.competition.name}</span>
+            </div>
           </div>
         )}
       </div>
