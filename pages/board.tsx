@@ -35,7 +35,7 @@ const NasdaqBoardCard = () => {
     <BoardCard
       title="NASDAQ Index Returns"
       content={
-        "As a personal finance junkie, I closely follow the stock market. I'm a big believer of time in the market - not timing the market."
+        'I see investing as vehicle to financial independence in the long run. Remember, time in the market almost always beats timing the market.'
       }
       icon={BarChartSquareSVG}
       stockData={[data?.ytd, data?.five, data?.ten, data?.twenty]}
