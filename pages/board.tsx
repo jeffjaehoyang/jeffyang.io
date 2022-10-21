@@ -3,14 +3,14 @@ import BoardCard from '@/components/BoardCard'
 import ExperienceCard from '@/components/ExperienceCard'
 import {
   BarChartSquareSVG,
-  DotfilesSVG,
+  BellAlertSVG,
   HomeSVG,
   MusicSVG,
+  SmileFaceSVG,
   TotalVisitsSVG,
-  TrophySVG,
 } from '@/components/icons'
 import useSWR from 'swr'
-import { LiverpoolFixture, Stock, TopTracks, Views } from '@/lib/types'
+import { Joke, LiverpoolFixture, Stock, TopTracks, Views } from '@/lib/types'
 import fetcher from '@/lib/fetcher'
 import { getDaysSince, lastDayInKorea, prevUncountedViews } from '@/lib/boardDataUtils'
 
@@ -49,7 +49,7 @@ const SpotifyBoardCard = () => {
     <BoardCard
       title="Top Tune on Spotify"
       content={
-        'I usually listen to the same songs over and over again. Hopefully this will serve as a reminder to explore some new music.'
+        "My top track on Spotify - I'm curious to see how often this will change. I listen to the same music over and over again. Hopefully this will serve as a reminder to explore some new music."
       }
       icon={MusicSVG}
       spotifyData={data}
@@ -63,8 +63,20 @@ const LiverpoolBoardCard = () => {
     <BoardCard
       title="Next Liverpool Game"
       content={"I've been a Liverpool fan since 2007 - I try to watch every single Liverpool game."}
-      icon={TrophySVG}
+      icon={BellAlertSVG}
       liverpoolData={data}
+    />
+  )
+}
+
+const JokeBoardCard = () => {
+  const { data } = useSWR<Joke>('/api/jokes', fetcher)
+  return (
+    <BoardCard
+      title="Giggles n' Giggles"
+      content={"There's always time for a nerdy joke!"}
+      icon={SmileFaceSVG}
+      jokeData={data}
     />
   )
 }
@@ -74,10 +86,10 @@ const Board = () => {
 
   return (
     <>
-      <PageSEO title={`Board`} description={`Random facts and scribbles`} />
+      <PageSEO title={`Board`} description={`Dashboard full of random but interesting facts.`} />
       <div className="mb-8">
         <div className="text-lg font-extrabold tracking-tight">Board</div>
-        <div className="text-2xl font-extrabold">Random Facts and Scribbles.</div>
+        <div className="text-2xl font-extrabold">Random, Interesting Facts.</div>
       </div>
       <div className="work-experience mb-4 rounded-lg border-2 border-solid border-gray-200 p-4 dark:border-gray-800">
         <div className="font-bold tracking-tight">Workplace</div>
@@ -125,14 +137,7 @@ const Board = () => {
         <SpotifyBoardCard />
         <NasdaqBoardCard />
         <LiverpoolBoardCard />
-        <BoardCard
-          title="Dotfiles"
-          content={
-            "Since I write code for a living, it'd make a lot of sense to keep my core dotfiles in a portable setting."
-          }
-          icon={DotfilesSVG}
-        // metric={`https://github.com/jeffjaehoyang/.dotfiles`}
-        />
+        <JokeBoardCard />
       </div>
     </>
   )

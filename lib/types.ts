@@ -38,3 +38,7 @@ export type LiverpoolFixture = {
   competition: FootballCompetition
   date: string
 }
+
+export type Joke = {
+  text: string
+}
