@@ -124,7 +124,7 @@ const Board = () => {
           endDate="Sep 2019"
         />
       </div>
-      <div className="grid grid-flow-row grid-cols-1 grid-rows-3 justify-between gap-4 sm:grid-cols-2 sm:grid-rows-1 xl:grid-cols-2">
+      <div className="grid grid-flow-row grid-cols-1 justify-between gap-4 sm:grid-cols-2 sm:grid-rows-1 xl:grid-cols-2">
         <TotalBlogViewsBoardCard />
         <BoardCard
           title="Last Visit Home"

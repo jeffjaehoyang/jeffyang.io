@@ -79,17 +79,17 @@ const BoardCard = ({
           </div>
         )}
         {liverpoolData && (
-          <div className="ml-auto mt-2 flex max-w-fit flex-col text-lg font-bold">
-            <div className="ml-auto">
-              {liverpoolData.homeTeam.name} (H) <span className="text-xs font-normal">vs.</span>
-            </div>
-            <div className="ml-auto">{liverpoolData.awayTeam.name} (A)</div>
-            <div className="ml-auto flex flex-row items-center text-xs font-bold">
+          <div className="ml-auto mt-2 flex max-w-fit flex-col font-bold">
+            <div className="ml-auto flex flex-row items-center text-xs font-normal">
               <span>{liverpoolData.date}</span>
-              <span className="mr-1 ml-1 text-lg">·</span>
+              <span className="mr-1 ml-1">·</span>
               <span>{liverpoolData.competition.name}</span>
             </div>
-            <span className="ml-auto mt-1 text-xs font-normal">Powered by football-data.org</span>
+            <div className="ml-auto text-lg">
+              {liverpoolData.homeTeam.name} (H) <span className="text-xs font-normal">vs.</span>
+            </div>
+            <div className="ml-auto text-lg">{liverpoolData.awayTeam.name} (A)</div>
+            <span className="ml-auto text-xs font-normal">Powered by football-data.org</span>
           </div>
         )}
         {jokeData && (
