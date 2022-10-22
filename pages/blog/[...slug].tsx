@@ -1,35 +1,35 @@
-import PageTitle from '@/components/PageTitle'
-import { MDXLayoutRenderer } from '@/components/MDXComponents'
-import { sortedBlogPost, coreContent } from '@/lib/utils/contentlayer'
-import { InferGetStaticPropsType } from 'next'
-import { allBlogPosts, allAuthors } from 'contentlayer/generated'
+import PageTitle from '@/components/PageTitle';
+import { MDXLayoutRenderer } from '@/components/MDXComponents';
+import { sortedBlogPost, coreContent } from '@/lib/utils/contentlayer';
+import { InferGetStaticPropsType } from 'next';
+import { allBlogPosts, allAuthors } from 'contentlayer/generated';
 
-import useViewCounter from '@/lib/hooks/useViewCounter'
+import useViewCounter from '@/lib/hooks/useViewCounter';
 
-const DEFAULT_LAYOUT = 'BlogPostLayout'
+const DEFAULT_LAYOUT = 'BlogPostLayout';
 
 export async function getStaticPaths() {
   return {
     paths: allBlogPosts.map((p) => ({ params: { slug: p.slug.split('/') } })),
     fallback: false,
-  }
+  };
 }
 
 export const getStaticProps = async ({ params }) => {
-  const slug = (params.slug as string[]).join('/')
-  const sortedPosts = sortedBlogPost(allBlogPosts)
-  const postIndex = sortedPosts.findIndex((p) => p.slug === slug)
+  const slug = (params.slug as string[]).join('/');
+  const sortedPosts = sortedBlogPost(allBlogPosts);
+  const postIndex = sortedPosts.findIndex((p) => p.slug === slug);
   // TODO: Refactor this extraction of coreContent
-  const prevContent = sortedPosts[postIndex + 1] || null
-  const prev = prevContent ? coreContent(prevContent) : null
-  const nextContent = sortedPosts[postIndex - 1] || null
-  const next = nextContent ? coreContent(nextContent) : null
-  const post = sortedPosts.find((p) => p.slug === slug)
-  const authorList = post.authors || ['default']
+  const prevContent = sortedPosts[postIndex + 1] || null;
+  const prev = prevContent ? coreContent(prevContent) : null;
+  const nextContent = sortedPosts[postIndex - 1] || null;
+  const next = nextContent ? coreContent(nextContent) : null;
+  const post = sortedPosts.find((p) => p.slug === slug);
+  const authorList = post.authors || ['default'];
   const authorDetails = authorList.map((author) => {
-    const authorResults = allAuthors.find((p) => p.name === author)
-    return coreContent(authorResults)
-  })
+    const authorResults = allAuthors.find((p) => p.name === author);
+    return coreContent(authorResults);
+  });
 
   return {
     props: {
@@ -38,8 +38,8 @@ export const getStaticProps = async ({ params }) => {
       prev,
       next,
     },
-  }
-}
+  };
+};
 
 const Blog = ({
   post,
@@ -47,7 +47,7 @@ const Blog = ({
   prev,
   next,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const viewCount = useViewCounter(post.slug)
+  const viewCount = useViewCounter(post.slug);
   return (
     <>
       {'draft' in post && post.draft !== true ? (
@@ -71,7 +71,7 @@ const Blog = ({
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;

@@ -1,16 +1,16 @@
-import siteMetadata from '@/data/siteMetadata'
-import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
-import Link from './Link'
-import SectionContainer from './SectionContainer'
-import Footer from './Footer'
-import MobileNav from './MobileNav'
-import ThemeSwitch from './ThemeSwitch'
-import { ReactNode } from 'react'
-import NavLink from './NavLink'
+import siteMetadata from '@/data/siteMetadata';
+import headerNavLinks from '@/data/headerNavLinks';
+import Logo from '@/data/logo.svg';
+import Link from './Link';
+import SectionContainer from './SectionContainer';
+import Footer from './Footer';
+import MobileNav from './MobileNav';
+import ThemeSwitch from './ThemeSwitch';
+import { ReactNode } from 'react';
+import NavLink from './NavLink';
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
 const LayoutWrapper = ({ children }: Props) => {
@@ -54,7 +54,7 @@ const LayoutWrapper = ({ children }: Props) => {
         <Footer />
       </div>
     </SectionContainer>
-  )
-}
+  );
+};
 
-export default LayoutWrapper
+export default LayoutWrapper;

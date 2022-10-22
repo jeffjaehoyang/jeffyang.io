@@ -1,25 +1,25 @@
-import Link from '@/components/Link'
-import PageTitle from '@/components/PageTitle'
-import { BlogSEO } from '@/components/SEO'
-import siteMetadata from '@/data/siteMetadata'
-import formatDate from '@/lib/utils/formatDate'
-import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import { CoreContent } from '@/lib/utils/contentlayer'
-import { ReactNode } from 'react'
-import type { BlogPost } from 'contentlayer/generated'
-import Giscus from '@/components/comments/Giscus'
-import Bio from '@/components/Bio'
+import Link from '@/components/Link';
+import PageTitle from '@/components/PageTitle';
+import { BlogSEO } from '@/components/SEO';
+import siteMetadata from '@/data/siteMetadata';
+import formatDate from '@/lib/utils/formatDate';
+import ScrollTopAndComment from '@/components/ScrollTopAndComment';
+import { CoreContent } from '@/lib/utils/contentlayer';
+import { ReactNode } from 'react';
+import type { BlogPost } from 'contentlayer/generated';
+import Giscus from '@/components/comments/Giscus';
+import Bio from '@/components/Bio';
 
 interface Props {
-  content: CoreContent<BlogPost>
-  children: ReactNode
-  viewCount: string
-  next?: { slug: string; title: string }
-  prev?: { slug: string; title: string }
+  content: CoreContent<BlogPost>;
+  children: ReactNode;
+  viewCount: string;
+  next?: { slug: string; title: string };
+  prev?: { slug: string; title: string };
 }
 
 export default function BlogPostLayout({ content, viewCount, next, prev, children }: Props) {
-  const { slug, date, title, readingTime } = content
+  const { slug, date, title, readingTime } = content;
 
   return (
     <>
@@ -79,5 +79,5 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
         </div>
       </article>
     </>
-  )
+  );
 }

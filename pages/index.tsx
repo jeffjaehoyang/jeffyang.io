@@ -1,28 +1,28 @@
-import { allBlogPosts } from 'contentlayer/generated'
-import { InferGetStaticPropsType } from 'next'
-import Link from 'next/link'
+import { allBlogPosts } from 'contentlayer/generated';
+import { InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
 
-import FeaturedPostCard from '@/components/FeaturedPostCard'
-import NewsCard from '@/components/NewsCard'
-import { PageSEO } from '@/components/SEO'
-import newsData from '@/data/newsData'
-import siteMetadata from '@/data/siteMetadata'
-import { allCoreContent, featuredBlogPost, sortedBlogPost } from '@/lib/utils/contentlayer'
+import FeaturedPostCard from '@/components/FeaturedPostCard';
+import NewsCard from '@/components/NewsCard';
+import { PageSEO } from '@/components/SEO';
+import newsData from '@/data/newsData';
+import siteMetadata from '@/data/siteMetadata';
+import { allCoreContent, featuredBlogPost, sortedBlogPost } from '@/lib/utils/contentlayer';
 
 const gradients = {
   '0': 'from-[#D8B4FE] to-[#818CF8]',
   '1': 'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]',
   '2': 'from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]',
-}
+};
 
 export const getStaticProps = async () => {
   // TODO: move computation to get only the essential frontmatter to contentlayer.config
-  const sortedPosts = sortedBlogPost(allBlogPosts)
-  const featuredPosts = featuredBlogPost(allBlogPosts)
-  const posts = allCoreContent(sortedPosts)
+  const sortedPosts = sortedBlogPost(allBlogPosts);
+  const featuredPosts = featuredBlogPost(allBlogPosts);
+  const posts = allCoreContent(sortedPosts);
 
-  return { props: { posts, featuredPosts } }
-}
+  return { props: { posts, featuredPosts } };
+};
 
 export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -48,7 +48,7 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
 
           <div className="flex flex-col gap-6 md:flex-row">
             {featuredPosts.map((frontMatter, index) => {
-              const { slug, title, readingTime } = frontMatter
+              const { slug, title, readingTime } = frontMatter;
               return (
                 <FeaturedPostCard
                   key={index}
@@ -57,17 +57,17 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
                   gradient={gradients[index]}
                   readingTime={readingTime.text}
                 />
-              )
+              );
             })}
           </div>
           <Link href="/blog">
-            <a className="float-right mt-6 flex items-center rounded-lg text-gray-600 transition-all hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+            <a className="flex items-center float-right mt-6 text-gray-600 transition-all rounded-lg hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
               See More
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="ml-1 h-6 w-6"
+                className="w-6 h-6 ml-1"
               >
                 <path
                   stroke="currentColor"
@@ -94,7 +94,7 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
                     <div key={d.year} className="mb-2 text-xl font-bold">
                       {d.year}
                     </div>
-                  )
+                  );
                 }
                 return (
                   <NewsCard
@@ -103,11 +103,11 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
                     published={d.published}
                     key={index}
                   />
-                )
+                );
               })}
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }

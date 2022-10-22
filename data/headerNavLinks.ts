@@ -4,6 +4,6 @@ const headerNavLinks = [
   { href: '/blog', title: 'Blog' },
   { href: '/board', title: 'Board' },
   { href: '/projects', title: 'Projects' },
-]
+];
 
-export default headerNavLinks
+export default headerNavLinks;

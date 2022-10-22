@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import Link from 'next/link'
-import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react'
-import { useRouter } from 'next/router'
-import cn from 'classnames'
+import Link from 'next/link';
+import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
+import { useRouter } from 'next/router';
+import cn from 'classnames';
 
 const NavLink = ({
   href,
   ...rest
 }: DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) => {
-  const router = useRouter()
-  const isActive = router.asPath === href
+  const router = useRouter();
+  const isActive = router.asPath === href;
 
   return (
     <Link href={href}>
@@ -23,7 +23,7 @@ const NavLink = ({
         {...rest}
       />
     </Link>
-  )
-}
+  );
+};
 
-export default NavLink
+export default NavLink;

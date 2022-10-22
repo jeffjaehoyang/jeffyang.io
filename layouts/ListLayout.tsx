@@ -1,26 +1,26 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import BlogPostCard from '@/components/BlogPostCard'
-import { CoreContent } from '@/lib/utils/contentlayer'
+import BlogPostCard from '@/components/BlogPostCard';
+import { CoreContent } from '@/lib/utils/contentlayer';
 
-import type { BlogPost } from 'contentlayer/generated'
+import type { BlogPost } from 'contentlayer/generated';
 
 interface Props {
-  posts: CoreContent<BlogPost>[]
-  title: string
-  initialDisplayPosts?: CoreContent<BlogPost>[]
+  posts: CoreContent<BlogPost>[];
+  title: string;
+  initialDisplayPosts?: CoreContent<BlogPost>[];
 }
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [] }: Props) {
-  const [searchValue, setSearchValue] = useState('')
+  const [searchValue, setSearchValue] = useState('');
   const filteredBlogPosts = posts.filter((post) => {
-    const searchContent = post.title + post.summary + post.tags.join(' ')
-    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
-  })
+    const searchContent = post.title + post.summary + post.tags.join(' ');
+    return searchContent.toLowerCase().includes(searchValue.toLowerCase());
+  });
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts;
 
   return (
     <>
@@ -55,7 +55,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [] }: P
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((post, index) => {
-            const { slug, date, title, summary, tags, readingTime } = post
+            const { slug, date, title, summary, tags, readingTime } = post;
             return (
               <BlogPostCard
                 key={index}
@@ -66,10 +66,10 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [] }: P
                 tags={tags}
                 readingTime={readingTime.text}
               />
-            )
+            );
           })}
         </ul>
       </div>
     </>
-  )
+  );
 }

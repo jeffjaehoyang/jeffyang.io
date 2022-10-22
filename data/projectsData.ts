@@ -34,6 +34,6 @@ const projectsData = [
     href: 'https://threewordthinker-api-heroku.herokuapp.com/',
     repo: 'https://github.com/jeffjaehoyang/twitter_bot',
   },
-]
+];
 
-export default projectsData
+export default projectsData;

@@ -1,22 +1,18 @@
-import { PageSEO } from '@/components/SEO'
-import BoardCard from '@/components/BoardCard'
-import ExperienceCard from '@/components/ExperienceCard'
+import useSWR from 'swr';
+
+import BoardCard from '@/components/BoardCard';
+import ExperienceCard from '@/components/ExperienceCard';
 import {
-  BarChartSquareSVG,
-  BellAlertSVG,
-  HomeSVG,
-  MusicSVG,
-  SmileFaceSVG,
-  TotalVisitsSVG,
-} from '@/components/icons'
-import useSWR from 'swr'
-import { Joke, LiverpoolFixture, Stock, TopTracks, Views } from '@/lib/types'
-import fetcher from '@/lib/fetcher'
-import { getDaysSince, lastDayInKorea, prevUncountedViews } from '@/lib/boardDataUtils'
+    BarChartSquareSVG, BellAlertSVG, ClockSVG, HomeSVG, MusicSVG, TotalVisitsSVG
+} from '@/components/icons';
+import { PageSEO } from '@/components/SEO';
+import { getDaysSince, lastDayInKorea, prevUncountedViews } from '@/lib/boardDataUtils';
+import fetcher from '@/lib/fetcher';
+import { DateHistory, LiverpoolFixture, Stock, TopTracks, Views } from '@/lib/types';
 
 const TotalBlogViewsBoardCard = () => {
-  const { data } = useSWR<Views>('/api/views', fetcher)
-  const pageViews = data?.total ? parseInt(data?.total?.toString()) + prevUncountedViews : '--'
+  const { data } = useSWR<Views>('/api/views', fetcher);
+  const pageViews = data?.total ? parseInt(data?.total?.toString()) + prevUncountedViews : '--';
   return (
     <BoardCard
       title="Total Blog Visits"
@@ -26,11 +22,11 @@ const TotalBlogViewsBoardCard = () => {
       icon={TotalVisitsSVG}
       metric={`${pageViews.toLocaleString()} visits`}
     />
-  )
-}
+  );
+};
 
 const NasdaqBoardCard = () => {
-  const { data } = useSWR<Stock>('/api/stock', fetcher)
+  const { data } = useSWR<Stock>('/api/stock', fetcher);
   return (
     <BoardCard
       title="NASDAQ Index Returns"
@@ -40,11 +36,11 @@ const NasdaqBoardCard = () => {
       icon={BarChartSquareSVG}
       stockData={[data?.ytd, data?.five, data?.ten, data?.twenty]}
     />
-  )
-}
+  );
+};
 
 const SpotifyBoardCard = () => {
-  const { data } = useSWR<TopTracks>('/api/top-tracks', fetcher)
+  const { data } = useSWR<TopTracks>('/api/top-tracks', fetcher);
   return (
     <BoardCard
       title="Top Tune on Spotify"
@@ -54,11 +50,11 @@ const SpotifyBoardCard = () => {
       icon={MusicSVG}
       spotifyData={data}
     />
-  )
-}
+  );
+};
 
 const LiverpoolBoardCard = () => {
-  const { data } = useSWR<LiverpoolFixture>('/api/liverpool', fetcher)
+  const { data } = useSWR<LiverpoolFixture>('/api/liverpool', fetcher);
   return (
     <BoardCard
       title="Next Liverpool Game"
@@ -66,23 +62,23 @@ const LiverpoolBoardCard = () => {
       icon={BellAlertSVG}
       liverpoolData={data}
     />
-  )
-}
+  );
+};
 
-const JokeBoardCard = () => {
-  const { data } = useSWR<Joke>('/api/jokes', fetcher)
+const DateHistoryCard = () => {
+  const { data } = useSWR<DateHistory>('/api/date-history', fetcher);
   return (
     <BoardCard
-      title="Giggles n' Giggles"
-      content={"There's always time for a nerdy joke!"}
-      icon={SmileFaceSVG}
-      jokeData={data}
+      title="Turning Back the Clock"
+      content={"Let's learn about what happened on this day, many years back."}
+      icon={ClockSVG}
+      dateHistoryData={data}
     />
-  )
-}
+  );
+};
 
 const Board = () => {
-  const daysSinceHome = getDaysSince(lastDayInKorea) // last day I was in Korea
+  const daysSinceHome = getDaysSince(lastDayInKorea); // last day I was in Korea
 
   return (
     <>
@@ -91,7 +87,7 @@ const Board = () => {
         <div className="text-lg font-extrabold tracking-tight">Board</div>
         <div className="text-2xl font-extrabold">Random, Interesting Facts.</div>
       </div>
-      <div className="work-experience mb-4 rounded-lg border-2 border-solid border-gray-200 p-4 dark:border-gray-800">
+      <div className="p-4 mb-4 border-2 border-gray-200 border-solid rounded-lg work-experience dark:border-gray-800">
         <div className="font-bold tracking-tight">Workplace</div>
         <ExperienceCard
           company="Meta"
@@ -124,7 +120,7 @@ const Board = () => {
           endDate="Sep 2019"
         />
       </div>
-      <div className="grid grid-flow-row grid-cols-1 justify-between gap-4 sm:grid-cols-2 sm:grid-rows-1 xl:grid-cols-2">
+      <div className="grid justify-between grid-flow-row grid-cols-1 gap-4 sm:grid-cols-2 sm:grid-rows-1 xl:grid-cols-2">
         <TotalBlogViewsBoardCard />
         <BoardCard
           title="Last Visit Home"
@@ -137,10 +133,10 @@ const Board = () => {
         <SpotifyBoardCard />
         <NasdaqBoardCard />
         <LiverpoolBoardCard />
-        <JokeBoardCard />
+        <DateHistoryCard />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Board
+export default Board;

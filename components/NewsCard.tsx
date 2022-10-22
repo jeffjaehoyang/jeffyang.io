@@ -23,7 +23,7 @@ const NewsCard = ({ content, explanation, published }) => {
         </div>
       </div>
     )
-  )
-}
+  );
+};
 
-export default NewsCard
+export default NewsCard;

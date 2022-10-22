@@ -1,12 +1,12 @@
-import fetcher from '@/lib/fetcher'
-import { Views } from '@/lib/types'
-import cn from 'classnames'
-import Link from 'next/link'
-import useSWR from 'swr'
+import fetcher from '@/lib/fetcher';
+import { Views } from '@/lib/types';
+import cn from 'classnames';
+import Link from 'next/link';
+import useSWR from 'swr';
 
 export default function FeaturedPostCard({ title, slug, gradient, readingTime }) {
-  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher)
-  const views = data?.total
+  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
 
   return (
     <Link href={`/blog/${slug}`}>
@@ -70,5 +70,5 @@ export default function FeaturedPostCard({ title, slug, gradient, readingTime })
         </div>
       </a>
     </Link>
-  )
+  );
 }

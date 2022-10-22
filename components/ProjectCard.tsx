@@ -1,5 +1,5 @@
-import Link from './Link'
-import SocialIcon from './social-icons'
+import Link from './Link';
+import SocialIcon from './social-icons';
 
 const ProjectCard = ({ title, description, href, repo }) => (
   <Link href={href} aria-label={`Link to ${title}`}>
@@ -34,6 +34,6 @@ const ProjectCard = ({ title, description, href, repo }) => (
       </div>
     </div>
   </Link>
-)
+);
 
-export default ProjectCard
+export default ProjectCard;

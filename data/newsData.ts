@@ -112,6 +112,6 @@ const newsData = [
     year: '2019',
     published: true,
   },
-]
+];
 
-export default newsData
+export default newsData;

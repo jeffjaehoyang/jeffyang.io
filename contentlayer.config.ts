@@ -1,23 +1,23 @@
-import { defineDocumentType, ComputedFields, makeSource } from 'contentlayer/source-files'
-import readingTime from 'reading-time'
-import path from 'path'
+import { defineDocumentType, ComputedFields, makeSource } from 'contentlayer/source-files';
+import readingTime from 'reading-time';
+import path from 'path';
 // Remark packages
-import remarkGfm from 'remark-gfm'
-import remarkFootnotes from 'remark-footnotes'
-import remarkMath from 'remark-math'
-import remarkExtractFrontmatter from './lib/remark-extract-frontmatter'
-import remarkCodeTitles from './lib/remark-code-title'
-import { extractTocHeadings } from './lib/remark-toc-headings'
-import remarkImgToJsx from './lib/remark-img-to-jsx'
+import remarkGfm from 'remark-gfm';
+import remarkFootnotes from 'remark-footnotes';
+import remarkMath from 'remark-math';
+import remarkExtractFrontmatter from './lib/remark-extract-frontmatter';
+import remarkCodeTitles from './lib/remark-code-title';
+import { extractTocHeadings } from './lib/remark-toc-headings';
+import remarkImgToJsx from './lib/remark-img-to-jsx';
 // Rehype packages
-import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeKatex from 'rehype-katex'
-import rehypeCitation from 'rehype-citation'
-import rehypePrismPlus from 'rehype-prism-plus'
-import rehypePresetMinify from 'rehype-preset-minify'
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeKatex from 'rehype-katex';
+import rehypeCitation from 'rehype-citation';
+import rehypePrismPlus from 'rehype-prism-plus';
+import rehypePresetMinify from 'rehype-preset-minify';
 
-const root = process.cwd()
+const root = process.cwd();
 
 const computedFields: ComputedFields = {
   readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
@@ -26,7 +26,7 @@ const computedFields: ComputedFields = {
     resolve: (doc) => doc._raw.flattenedPath.replace(/^.+?(\/)/, ''),
   },
   toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
-}
+};
 
 export const BlogPost = defineDocumentType(() => ({
   name: 'BlogPost',
@@ -45,7 +45,7 @@ export const BlogPost = defineDocumentType(() => ({
     canonicalUrl: { type: 'string' },
   },
   computedFields,
-}))
+}));
 
 export const Authors = defineDocumentType(() => ({
   name: 'Authors',
@@ -59,7 +59,7 @@ export const Authors = defineDocumentType(() => ({
     linkedin: { type: 'string' },
     github: { type: 'string' },
   },
-}))
+}));
 
 export default makeSource({
   contentDirPath: 'data',
@@ -83,4 +83,4 @@ export default makeSource({
       rehypePresetMinify,
     ],
   },
-})
+});

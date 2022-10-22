@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
 const Bio: React.FC = () => {
   return (
@@ -26,7 +26,7 @@ const Bio: React.FC = () => {
         </span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Bio
+export default Bio;

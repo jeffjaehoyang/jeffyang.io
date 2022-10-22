@@ -1,11 +1,11 @@
-import fetcher from 'lib/fetcher'
-import { Views } from 'lib/types'
-import Link from 'next/link'
-import useSWR from 'swr'
+import fetcher from 'lib/fetcher';
+import { Views } from 'lib/types';
+import Link from 'next/link';
+import useSWR from 'swr';
 
-import formatDate from '@/lib/utils/formatDate'
+import formatDate from '@/lib/utils/formatDate';
 
-import Tag from './Tag'
+import Tag from './Tag';
 
 export default function BlogPostCard({
   slug,
@@ -15,15 +15,15 @@ export default function BlogPostCard({
   tags,
   readingTime,
 }: {
-  slug: string
-  title: string
-  summary: string
-  date: string
-  tags: Array<string>
-  readingTime: string
+  slug: string;
+  title: string;
+  summary: string;
+  date: string;
+  tags: Array<string>;
+  readingTime: string;
 }) {
-  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher)
-  const views = data?.total
+  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
 
   return (
     <Link href={`/blog/${slug}`}>
@@ -53,5 +53,5 @@ export default function BlogPostCard({
         </div>
       </a>
     </Link>
-  )
+  );
 }

@@ -1,16 +1,19 @@
-import { Joke, LiverpoolFixture, TopTracks } from '@/lib/types'
-import { ReactNode } from 'react'
-import SocialIcon from './social-icons'
+import { ReactNode } from 'react';
+
+import { DateHistory, Joke, LiverpoolFixture, TopTracks } from '@/lib/types';
+
+import SocialIcon from './social-icons';
 
 interface Props {
-  title: string
-  content: string
-  icon: ReactNode
-  metric?: string | number
-  stockData?: string[]
-  spotifyData?: TopTracks
-  liverpoolData?: LiverpoolFixture
-  jokeData?: Joke
+  title: string;
+  content: string;
+  icon: ReactNode;
+  metric?: string | number;
+  stockData?: string[];
+  spotifyData?: TopTracks;
+  liverpoolData?: LiverpoolFixture;
+  jokeData?: Joke;
+  dateHistoryData?: DateHistory;
 }
 
 const BoardCard = ({
@@ -22,32 +25,28 @@ const BoardCard = ({
   spotifyData,
   liverpoolData,
   jokeData,
+  dateHistoryData,
 }: Props) => {
   return (
     <div
       title={title}
-      className="flex w-full flex-col justify-between overflow-hidden rounded-lg border-2 border-solid border-gray-200 p-4 dark:border-gray-800"
+      className="flex flex-col justify-between w-full p-4 overflow-hidden border-2 border-gray-200 border-solid rounded-lg dark:border-gray-800"
     >
       <div>
-        <div className="mb-2 flex flex-row items-center">
+        <div className="flex flex-row items-center mb-2">
           <div className="mr-2">{icon}</div>
           <div className="text-lg font-bold">{title}</div>
         </div>
         <div className="text-sm">{content}</div>
       </div>
       <div>
-        {!metric && !stockData && !spotifyData && !liverpoolData && !jokeData && (
-          <div className="ml-auto mt-4 max-w-fit rounded-md bg-sky-100 px-1.5 py-1 text-xs text-sky-700 opacity-60">
-            coming soon
-          </div>
-        )}
-        {metric && <div className="ml-auto mt-2 max-w-fit text-lg font-bold">{metric}</div>}
+        {metric && <div className="mt-2 ml-auto text-lg font-bold max-w-fit">{metric}</div>}
         {spotifyData && (
-          <div className="mt-2 flex flex-col text-lg font-bold">
+          <div className="flex flex-col mt-2 text-lg font-bold">
             {spotifyData?.tracks && (
               <>
-                <div className="nasdaq-ytd truncate">{spotifyData.tracks[0].title}</div>
-                <div className="nasdaq-five ml-auto flex flex-row items-center text-sm">
+                <div className="truncate nasdaq-ytd">{spotifyData.tracks[0].title}</div>
+                <div className="flex flex-row items-center ml-auto text-sm nasdaq-five">
                   <span className="mr-2">by {spotifyData.tracks[0].artist}</span>
                   <SocialIcon kind={'spotify'} size={5} href={spotifyData?.tracks[0].songUrl} />
                 </div>
@@ -56,53 +55,61 @@ const BoardCard = ({
           </div>
         )}
         {stockData && (
-          <div className="float-right flex flex-col text-xs">
-            <div className="text-md float-right mt-2 flex flex-row items-center font-bold">
-              <div className="nasdaq-ytd flex h-14 w-14 flex-col items-center justify-center rounded-full bg-gray-100 p-1 text-sm dark:bg-gray-700">
+          <div className="flex flex-col float-right text-xs">
+            <div className="flex flex-row items-center float-right mt-2 font-bold text-md">
+              <div className="flex flex-col items-center justify-center p-1 text-sm bg-gray-100 rounded-full nasdaq-ytd h-14 w-14 dark:bg-gray-700">
                 <span className="text-xs font-normal">(ytd)</span>
                 <span>{stockData && stockData[0]}%</span>
               </div>
-              <div className="nasdaq-five ml-2 flex h-14 w-14 flex-col items-center justify-center rounded-full bg-gray-100 p-1 text-sm dark:bg-gray-700">
+              <div className="flex flex-col items-center justify-center p-1 ml-2 text-sm bg-gray-100 rounded-full nasdaq-five h-14 w-14 dark:bg-gray-700">
                 <span className="text-xs font-normal">(5y)</span>
                 <span>{stockData && stockData[1]}%</span>
               </div>
-              <div className="nasdaq-ten ml-2 flex h-14 w-14 flex-col items-center justify-center rounded-full bg-gray-100 p-1 text-sm dark:bg-gray-700">
+              <div className="flex flex-col items-center justify-center p-1 ml-2 text-sm bg-gray-100 rounded-full nasdaq-ten h-14 w-14 dark:bg-gray-700">
                 <span className="text-xs font-normal">(10y)</span>
                 <span>{stockData && stockData[2]}%</span>
               </div>
-              <div className="nasdaq-twenty ml-2 flex h-14 w-14 flex-col items-center justify-center rounded-full bg-gray-100 p-1 text-sm dark:bg-gray-700">
+              <div className="flex flex-col items-center justify-center p-1 ml-2 text-sm bg-gray-100 rounded-full nasdaq-twenty h-14 w-14 dark:bg-gray-700">
                 <span className="text-xs font-normal">(20y)</span>
                 <span>{stockData && stockData[3]}%</span>
               </div>
             </div>
-            <span className="ml-auto mt-2 text-xs">Powered by Alpha Vantage</span>
+            <span className="mt-2 ml-auto text-xs">Powered by Alpha Vantage</span>
           </div>
         )}
         {liverpoolData && (
-          <div className="ml-auto mt-2 flex max-w-fit flex-col font-bold">
-            <div className="ml-auto flex flex-row items-center text-xs">
+          <div className="flex flex-col mt-2 ml-auto font-bold max-w-fit">
+            <div className="flex flex-row items-center ml-auto text-xs">
               <span>{liverpoolData.date}</span>
-              <span className="mr-1 ml-1">·</span>
+              <span className="ml-1 mr-1">·</span>
               <span>{liverpoolData.competition.name}</span>
             </div>
-            <div className="ml-auto text-lg leading-5">
+            <div className="ml-auto text-lg leading-6">
               {liverpoolData.homeTeam.name} (H) <span className="text-xs font-normal">vs.</span>
             </div>
-            <div className="ml-auto text-lg leading-5">{liverpoolData.awayTeam.name} (A)</div>
-            <span className="ml-auto mt-1 text-xs font-normal">Powered by football-data.org</span>
+            <div className="ml-auto text-lg leading-6">{liverpoolData.awayTeam.name} (A)</div>
+            <span className="mt-1 ml-auto text-xs font-normal">Powered by football-data.org</span>
           </div>
         )}
         {jokeData && (
-          <div className="ml-auto mt-2 flex max-w-fit flex-col text-lg font-bold">
+          <div className="flex flex-col mt-2 ml-auto text-lg font-bold max-w-fit">
             <div className="flex flex-col">
-              <div className="ml-auto text-sm font-bold leading-5">{jokeData.text}</div>
-              <span className="ml-auto mt-1 text-xs font-normal">Powered by Joke API</span>
+              <div className="ml-auto text-sm font-bold leading-6">{jokeData.text}</div>
+              <span className="mt-1 ml-auto text-xs font-normal">Powered by Joke API</span>
+            </div>
+          </div>
+        )}
+        {dateHistoryData && (
+          <div className="flex flex-col mt-2 ml-auto text-lg font-bold max-w-fit">
+            <div className="flex flex-col">
+              <div className="ml-auto text-sm font-bold leading-5">"{dateHistoryData.text}"</div>
+              <span className="mt-1 ml-auto text-xs font-normal">Powered by Numbers API</span>
             </div>
           </div>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BoardCard
+export default BoardCard;

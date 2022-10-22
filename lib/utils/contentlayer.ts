@@ -1,14 +1,14 @@
-import kebabCase from '@/lib/utils/kebabCase'
-import type { BlogPost, DocumentTypes } from 'contentlayer/generated'
+import kebabCase from '@/lib/utils/kebabCase';
+import type { BlogPost, DocumentTypes } from 'contentlayer/generated';
 
 export function dateSortDesc(a: string, b: string) {
-  if (a > b) return -1
-  if (a < b) return 1
-  return 0
+  if (a > b) return -1;
+  if (a < b) return 1;
+  return 0;
 }
 
 export function sortedBlogPost(allBlogs: BlogPost[]) {
-  return allBlogs.sort((a, b) => dateSortDesc(a.date, b.date))
+  return allBlogs.sort((a, b) => dateSortDesc(a.date, b.date));
 }
 
 export function featuredBlogPost(allBlogs: BlogPost[]) {
@@ -16,18 +16,18 @@ export function featuredBlogPost(allBlogs: BlogPost[]) {
     'My Facebook Internship',
     'Resize Images Stored in AWS S3 with AWS Lambda (feat. Docker)',
     'Navigating a Computer Science Degree',
-  ]
-  return allBlogs.filter((blog) => featuredPostsTitle.includes(blog.title))
+  ];
+  return allBlogs.filter((blog) => featuredPostsTitle.includes(blog.title));
 }
 
 type ConvertUndefined<T> = OrNull<{
-  [K in keyof T as undefined extends T[K] ? K : never]-?: T[K]
-}>
-type OrNull<T> = { [K in keyof T]: Exclude<T[K], undefined> | null }
+  [K in keyof T as undefined extends T[K] ? K : never]-?: T[K];
+}>;
+type OrNull<T> = { [K in keyof T]: Exclude<T[K], undefined> | null };
 type PickRequired<T> = {
-  [K in keyof T as undefined extends T[K] ? never : K]: T[K]
-}
-type ConvertPick<T> = ConvertUndefined<T> & PickRequired<T>
+  [K in keyof T as undefined extends T[K] ? never : K]: T[K];
+};
+type ConvertPick<T> = ConvertUndefined<T> & PickRequired<T>;
 
 /**
  *
@@ -38,45 +38,45 @@ export const pick = <Obj, Keys extends keyof Obj>(
   keys: Keys[]
 ): ConvertPick<{ [K in Keys]: Obj[K] }> => {
   return keys.reduce((acc, key) => {
-    acc[key] = obj[key] ?? null
-    return acc
-  }, {} as any)
-}
+    acc[key] = obj[key] ?? null;
+    return acc;
+  }, {} as any);
+};
 
 export const omit = <Obj, Keys extends keyof Obj>(obj: Obj, keys: Keys[]): Omit<Obj, Keys> => {
-  const result = Object.assign({}, obj)
+  const result = Object.assign({}, obj);
   keys.forEach((key) => {
-    delete result[key]
-  })
-  return result
-}
+    delete result[key];
+  });
+  return result;
+};
 
-export type CoreContent<T> = Omit<T, 'body' | '_raw' | '_id'>
+export type CoreContent<T> = Omit<T, 'body' | '_raw' | '_id'>;
 
 export function coreContent<T extends DocumentTypes>(content: T) {
-  return omit(content, ['body', '_raw', '_id'])
+  return omit(content, ['body', '_raw', '_id']);
 }
 
 export function allCoreContent<T extends DocumentTypes>(contents: T[]) {
-  return contents.map((c) => coreContent(c))
+  return contents.map((c) => coreContent(c));
 }
 
 // TODO: refactor into contentlayer once compute over all docs is enabled
 export async function getAllTags(allBlogs: BlogPost[]) {
-  const tagCount: Record<string, number> = {}
+  const tagCount: Record<string, number> = {};
   // Iterate through each post, putting all found tags into `tags`
   allBlogs.forEach((file) => {
     if (file.tags && file.draft !== true) {
       file.tags.forEach((tag) => {
-        const formattedTag = kebabCase(tag)
+        const formattedTag = kebabCase(tag);
         if (formattedTag in tagCount) {
-          tagCount[formattedTag] += 1
+          tagCount[formattedTag] += 1;
         } else {
-          tagCount[formattedTag] = 1
+          tagCount[formattedTag] = 1;
         }
-      })
+      });
     }
-  })
+  });
 
-  return tagCount
+  return tagCount;
 }

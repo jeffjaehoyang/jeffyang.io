@@ -1,31 +1,31 @@
 /* eslint-disable react/display-name */
-import React from 'react'
-import { useMDXComponent } from 'next-contentlayer/hooks'
-import { ComponentMap } from 'mdx-bundler/client'
-import { coreContent } from '@/lib/utils/contentlayer'
-import Image from './Image'
-import CustomLink from './Link'
-import TOCInline from './TOCInline'
-import Pre from './Pre'
-import { BlogNewsletterForm } from './NewsletterForm'
-import type { BlogPost } from 'contentlayer/generated'
+import React from 'react';
+import { useMDXComponent } from 'next-contentlayer/hooks';
+import { ComponentMap } from 'mdx-bundler/client';
+import { coreContent } from '@/lib/utils/contentlayer';
+import Image from './Image';
+import CustomLink from './Link';
+import TOCInline from './TOCInline';
+import Pre from './Pre';
+import { BlogNewsletterForm } from './NewsletterForm';
+import type { BlogPost } from 'contentlayer/generated';
 
 interface MDXLayout {
-  layout: string
-  content: BlogPost
-  viewCount: string
-  [key: string]: unknown
+  layout: string;
+  content: BlogPost;
+  viewCount: string;
+  [key: string]: unknown;
 }
 
 interface Wrapper {
-  layout: string
-  [key: string]: unknown
+  layout: string;
+  [key: string]: unknown;
 }
 
 const Wrapper = ({ layout, content, viewCount, ...rest }: MDXLayout) => {
-  const Layout = require(`../layouts/${layout}`).default
-  return <Layout content={content} viewCount={viewCount} {...rest} />
-}
+  const Layout = require(`../layouts/${layout}`).default;
+  return <Layout content={content} viewCount={viewCount} {...rest} />;
+};
 
 export const MDXComponents: ComponentMap = {
   Image,
@@ -34,11 +34,11 @@ export const MDXComponents: ComponentMap = {
   pre: Pre,
   wrapper: Wrapper,
   BlogNewsletterForm,
-}
+};
 
 export const MDXLayoutRenderer = ({ layout, content, viewCount, ...rest }: MDXLayout) => {
-  const MDXLayout = useMDXComponent(content.body.code)
-  const mainContent = coreContent(content)
+  const MDXLayout = useMDXComponent(content.body.code);
+  const mainContent = coreContent(content);
 
   return (
     <MDXLayout
@@ -48,5 +48,5 @@ export const MDXLayoutRenderer = ({ layout, content, viewCount, ...rest }: MDXLa
       components={MDXComponents}
       {...rest}
     />
-  )
-}
+  );
+};

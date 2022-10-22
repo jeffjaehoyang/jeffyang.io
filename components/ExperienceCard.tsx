@@ -1,14 +1,14 @@
-import MetaLogo from '../components/social-icons/meta.svg'
-import FacebookLetterLogo from '../components/social-icons/facebook-letter.svg'
-import EsriLogo from '../components/social-icons/esri.svg'
-import KnowruLogo from '../components/social-icons/knowru.svg'
-import FumiLogo from '../components/social-icons/fumi.svg'
+import MetaLogo from '../components/social-icons/meta.svg';
+import FacebookLetterLogo from '../components/social-icons/facebook-letter.svg';
+import EsriLogo from '../components/social-icons/esri.svg';
+import KnowruLogo from '../components/social-icons/knowru.svg';
+import FumiLogo from '../components/social-icons/fumi.svg';
 
 interface Props {
-  company: string
-  position: string
-  startDate: string
-  endDate: string
+  company: string;
+  position: string;
+  startDate: string;
+  endDate: string;
 }
 
 const LogoMapping = {
@@ -17,10 +17,10 @@ const LogoMapping = {
   Esri: EsriLogo,
   Knowru: KnowruLogo,
   Fumi: FumiLogo,
-}
+};
 
 const ExperienceCard = ({ company, position, startDate, endDate }: Props) => {
-  const CompanyLogo = LogoMapping[company]
+  const CompanyLogo = LogoMapping[company];
 
   return (
     <div className="mt-5 flex items-center gap-4">
@@ -44,7 +44,7 @@ const ExperienceCard = ({ company, position, startDate, endDate }: Props) => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ExperienceCard
+export default ExperienceCard;
