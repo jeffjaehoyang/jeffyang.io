@@ -88,6 +88,7 @@ const BoardCard = ({
               {liverpoolData.homeTeam.name} (H) <span className="text-xs font-normal">vs.</span>
             </div>
             <div className="ml-auto text-lg leading-6">{liverpoolData.awayTeam.name} (A)</div>
+            <span className="ml-auto text-xs font-normal">Time in Eastern Time (ET)</span>
             <span className="mt-1 ml-auto text-xs font-normal">Powered by football-data.org</span>
           </div>
         )}

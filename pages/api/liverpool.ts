@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const data = await response.json();
   const nextMatch = data['matches'][0];
   const utcDate = nextMatch['utcDate'];
-  const localDate = new Date(utcDate).toLocaleString();
+  const localDate = new Date(utcDate).toLocaleString('en-US', { timeZone: 'America/New_York' });
 
   const dateStringSplit = localDate.split(':');
   const ampm = dateStringSplit[2].split(' ')[1];
