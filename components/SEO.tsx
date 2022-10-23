@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+
 import siteMetadata from '@/data/siteMetadata';
 import { CoreContent } from '@/lib/utils/contentlayer';
+
 import type { BlogPost, Authors } from 'contentlayer/generated';
 interface CommonSEOProps {
   title: string;
@@ -76,7 +78,7 @@ export const PageSEO = ({ title, description }: PageSEOProps) => {
 export const TagSEO = ({ title, description }: PageSEOProps) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
-  const router = useRouter();
+  // const router = useRouter();
   return (
     <>
       <CommonSEO
@@ -86,14 +88,14 @@ export const TagSEO = ({ title, description }: PageSEOProps) => {
         ogImage={ogImageUrl}
         twImage={twImageUrl}
       />
-      <Head>
+      {/* <Head>
         <link
           rel="alternate"
           type="application/rss+xml"
           title={`${description} - RSS feed`}
           href={`${siteMetadata.siteUrl}${router.asPath}/feed.xml`}
         />
-      </Head>
+      </Head> */}
     </>
   );
 };

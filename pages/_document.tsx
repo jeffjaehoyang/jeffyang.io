@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   render() {
@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </Head>
-        <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-gray-200">
+        <body className="antialiased text-black bg-white dark:bg-gray-900 dark:text-gray-200">
           <Main />
           <NextScript />
         </body>

@@ -1,8 +1,8 @@
-const { withContentlayer } = require('next-contentlayer')
+const { withContentlayer } = require('next-contentlayer');
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-})
+});
 
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
@@ -14,7 +14,7 @@ const ContentSecurityPolicy = `
   connect-src *;
   font-src 'self';
   frame-src giscus.app;
-`
+`;
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
@@ -52,7 +52,7 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=()',
   },
-]
+];
 
 /**
  * @type {import('next/dist/next-server/server/config').NextConfig}
@@ -70,7 +70,7 @@ module.exports = withContentlayer(
           source: '/(.*)',
           headers: securityHeaders,
         },
-      ]
+      ];
     },
     async redirects() {
       return [
@@ -94,13 +94,21 @@ module.exports = withContentlayer(
           destination: '/blog/eslint-prettier-vscode',
           permanent: true,
         },
-      ]
+      ];
+    },
+    async rewrites() {
+      return [
+        {
+          source: '/rss.xml',
+          destination: '/api/rss',
+        },
+      ];
     },
     webpack: (config, { dev, isServer }) => {
       config.module.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
-      })
+      });
 
       if (!dev && !isServer) {
         // Replace React with Preact only in client production build
@@ -109,10 +117,10 @@ module.exports = withContentlayer(
           react: 'preact/compat',
           'react-dom/test-utils': 'preact/test-utils',
           'react-dom': 'preact/compat',
-        })
+        });
       }
 
-      return config
+      return config;
     },
   })
-)
+);

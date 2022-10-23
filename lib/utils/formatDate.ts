@@ -5,9 +5,9 @@ const formatDate = (date: string) => {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   };
   const now = new Date(date).toLocaleDateString(siteMetadata.locale, options);
-
   return now;
 };
 

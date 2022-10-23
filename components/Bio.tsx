@@ -3,8 +3,8 @@ import React from 'react';
 
 const Bio: React.FC = () => {
   return (
-    <div className="mt-10 mb-10 flex w-full flex-col items-center justify-between rounded-lg bg-primary-100 px-2 py-8 text-gray-800 opacity-90">
-      <div className="flex w-full items-center justify-center font-bold">
+    <div className="flex flex-col items-center justify-between w-full px-2 py-8 mt-10 mb-10 text-gray-800 bg-gray-100 rounded-lg opacity-90 dark:bg-gray-800 dark:text-gray-100">
+      <div className="flex items-center justify-center w-full font-bold">
         <span>Thank you for reading!</span>
       </div>
       <div className="mt-4 mb-4">
@@ -16,7 +16,7 @@ const Bio: React.FC = () => {
           style={{ borderRadius: '50%' }}
         />
       </div>
-      <div className="flex w-full flex-col items-center justify-center text-center">
+      <div className="flex flex-col items-center justify-center w-full text-center">
         <span>
           Written by <b>Jeff Yang</b>
         </span>

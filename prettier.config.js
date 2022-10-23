@@ -6,4 +6,5 @@ module.exports = {
   useTabs: false,
   trailingComma: 'es5',
   bracketSpacing: true,
-}
+  proseWrap: 'always', // formats md/mdx files correctly for long lines that need to be wrapped.
+};
