@@ -1,3 +1,5 @@
+// https://heroicons.com
+
 export const WorkPlaceSVG = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -5,7 +7,7 @@ export const WorkPlaceSVG = (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -22,7 +24,7 @@ export const TotalVisitsSVG = (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -39,7 +41,7 @@ export const DotfilesSVG = (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -56,7 +58,7 @@ export const LinkSVG = (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -73,7 +75,7 @@ export const HomeSVG = (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -90,7 +92,7 @@ export const DateSVG = (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -107,7 +109,7 @@ export const DollarSVG = (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -124,7 +126,7 @@ export const MusicSVG = (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -141,7 +143,7 @@ export const PresentationChartSVG = (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -158,7 +160,7 @@ export const RadioSVG = (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -175,7 +177,7 @@ export const BarChartSquareSVG = (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -192,7 +194,7 @@ export const TrophySVG = (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -209,7 +211,7 @@ export const SmileFaceSVG = (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -226,7 +228,7 @@ export const BellAlertSVG = (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -243,7 +245,7 @@ export const ClockSVG = (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
