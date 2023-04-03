@@ -10,9 +10,9 @@ import siteMetadata from '@/data/siteMetadata';
 import { allCoreContent, featuredBlogPost, sortedBlogPost } from '@/lib/utils/contentlayer';
 
 const gradients = {
-  '0': 'from-[#D8B4FE] to-[#818CF8]',
-  '1': 'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]',
-  '2': 'from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]',
+  '0': 'from-[rgba(246,97,133,0.3)] to-[rgba(51,148,56,0.3)]',
+  '1': 'from-[rgba(246,97,133,0.3)] to-[rgba(51,148,56,0.3)]',
+  '2': 'from-[rgba(246,97,133,0.3)] to-[rgba(51,148,56,0.3)]',
 };
 
 export const getStaticProps = async () => {
@@ -30,7 +30,7 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
         <div className="mb-16">
-          <div className="font-bold tracking-tight">Software Engineer & Neovim Enthusiast</div>
+          <div className="font-bold tracking-tight">software engineer & aspiring entrepreneur</div>
           <div className="mb-8 text-3xl font-bold tracking-tight">
             Hello, I'm Jeff <span className="waving-hand"> 👋</span>
           </div>
@@ -61,13 +61,13 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
             })}
           </div>
           <Link href="/blog">
-            <a className="flex items-center float-right mt-6 text-gray-600 transition-all rounded-lg hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+            <a className="float-right mt-6 flex items-center rounded-lg text-gray-600 transition-all hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
               See More
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="w-6 h-6 ml-1"
+                className="ml-1 h-6 w-6"
               >
                 <path
                   stroke="currentColor"

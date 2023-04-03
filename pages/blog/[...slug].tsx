@@ -1,10 +1,12 @@
-import PageTitle from '@/components/PageTitle';
-import { MDXLayoutRenderer } from '@/components/MDXComponents';
-import { sortedBlogPost, coreContent } from '@/lib/utils/contentlayer';
+import { allAuthors, allBlogPosts } from 'contentlayer/generated';
 import { InferGetStaticPropsType } from 'next';
-import { allBlogPosts, allAuthors } from 'contentlayer/generated';
+import Link from 'next/link';
 
+import GiscusComments from '@/components/comments/GiscusComments';
+import { MDXLayoutRenderer } from '@/components/MDXComponents';
+import PageTitle from '@/components/PageTitle';
 import useViewCounter from '@/lib/hooks/useViewCounter';
+import { coreContent, sortedBlogPost } from '@/lib/utils/contentlayer';
 
 const DEFAULT_LAYOUT = 'BlogPostLayout';
 
@@ -48,18 +50,44 @@ const Blog = ({
   next,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const viewCount = useViewCounter(post.slug);
+
   return (
     <>
       {'draft' in post && post.draft !== true ? (
-        <MDXLayoutRenderer
-          layout={DEFAULT_LAYOUT}
-          toc={post.toc}
-          content={post}
-          authorDetails={authorDetails}
-          prev={prev}
-          next={next}
-          viewCount={viewCount}
-        />
+        <div>
+          <MDXLayoutRenderer
+            layout={DEFAULT_LAYOUT}
+            toc={post.toc}
+            content={post}
+            authorDetails={authorDetails}
+            prev={prev}
+            next={next}
+            viewCount={viewCount}
+          />
+          <GiscusComments />
+          <div className="flex w-full flex-row items-center justify-between pt-12 text-base text-sm font-medium">
+            {prev && (
+              <div className="pt-4 xl:pt-8">
+                <Link
+                  href={`/blog/${prev.slug}`}
+                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                >
+                  &larr; prev
+                </Link>
+              </div>
+            )}
+            {next && (
+              <div className="pt-4 xl:pt-8">
+                <Link
+                  href={`/blog/${next.slug}`}
+                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                >
+                  next &rarr;
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
       ) : (
         <div className="mt-24 text-center">
           <PageTitle>

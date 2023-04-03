@@ -3,8 +3,8 @@ import React, { useCallback, useEffect } from 'react';
 
 import siteMetadata from '@/data/siteMetadata';
 
-const Giscus = () => {
-  // const [enableLoadComments, setEnabledLoadComments] = useState(true)
+const GiscusComments: React.FC = () => {
+  // const [enableLoadComments, setEnabledLoadComments] = useState(true);
   const { theme, resolvedTheme } = useTheme();
   const commentsTheme =
     siteMetadata.comment.giscusConfig.themeURL === ''
@@ -60,10 +60,10 @@ const Giscus = () => {
   }, [LoadComments]);
 
   return (
-    <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
+    <div className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300">
       <div className="giscus" id={COMMENTS_ID} />
     </div>
   );
 };
 
-export default Giscus;
+export default GiscusComments;

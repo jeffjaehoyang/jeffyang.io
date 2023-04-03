@@ -1,15 +1,15 @@
+import { useMDXComponent } from 'next-contentlayer/hooks';
 /* eslint-disable react/display-name */
 import React from 'react';
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import { ComponentMap } from 'mdx-bundler/client';
+
 import { coreContent } from '@/lib/utils/contentlayer';
+
 import Image from './Image';
 import CustomLink from './Link';
-import TOCInline from './TOCInline';
 import Pre from './Pre';
-import { BlogNewsletterForm } from './NewsletterForm';
-import type { BlogPost } from 'contentlayer/generated';
+import TOCInline from './TOCInline';
 
+import type { BlogPost } from 'contentlayer/generated';
 interface MDXLayout {
   layout: string;
   content: BlogPost;
@@ -22,18 +22,17 @@ interface Wrapper {
   [key: string]: unknown;
 }
 
-const Wrapper = ({ layout, content, viewCount, ...rest }: MDXLayout) => {
+export const Wrapper = ({ layout, content, viewCount, ...rest }: MDXLayout) => {
   const Layout = require(`../layouts/${layout}`).default;
   return <Layout content={content} viewCount={viewCount} {...rest} />;
 };
 
-export const MDXComponents: ComponentMap = {
+export const MDXComponents = {
   Image,
   TOCInline,
   a: CustomLink,
   pre: Pre,
   wrapper: Wrapper,
-  BlogNewsletterForm,
 };
 
 export const MDXLayoutRenderer = ({ layout, content, viewCount, ...rest }: MDXLayout) => {

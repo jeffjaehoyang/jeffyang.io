@@ -1,15 +1,14 @@
-import Link from '@/components/Link';
+import { ReactNode } from 'react';
+
+import Bio from '@/components/Bio';
 import PageTitle from '@/components/PageTitle';
+import ScrollTopAndComment from '@/components/ScrollTopAndComment';
 import { BlogSEO } from '@/components/SEO';
 import siteMetadata from '@/data/siteMetadata';
-import formatDate from '@/lib/utils/formatDate';
-import ScrollTopAndComment from '@/components/ScrollTopAndComment';
 import { CoreContent } from '@/lib/utils/contentlayer';
-import { ReactNode } from 'react';
-import type { BlogPost } from 'contentlayer/generated';
-import Giscus from '@/components/comments/Giscus';
-import Bio from '@/components/Bio';
+import formatDate from '@/lib/utils/formatDate';
 
+import type { BlogPost } from 'contentlayer/generated';
 interface Props {
   content: CoreContent<BlogPost>;
   children: ReactNode;
@@ -49,32 +48,9 @@ export default function BlogPostLayout({ content, viewCount, next, prev, childre
           </header>
           <div className="pb-8" style={{ gridTemplateRows: 'auto 1fr' }}>
             <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
+              <div className="prose max-w-none pb-8 pt-10 dark:prose-dark">{children}</div>
             </div>
             <Bio />
-            <Giscus />
-            <div className="flex w-full flex-row items-center justify-between pt-12 text-sm text-base font-medium">
-              {prev && (
-                <div className="pt-4 xl:pt-8">
-                  <Link
-                    href={`/blog/${prev.slug}`}
-                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                  >
-                    &larr; prev
-                  </Link>
-                </div>
-              )}
-              {next && (
-                <div className="pt-4 xl:pt-8">
-                  <Link
-                    href={`/blog/${next.slug}`}
-                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                  >
-                    next &rarr;
-                  </Link>
-                </div>
-              )}
-            </div>
           </div>
         </div>
       </article>
