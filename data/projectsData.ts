@@ -1,10 +1,10 @@
 const projectsData = [
   {
-    title: 'inretrospect.finance',
+    title: 'investment.notes',
     description:
-      'Are you a long-term investor? If you are anything like me, you probably had to make numerous decisions over time to decide which stocks to buy. Every now and then, I wonder - would I have been better off if I had invested in this rather than that? I built inretrospect.finance to help record investment decisions - both good ones and bad ones. You can only look back and learn if you keep a proper record - as with anything else in life. To add some fun to it, you can also share your investment records through shareable links!',
-    href: 'https://inretrospect-finance.herokuapp.com/dashboard',
-    repo: 'https://github.com/jeffjaehoyang/inretrospect-finance',
+      'Are you a long-term investor? If you are anything like me, you probably had to make numerous decisions over time to decide which stocks to buy. Every now and then, I wonder - would I have been better off if I had invested in this rather than that? I built investment.notes to help record investment decisions - both good ones and bad ones. You can only look back and learn if you keep a proper record - as with anything else in life. To add some fun to it, you can also share your investment records through shareable links!',
+    href: 'https://investment-notes.vercel.app',
+    repo: 'https://github.com/jeffjaehoyang/investment-notes',
   },
   {
     title: 'Tech Salary Visualization',
