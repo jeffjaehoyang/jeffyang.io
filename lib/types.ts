@@ -46,3 +46,17 @@ export type Joke = {
 export type DateHistory = {
   text: string;
 };
+
+export type NewsData = {
+  published: boolean;
+  category: string;
+  content: string;
+  explanation: string;
+  newsDate: string;
+};
+
+export type NewsDataGroup = {
+  year: number;
+  data: NewsData[];
+  isVisible: boolean;
+};

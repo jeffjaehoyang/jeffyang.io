@@ -8,7 +8,7 @@ export const priceTenYearsAgo = '59.33'; // Jan 2013
 export const priceTwentyYearsAgo = '20.97'; // Jan 2003
 
 // update this const every time I get back from Korea
-export const lastDayInKorea = new Date('6/20/2022');
+export const lastDayInKorea = new Date('7/06/2023');
 
 export const getDaysSince = (start: Date): string => {
   const today = new Date();

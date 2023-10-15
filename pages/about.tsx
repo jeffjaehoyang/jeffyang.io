@@ -35,9 +35,13 @@ const About = ({ author }: InferGetStaticPropsType<typeof getStaticProps>) => {
         </div>
         <div className="mb-3 text-lg font-bold">What's my job?</div>
         <div className="mb-8">
-          I'm a software engineer at Meta. I am part of a team that builds the backend &
-          infrastructure of checkout experiences across Meta's Family of Apps (including Facebook &
-          Instagram).
+          I'm a software engineer at Meta. I worked on the checkout backend & infrastructure team
+          that powered checkout experiences across Meta's Family of Apps (FB & IG). Currently, I am
+          working in the intersection of E-Commerce and Ad-tech. After sunsetting Instagram's Shops
+          tab, Meta has been focusing on Shops Ads - focusing on shopping experiences with ads at
+          the top of the funnel, instead of an organic shopping experience (as it was with the IG
+          Shops tab). My team currently is focused on building features that expand the top of the
+          funnel TAM (streamlining onboarding onto FB/IG onsite storefront).
         </div>
         <div className="mb-3 text-lg font-bold">When did I start programming?</div>
         <div className="mb-8">

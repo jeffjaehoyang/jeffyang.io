@@ -3,11 +3,12 @@ import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 
 import FeaturedPostCard from '@/components/FeaturedPostCard';
-import NewsCard from '@/components/NewsCard';
+import NewsCardGroup from '@/components/NewsCardGroup';
 import { PageSEO } from '@/components/SEO';
 import newsData from '@/data/newsData';
 import siteMetadata from '@/data/siteMetadata';
 import { allCoreContent, featuredBlogPost, sortedBlogPost } from '@/lib/utils/contentlayer';
+import { NewsDataGroup } from '@/lib/types';
 
 const gradients = {
   '0': 'from-[rgba(246,97,133,0.3)] to-[rgba(51,148,56,0.3)]',
@@ -87,22 +88,10 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
           </div>
           <div>
             {newsData
-              .sort((a, b) => Date.parse(b.newsDate) - Date.parse(a.newsDate))
-              .map((d, index) => {
-                if (d.isSeparator) {
-                  return (
-                    <div key={d.year} className="mb-2 text-xl font-bold">
-                      {d.year}
-                    </div>
-                  );
-                }
+              .sort((a, b) => b.year - a.year)
+              .map((d: NewsDataGroup, index) => {
                 return (
-                  <NewsCard
-                    content={d.content}
-                    explanation={d.explanation}
-                    published={d.published}
-                    key={index}
-                  />
+                  <NewsCardGroup key={index} year={d.year} data={d.data} isVisible={d.isVisible} />
                 );
               })}
           </div>
