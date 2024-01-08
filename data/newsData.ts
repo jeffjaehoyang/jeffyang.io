@@ -72,7 +72,7 @@ const newsData: NewsDataGroup[] = [
         published: true,
       },
     ],
-    isVisible: true,
+    isVisible: false,
   },
   {
     year: 2020,
