@@ -27,8 +27,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [] }: P
       <div>
         <div className="mb-8">
           <div className="text-lg font-extrabold tracking-tight">{title}</div>
-          <div className="text-2xl font-extrabold">It's not an idea until you write it down.</div>
-          <div className="relative mt-3">
+          {/* <div className="text-2xl font-extrabold">It's not an idea until you write it down.</div> */}
+          {/* <div className="relative mt-3">
             <input
               aria-label="Search articles"
               type="text"
@@ -50,22 +50,24 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [] }: P
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
-          </div>
+          </div> */}
         </div>
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((post, index) => {
-            const { slug, date, title, summary, tags, readingTime } = post;
+            const { slug, draft, date, title, summary, tags, readingTime } = post;
             return (
-              <BlogPostCard
-                key={index}
-                slug={slug}
-                date={date}
-                title={title}
-                summary={summary}
-                tags={tags}
-                readingTime={readingTime.text}
-              />
+              !draft && (
+                <BlogPostCard
+                  key={index}
+                  slug={slug}
+                  date={date}
+                  title={title}
+                  summary={summary}
+                  tags={tags}
+                  readingTime={readingTime.text}
+                />
+              )
             );
           })}
         </ul>

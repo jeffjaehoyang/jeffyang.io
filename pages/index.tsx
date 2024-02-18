@@ -32,7 +32,7 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
       <div>
         <div className="mb-16">
           <div className="font-bold tracking-tight">software engineer & aspiring entrepreneur</div>
-          <div className="mb-8 text-3xl font-bold tracking-tight">
+          <div className="mb-8 text-xl font-bold tracking-tight">
             Hello, I'm Jeff <span className="waving-hand"> 👋</span>
           </div>
           <div>
@@ -43,7 +43,7 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
         </div>
 
         <div className="mb-16">
-          <div className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
+          <div className="mb-4 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
             Featured Posts
           </div>
 
@@ -62,13 +62,13 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
             })}
           </div>
           <Link href="/blog">
-            <a className="float-right mt-6 flex items-center rounded-lg text-gray-600 transition-all hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+            <a className="float-right mt-6 flex items-center rounded-lg text-xs text-gray-600 transition-all hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
               See More
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="ml-1 h-6 w-6"
+                className="ml-1 h-4 w-4"
               >
                 <path
                   stroke="currentColor"
@@ -83,7 +83,7 @@ export default function Home({ featuredPosts }: InferGetStaticPropsType<typeof g
         </div>
 
         <div className="mb-16">
-          <div className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
+          <div className="mb-4 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
             News Room
           </div>
           <div>

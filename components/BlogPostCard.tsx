@@ -28,10 +28,10 @@ export default function BlogPostCard({
   return (
     <Link href={`/blog/${slug}`}>
       <a className="w-full" style={{ WebkitTapHighlightColor: 'transparent' }}>
-        <div className="w-full mb-12">
+        <div className="mb-12 w-full">
           <div className="flex flex-col justify-between md:flex-row">
             <h3 className="text-xl font-bold tracking-tight">{title}</h3>
-            <div className="text-sm text-left text-gray-600 dark:text-gray-400 md:mb-0 md:text-right">
+            <div className="text-left text-sm text-gray-600 dark:text-gray-400 md:mb-0 md:text-right">
               {`${views ? new Number(views).toLocaleString() : '–––'} views`}
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function BlogPostCard({
                 <Tag key={tag} text={tag} />
               ))}
             </div>
-            <span className="flex flex-row items-center mr-2 text-sm text-gray-600 dark:text-gray-400">
+            <span className="mr-2 flex flex-row items-center text-sm text-gray-600 dark:text-gray-400">
               <time className="mr-2" dateTime={date}>
                 {formatDate(date)}
               </time>
@@ -49,7 +49,7 @@ export default function BlogPostCard({
               <span className="mr-2 text-sm text-gray-600 dark:text-gray-400">{readingTime}</span>
             </span>
           </div>
-          <div className="text-sm text-gray-600 max-w-none dark:text-gray-400">{summary}</div>
+          <div className="max-w-none text-sm text-gray-600 dark:text-gray-400">{summary}</div>
         </div>
       </a>
     </Link>

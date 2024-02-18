@@ -14,11 +14,11 @@ const About = ({ author }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <>
-      <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
+      <PageSEO title={`About | ${name}`} description={`About me - ${name}`} />
       <div>
         <div className="mb-8">
           <div className="text-lg font-extrabold tracking-tight">A Little About Myself</div>
-          <div className="text-2xl font-extrabold">{siteMetadata.description}</div>
+          {/* <div className="text-2xl font-extrabold">{siteMetadata.description}</div> */}
         </div>
         <div className="mb-2 text-lg font-bold">Hey, I'm Jeff ✌️</div>
         <div className="mb-8">

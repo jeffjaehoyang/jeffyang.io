@@ -17,8 +17,8 @@ const LayoutWrapper = ({ children }: Props) => {
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
-        <header className="flex items-center justify-between pt-5 pb-10">
-          <div>
+        <header className="flex items-center justify-between pb-10 pt-5">
+          {/* <div>
             <Link
               href="/"
               aria-label={siteMetadata.headerTitle}
@@ -37,7 +37,7 @@ const LayoutWrapper = ({ children }: Props) => {
                 )}
               </div>
             </Link>
-          </div>
+          </div> */}
           <div className="flex items-center text-sm leading-5">
             <div className="hidden sm:block">
               {headerNavLinks.map((link) => (
@@ -46,7 +46,7 @@ const LayoutWrapper = ({ children }: Props) => {
                 </NavLink>
               ))}
             </div>
-            <ThemeSwitch />
+            {/* <ThemeSwitch /> */}
             <MobileNav />
           </div>
         </header>

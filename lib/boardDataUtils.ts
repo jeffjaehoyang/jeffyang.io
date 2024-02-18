@@ -2,10 +2,11 @@
 export const prevUncountedViews = 8698;
 
 // update these annually, beginning of the year (QQQ Price)
-export const priceOneYearAgo = '264.48'; // Jan 2023
-export const priceFiveYearsAgo = '154.37'; // Jan 2018
-export const priceTenYearsAgo = '59.33'; // Jan 2013
-export const priceTwentyYearsAgo = '20.97'; // Jan 2003
+// https://finance.yahoo.com/quote/QQQ/history/
+export const priceOneYearAgo = '405.84'; // Jan 2024
+export const priceFiveYearsAgo = '150.99'; // Jan 2019
+export const priceTenYearsAgo = '87.55'; // Jan 2014
+export const priceTwentyYearsAgo = '36.66'; // Jan 2004
 
 // update this const every time I get back from Korea
 export const lastDayInKorea = new Date('7/06/2023');

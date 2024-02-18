@@ -1,10 +1,10 @@
 const siteMetadata = {
-  title: 'Personal Blog by Jeff Yang',
+  title: 'Jeff Yang',
   author: 'Jeff Yang',
   headerTitle: '', // used for logo
   description: 'Recording life, code, and passion.',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://www.jeffyang.io',
   siteRepo: 'https://github.com/jeffjaehoyang/jeffyang.io',
   siteLogo: '/static/images/logo.png',

@@ -42,6 +42,10 @@ img {
   object-fit: cover;
 }
 
+body {
+  background-color: #0f0f0f !important;
+}
+
 @keyframes wave-animation {
   0% {
     transform: rotate(0deg);
